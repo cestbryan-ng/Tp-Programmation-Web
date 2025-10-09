@@ -1,6 +1,6 @@
-/* 
+/* ========================================
    RESET & VARIABLES GLOBALES
- */
+======================================== */
 
 * {
     margin: 0;
@@ -65,10 +65,10 @@ button {
     font-family: inherit;
 }
 
-/* 
+/* ========================================
    BANNIÈRE PROMOTIONNELLE
    Barre fixe en haut du site
- */
+======================================== */
 
 .promo-banner {
     background-color: var(--color-black);
@@ -88,10 +88,10 @@ button {
     margin: 0;
 }
 
-/* 
+/* ========================================
    HEADER / NAVIGATION
    Section réutilisable pour toutes les pages
- */
+======================================== */
 
 .header {
     position: fixed;
@@ -375,10 +375,10 @@ button {
     font-weight: 600;
 }
 
-/* 
+/* ========================================
    HERO SECTION
    Section d'accueil avec image principale
- */
+======================================== */
 
 .hero {
     height: 100vh;
@@ -469,10 +469,10 @@ button {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* 
+/* ========================================
    SECTION COLLECTIONS
    Présentation des 3 catégories principales
- */
+======================================== */
 
 .collections {
     padding: var(--spacing-xl) 0;
@@ -577,10 +577,10 @@ button {
     line-height: 1.7;
 }
 
-/* 
+/* ========================================
    SECTION ŒUVRES VEDETTES
    Mise en avant de 4 produits phares
- */
+======================================== */
 
 .featured-products {
     padding: var(--spacing-xl) 0;
@@ -689,10 +689,10 @@ button {
     transform: translateY(-2px);
 }
 
-/* 
+/* ========================================
    SECTION TÉMOIGNAGES + FORMULAIRE
    Avis clients avec carousel + formulaire d'ajout
- */
+======================================== */
 
 .testimonials-section {
     padding: var(--spacing-xl) 0;
@@ -881,10 +881,10 @@ button {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* 
+/* ========================================
    FOOTER
    Section réutilisable pour toutes les pages
- */
+======================================== */
 
 .footer {
     background-color: var(--color-black);
@@ -992,9 +992,9 @@ button {
     color: var(--color-white);
 }
 
-/* 
+/* ========================================
    RESPONSIVE DESIGN
- */
+======================================== */
 
 @media (max-width: 1024px) {
     .products-grid {
