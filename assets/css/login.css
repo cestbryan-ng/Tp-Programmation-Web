@@ -1,9 +1,11 @@
+/* Reset basique : marges, padding et box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Corps de la page : police, couleurs et fond par défaut */
 body {
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -13,6 +15,7 @@ body {
   min-height: 100vh;
 }
 
+/* Conteneur principal : image de fond et centrage du contenu */
 .conteneur-principal {
   background-color: #fff;
   background-image: url("../images/fond.jpg");
@@ -26,17 +29,20 @@ body {
   padding: 20px;
 }
 
+/* Réglages pour écrans moyens et larges */
 @media screen and (min-width: 768px) {
   .conteneur-principal {
     padding: 80px 20px;
   }
 }
 
+/* Conteneur centre : limite la largeur du contenu */
 .conteneur-centre {
   width: 100%;
   max-width: 1040px;
 }
 
+/* Rangee centrale : aligne les colonnes */
 .rangee-centre {
   width: 100%;
   display: flex;
@@ -49,6 +55,7 @@ body {
   }
 }
 
+/* Bloc formulaire : carte blanche, ombre et animation */
 .bloc-formulaire {
   color: #3f3f41;
   background: #fff;
@@ -59,6 +66,7 @@ body {
   animation: fadeInUp 1s ease forwards;
 }
 
+/* Panneau et padding interne du formulaire */
 .panneau-formulaire {
   display: block;
 }
@@ -67,11 +75,13 @@ body {
   padding: 45px;
 }
 
+/* En-tête du formulaire : logo et slogan */
 .entete-formulaire {
   margin-bottom: 30px;
   text-align: center;
 }
 
+/* Logo principal : taille et transitions au hover */
 .logo-principal {
   height: auto;
   width: 240px;
@@ -85,16 +95,19 @@ body {
   filter: brightness(1.2);
 }
 
+/* Texte du slogan dans l'en-tête */
 .entete-formulaire p {
   font-size: 18px;
   font-weight: 700;
   margin: 0;
 }
 
+/* Zone du formulaire (marges internes) */
 .zone-formulaire form {
   margin-bottom: 20px;
 }
 
+/* Conteneur pour les champs : clear float et espacement */
 .groupe-champs::after {
   content: "";
   display: table;
@@ -102,11 +115,13 @@ body {
   margin-bottom: 15px;
 }
 
+/* Chaque champ (input + label + erreurs) */
 .champ-conteneur {
   padding: 10px 0;
   position: relative;
 }
 
+/* Icône afficher/masquer le mot de passe */
 .afficher-password {
   position: absolute;
   right: 12px;
@@ -128,6 +143,7 @@ body {
   color: #111;
 }
 
+/* Styles communs aux contrôles de formulaire (input) */
 .controle-formulaire {
   width: 100%;
   padding: 12px;
@@ -150,6 +166,7 @@ body {
   border-color: #000;
 }
 
+/* Label flottant (au-dessus du champ) */
 .etiquette-flottante {
   position: absolute;
   left: 12px;
@@ -163,21 +180,7 @@ body {
   z-index: 2;
 }
 
-.texte-mot-passe-oublie {
-  text-align: right;
-  margin-bottom: 15px;
-}
-
-.texte-mot-passe-oublie a {
-  color: #9d9da1;
-  font-size: 12px;
-  text-decoration: underline;
-}
-
-.texte-mot-passe-oublie a:hover {
-  color: #000;
-}
-
+/* Styles généraux des boutons */
 .bouton {
   display: inline-flex;
   align-items: center;
@@ -211,6 +214,7 @@ body {
   width: 100%;
 }
 
+/* Texte secondaire sous le formulaire (inscription) */
 .texte-secondaire {
   text-align: center;
   font-size: 14px;
@@ -228,10 +232,12 @@ body {
   color: #000;
 }
 
+/* Styles pour champs en erreur */
 .controle-formulaire.error {
   border-bottom: 2px solid red;
 }
 
+/* Message d'erreur affiché sous les champs */
 .message-erreur {
   display: block;
   font-size: 12px;
@@ -239,6 +245,7 @@ body {
   margin-top: 5px;
 }
 
+/* Animation d'entrée (légère translation + fade-in) */
 @keyframes fadeInUp {
   0% {
     opacity: 0;

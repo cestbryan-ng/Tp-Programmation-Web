@@ -1,9 +1,11 @@
+/* Reset basique : marges, padding et box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Corps : police, couleurs et hauteur minimale */
 body {
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -13,6 +15,7 @@ body {
   min-height: 100vh;
 }
 
+/* Conteneur principal : image de fond et centrage */
 .conteneur-principal {
   background-color: #fff;
   background-image: url("../images/fond.jpg");
@@ -26,17 +29,20 @@ body {
   padding: 20px;
 }
 
+/* Ajustements pour écrans larges */
 @media screen and (min-width: 768px) {
   .conteneur-principal {
     padding: 80px 20px;
   }
 }
 
+/* Conteneur centre : limite la largeur du contenu */
 .conteneur-centre {
   width: 100%;
   max-width: 1040px;
 }
 
+/* Rangee centrale : alignement horizontal */
 .rangee-centre {
   width: 100%;
   display: flex;
@@ -49,6 +55,7 @@ body {
   }
 }
 
+/* Carte du formulaire : fond blanc, ombre et arrondis */
 .bloc-formulaire {
   color: #3f3f41;
   background: #fff;
@@ -59,6 +66,7 @@ body {
   animation: fadeInUp 1s ease forwards;
 }
 
+/* Panneau et padding interne du formulaire */
 .panneau-formulaire {
   display: block;
 }
@@ -72,6 +80,7 @@ body {
   text-align: center;
 }
 
+/* Logo : taille et légère animation au survol */
 .logo-principal {
   height: auto;
   width: 240px;
@@ -91,10 +100,12 @@ body {
   margin: 0;
 }
 
+/* Zone formulaire : espacement bas */
 .zone-formulaire form {
   margin-bottom: 20px;
 }
 
+/* Groupe de champs : clear et marge */
 .groupe-champs::after {
   content: "";
   display: table;
@@ -102,11 +113,13 @@ body {
   margin-bottom: 15px;
 }
 
+/* Conteneur d'un champ (label + input + erreur) */
 .champ-conteneur {
   padding: 10px 0;
   position: relative;
 }
 
+/* Icône afficher/masquer le mot de passe */
 .afficher-password {
   position: absolute;
   right: 12px;
@@ -128,6 +141,7 @@ body {
   color: #111;
 }
 
+/* Inputs : padding, bordure et transition focus */
 .controle-formulaire {
   width: 100%;
   padding: 12px;
@@ -146,6 +160,7 @@ body {
   border-color: #000;
 }
 
+/* Label flottant au-dessus du champ */
 .etiquette-flottante {
   position: absolute;
   left: 12px;
@@ -159,6 +174,7 @@ body {
   z-index: 2;
 }
 
+/* Boutons : forme ronde et alignement du texte */
 .bouton {
   display: inline-flex;
   align-items: center;
@@ -192,6 +208,7 @@ body {
   width: 100%;
 }
 
+/* Texte secondaire : lien vers inscription */
 .texte-secondaire {
   text-align: center;
   font-size: 14px;
@@ -209,10 +226,12 @@ body {
   color: #000;
 }
 
+/* Champ en erreur */
 .controle-formulaire.error {
   border-bottom: 2px solid red;
 }
 
+/* Message d'erreur sous le champ */
 .message-erreur {
   display: block;
   font-size: 12px;
@@ -220,6 +239,7 @@ body {
   margin-top: 5px;
 }
 
+/* Animation d'entrée */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
