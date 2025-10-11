@@ -1,9 +1,3 @@
-/* ====== STYLES COMBINÉS ======
-   Header/Footer : Artika (accueil.css)
-   Body : Art Abstrait (artAbstrait.css)
-*/
-
-/* === HEADER & FOOTER (depuis accueil.css) === */
 
 /* ========================================
    RESET & VARIABLES GLOBALES
@@ -382,79 +376,6 @@ button {
     font-weight: 600;
 }
 
-/* ========================================
-   HERO SECTION
-   Section d'accueil avec image principale
-======================================== */
-
-.hero {
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 110px; /* Hauteur bannière + header */
-    overflow: hidden;
-}
-
-.hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0.5)
-    );
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: var(--color-white);
-    animation: fadeInUp 1.2s ease;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero-title {
-    font-size: 90px;
-    font-weight: 700;
-    letter-spacing: 15px;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
-}
-
-.hero-subtitle {
-    font-size: 24px;
-    font-weight: 300;
-    letter-spacing: 4px;
-    margin-bottom: 50px;
-    opacity: 0.95;
-}
 
 .btn-primary {
     display: inline-block;
@@ -1390,10 +1311,6 @@ footer {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-    }
-
-    .hero h1 {
-        font-size: 32px;
     }
 
     nav ul {
