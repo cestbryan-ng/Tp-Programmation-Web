@@ -81,7 +81,7 @@ body {
 }
 
 .logo-principal:hover {
-  transform: scale(1.1) rotate(-1deg);
+  transform: scale(1.1) rotate(1deg);
   filter: brightness(1.2);
 }
 
@@ -146,6 +146,10 @@ body {
   border-color: #000;
 }
 
+.controle-formulaire:hover {
+  border-color: #000;
+}
+
 .etiquette-flottante {
   position: absolute;
   left: 12px;
@@ -157,6 +161,21 @@ body {
   color: #666;
   pointer-events: none;
   z-index: 2;
+}
+
+.texte-mot-passe-oublie {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.texte-mot-passe-oublie a {
+  color: #9d9da1;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.texte-mot-passe-oublie a:hover {
+  color: #000;
 }
 
 .bouton {
