@@ -110,7 +110,7 @@ main, .panier-section {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
-}
+} 
 .checkout-btn:hover {
   opacity: 0.9;
 }
