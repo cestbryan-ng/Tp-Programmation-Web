@@ -103,14 +103,15 @@ main, .panier-section {
 
 /* Bouton passer au paiement */
 .checkout-btn {
-  background-color: var(--success);
+  background-color: #000;
   color: white;
   border: none;
   padding: 0.7rem 1.5rem;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
-} 
+}
+
 .checkout-btn:hover {
   opacity: 0.9;
 }
