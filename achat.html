@@ -1,101 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Articart</title>
-<style>
-:root {--accent:#1f2937;--muted:#6b7280;--bg:#f5f5f5;--card:#fff;--border:#e5e7eb;}
-body{font-family:'Inter',sans-serif;background:var(--bg);margin:0;color:var(--accent);}
-header{background:#fff;border-bottom:1px solid var(--border);padding:12px 18px;display:flex;justify-content:space-between;align-items:center;}
-.logo{font-weight:700;font-size:18px;background:var(--accent);color:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:8px;}
-nav .btn{padding:8px 14px;border:none;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer;}
-main{max-width:1100px;margin:24px auto;padding:0 16px;}
-.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
-.card{background:var(--card);padding:12px;border-radius:12px;border:1px solid var(--border);box-shadow:0 3px 8px rgba(0,0,0,0.04);cursor:pointer;transition:transform .2s;}
-.card:hover{transform:translateY(-3px);}
-.card img{width:100%;height:160px;object-fit:cover;border-radius:8px;}
-.price{font-weight:600;margin-top:6px;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement - ARTGALLERY</title>
+  <link rel="stylesheet" href="assets/css/achat.css">
 </head>
 <body>
 
+<!-- ===== HEADER ===== -->
 <header>
-  <div class="logo">LO</div>
-  <div>
-    <strong>Artcart</strong> - Boutique Peinture & Art
-  </div>
-  <nav>
-    <button class="btn" onclick="window.location.href='cart.html'">Voir le Panier</button>
-  </nav>
+    <div class="header-container">
+        <div class="logo">ARTGALLERY</div>
+        <nav>
+            <ul>
+                <li><a href="achat.html">Acheter</a></li>
+                <li><a href="#photographie">Photographie</a></li>
+                <li><a href="#sculpture">Sculpture</a></li>
+                <li><a href="#estampes">Estampes</a></li>
+                <li><a href="#artistes">Artistes</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<main>
-  <h2>Matériel de Peinture</h2>
-  <div class="products" id="products"></div>
-</main>
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <h1>Paiement</h1>
+    <p>Choisissez votre moyen de paiement</p>
+</section>
 
-<!-- Modal produit -->
-<div class="modal" id="product-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;">
-  <div style="background:#fff;padding:18px;border-radius:12px;max-width:520px;width:100%;" id="product-detail"></div>
+<!-- ===== MOYENS DE PAIEMENT ===== -->
+<div class="container">
+    <div class="payment-methods">
+        <div class="payment-card">
+            <img src="assets/images/orange.png" alt="Orange Money">
+            <p>Orange Money</p>
+        </div>
+        <div class="payment-card">
+            <img src="assets/images/mtn.jpeg" alt="MTN Mobile Money">
+            <p>MTN Mobile Money</p>
+        </div>
+        <div class="payment-card">
+            <img src="assets/images/bank.jpeg" alt="Carte Bancaire">
+            <p>Carte Bancaire</p>
+        </div>
+    </div>
+
+    <div class="pay-btn-container">
+        <a href="#" class="pay-btn">Payer maintenant</a>
+    </div>
 </div>
 
-<script>
-const PRODUCTS=[
-  {id:1,title:'Peinture Acrylique 500ml',price:4500,desc:'Peinture acrylique pro, couleur vive.',img:'images/1.jpeg'},
-  {id:2,title:'Pinceaux Premium (lot de 5)',price:6000,desc:'Set de pinceaux fins et épais.',img:'images/2.jpeg'},
-  {id:3,title:'Toile sur châssis 50x70cm',price:8000,desc:'Toile en coton montée sur cadre en bois.',img:'images/3.jpeg'},
-  {id:4,title:'Palette de Peintre',price:2000,desc:'Palette ergonomique pour mélanger vos couleurs.',img:'images/4.jpeg'},
-  {id:5,title:'Chevalet en bois',price:15000,desc:'Chevalet réglable pour artistes.',img:'images/5.jpeg'},
-  {id:6,title:'Crayons de dessin artistiques (x12)',price:5000,desc:'Crayons à mine tendre.',img:'images/6.jpeg'}
-];
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>À propos</h3>
+            <ul>
+                <li><a href="#">Notre histoire</a></li>
+                <li><a href="#">Nos artistes</a></li>
+                <li><a href="#">Presse</a></li>
+                <li><a href="#">Carrières</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Acheter de l'art</a></li>
+                <li><a href="#">Vendre de l'art</a></li>
+                <li><a href="#">Conseils d'experts</a></li>
+                <li><a href="#">Encadrement</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Aide</h3>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Livraison</a></li>
+                <li><a href="#">Retours</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Suivez-nous</h3>
+            <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Pinterest</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
 
-const CART_KEY='articart_cart_v1';
-const format=v=>new Intl.NumberFormat('fr-FR').format(v)+' FCFA';
-
-function loadCart(){try{return JSON.parse(localStorage.getItem(CART_KEY))||{}}catch(e){return{}}}
-function saveCart(cart){localStorage.setItem(CART_KEY,JSON.stringify(cart));}
-
-// ==== Affichage des produits ====
-function renderProducts(){
-  const productsEl=document.getElementById('products');
-  productsEl.innerHTML='';
-  PRODUCTS.forEach(p=>{
-    const el=document.createElement('div');
-    el.className='card';
-    el.innerHTML=`<img src="${p.img}" alt="${p.title}"><div>${p.title}</div><div class="price">${format(p.price)}</div>`;
-    el.addEventListener('click',()=>showProductModal(p));
-    productsEl.appendChild(el);
-  });
-}
-
-// ==== Modal produit ====
-const productModal=document.getElementById('product-modal');
-const productDetail=document.getElementById('product-detail');
-
-function showProductModal(product){
-  productDetail.innerHTML=`<h3>${product.title}</h3>
-    <img src="${product.img}" style="width:80%;margin:10px 0;border-radius:8px;">
-    <p>${product.desc}</p>
-    <p><strong>Prix:</strong> ${format(product.price)}</p>
-    <div style="display:flex;gap:8px;align-items:center;">
-      <input type="number" id="modal-qty" value="1" min="1" style="width:60px;padding:6px;border-radius:8px;border:1px solid #e5e7eb;text-align:center;"/>
-      <button onclick="addToCart(${product.id},parseInt(document.getElementById('modal-qty').value))" class="btn">Ajouter au panier</button>
-      <button onclick="productModal.style.display='none'" class="btn ghost">Fermer</button>
-    </div>`;
-  productModal.style.display='flex';
-}
-
-function addToCart(id,qty=1){
-  const cart=loadCart();
-  if(cart[id]) cart[id].qty+=qty;
-  else {const p=PRODUCTS.find(x=>x.id===id); cart[id]={...p,qty};}
-  saveCart(cart);
-  alert('Produit ajouté au panier !');
-  productModal.style.display='none';
-}
-
-renderProducts();
-</script>
 </body>
 </html>

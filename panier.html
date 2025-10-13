@@ -1,97 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Panier — Artcart</title>
-<style>
-:root {--accent:#1f2937;--muted:#6b7280;--bg:#f5f5f5;--card:#fff;--border:#e5e7eb;}
-body{font-family:'Inter',sans-serif;background:var(--bg);margin:0;padding:0;color:var(--accent);}
-header{background:#fff;border-bottom:1px solid var(--border);padding:12px 18px;display:flex;justify-content:space-between;align-items:center;}
-.btn{background:var(--accent);color:#fff;padding:8px 14px;border:none;border-radius:8px;cursor:pointer;}
-.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent);}
-main{max-width:900px;margin:24px auto;padding:0 16px;}
-.cart-item{display:flex;gap:10px;align-items:center;padding:12px;background:#fafafa;border:1px solid var(--border);border-radius:8px;margin-bottom:10px;}
-.cart-thumb{width:80px;height:80px;overflow:hidden;border-radius:8px;}
-.cart-thumb img{width:100%;height:100%;object-fit:cover;}
-.cart-meta{flex:1;}
-.row{display:flex;justify-content:space-between;margin-top:12px;font-weight:600;font-size:18px;}
-input[type=number]{width:60px;padding:6px;border:1px solid #e5e7eb;border-radius:6px;text-align:center;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - ARTGALLERY</title>
+    <link rel="stylesheet" href="assets/css/panier.css">
 </head>
 <body>
 
+<!-- ===== HEADER ===== -->
 <header>
-  <div><strong>Artcart</strong> - Panier</div>
-  <a href="index.html" class="btn ghost">Retour aux produits</a>
+    <div class="header-container">
+        <div class="logo">ARTGALLERY</div>
+        <nav>
+            <ul>
+                <li><a href="#peintures">Peintures</a></li>
+                <li><a href="#photographie">Photographie</a></li>
+                <li><a href="#sculpture">Sculpture</a></li>
+                <li><a href="#estampes">Estampes</a></li>
+                <li><a href="#artistes">Artistes</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<main>
-  <div id="cart"></div>
-  <div class="row" id="totals"></div>
-  <div style="margin-top:16px;">
-    <button class="btn" id="checkout">Passer à la caisse</button>
-    <button class="btn ghost" id="clear-cart">Vider le panier</button>
-  </div>
-</main>
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <h1>Votre Panier</h1>
+    <p>Vérifiez vos articles avant de passer à la caisse</p>
+</section>
 
-<script>
-const CART_KEY='articart_cart_v1';
-const format=v=>new Intl.NumberFormat('fr-FR').format(v)+' FCFA';
+<!-- ===== PANIER ===== -->
+<div class="container">
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Nom de l'œuvre</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="assets/images/IMG_3433.JPG" alt="Rêves Abstraits"></td>
+                <td>Rêves Abstraits</td>
+                <td>285.000 FCFA</td>
+                <td>1</td>
+                <td>285.000 FCFA</td>
+            </tr>
+            <tr>
+                <td><img src="assets/images/IMG_3434.JPG" alt="Horizon Urbain"></td>
+                <td>Horizon Urbain</td>
+                <td>195.000 FCFA</td>
+                <td>2</td>
+                <td>390.000 FCFA</td>
+            </tr>
+            <tr>
+                <td><img src="assets/images/IMG_3435.JPG" alt="Océan Intérieur"></td>
+                <td>Océan Intérieur</td>
+                <td>425.000 FCFA</td>
+                <td>1</td>
+                <td>425.000 FCFA</td>
+            </tr>
+        </tbody>
+    </table>
 
-function loadCart(){try{return JSON.parse(localStorage.getItem(CART_KEY))||{}}catch(e){return{}}}
-function saveCart(cart){localStorage.setItem(CART_KEY,JSON.stringify(cart)); renderCart();}
-function clearCart(){localStorage.removeItem(CART_KEY); renderCart();}
+    <div class="cart-summary">
+        <p>Total du panier : <strong>1.100.000 FCFA</strong></p>
+        <button class="checkout-btn">Passer à la caisse</button>
+    </div>
+</div>
 
-const cartEl=document.getElementById('cart');
-const totalsEl=document.getElementById('totals');
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>À propos</h3>
+            <ul>
+                <li><a href="#">Notre histoire</a></li>
+                <li><a href="#">Nos artistes</a></li>
+                <li><a href="#">Presse</a></li>
+                <li><a href="#">Carrières</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Acheter de l'art</a></li>
+                <li><a href="#">Vendre de l'art</a></li>
+                <li><a href="#">Conseils d'experts</a></li>
+                <li><a href="#">Encadrement</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Aide</h3>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Livraison</a></li>
+                <li><a href="#">Retours</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Suivez-nous</h3>
+            <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Pinterest</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
 
-function calculateTotals(cart){let subtotal=0; Object.values(cart).forEach(i=>subtotal+=i.price*i.qty); const shipping=subtotal>20000?0:(subtotal===0?0:1200); const total=subtotal+shipping; return {subtotal,shipping,total};}
-
-function renderCart(){
-  const cart=loadCart();
-  cartEl.innerHTML='';
-  const items=Object.values(cart);
-  if(items.length===0){cartEl.innerHTML='<p>Votre panier est vide.</p>'; totalsEl.innerHTML=''; return;}
-  items.forEach(it=>{
-    const div=document.createElement('div');
-    div.className='cart-item';
-    div.innerHTML=`<div class="cart-thumb"><img src="${it.img}"></div>
-      <div class="cart-meta">
-        <div>${it.title}</div>
-        <div>${format(it.price)} x <input type="number" min="1" value="${it.qty}" data-id="${it.id}"/> = ${format(it.price*it.qty)}</div>
-      </div>
-      <button data-remove="${it.id}" class="btn ghost">Supprimer</button>`;
-    cartEl.appendChild(div);
-  });
-  const totals=calculateTotals(cart);
-  totalsEl.innerHTML=`Sous-total: ${format(totals.subtotal)} | Livraison: ${format(totals.shipping)} | Total: ${format(totals.total)}`;
-}
-
-// Événements
-cartEl.addEventListener('change',e=>{
-  const input=e.target.closest('input[type=number][data-id]');
-  if(input){ 
-    const cart=loadCart(); 
-    const id=input.dataset.id; 
-    cart[id].qty=Math.max(1, Number(input.value)||1); 
-    saveCart(cart);
-  }
-});
-
-cartEl.addEventListener('click',e=>{
-  const rm=e.target.closest('[data-remove]');
-  if(rm){ 
-    const cart=loadCart(); 
-    delete cart[rm.dataset.remove]; 
-    saveCart(cart);
-  }
-});
-
-document.getElementById('clear-cart').addEventListener('click',()=>{if(confirm('Vider le panier ?')) clearCart();});
-document.getElementById('checkout').addEventListener('click',()=>{if(Object.keys(loadCart()).length===0){alert('Panier vide');return;} alert('Redirection vers la page de paiement...');});
-
-renderCart();
-</script>
 </body>
 </html>
