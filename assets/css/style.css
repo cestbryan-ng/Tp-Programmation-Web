@@ -762,7 +762,7 @@
 
         /* Contact Hero Section */
         .contact-hero {
-            background: linear-gradient(135deg, #c6c7ce 0%, #363536 100%);
+            background: linear-gradient(135deg, #0f0f0f 0%, #363536 100%);
             padding: 80px 20px;
             text-align: center;
             color: white;
@@ -850,7 +850,7 @@
 
         .btn-submit {
             width: 100%;
-            background: linear-gradient(135deg, #a9acb8 0%, #252525 100%);
+            background: linear-gradient(135deg, #111111 0%, #252525 100%);
             color: var(--color-white);
             padding: 16px 30px;
             font-size: 16px;
@@ -891,16 +891,16 @@
         }
 
         .info-card h3::before {
-            content: "📍";
+            /* content: "📍"; */
             font-size: 24px;
         }
 
         .info-card:nth-child(2) h3::before {
-            content: "📞";
+            /* content: "📞"; */
         }
 
         .info-card:nth-child(3) h3::before {
-            content: "❓";
+            /* content: "❓"; */
         }
 
         .info-item {
@@ -1207,6 +1207,36 @@
         .social-links {
             display: flex;
             gap: 15px;
+        }
+        /* Ligne de séparation */
+        .footer-divider {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: var(--spacing-md) 0;
+        }
+
+        /* Bas du footer */
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .footer-legal a {
+            color: rgba(255, 255, 255, 0.5);
+            transition: color var(--transition-normal);
+        }
+
+        .footer-legal a:hover {
+            color: var(--color-white);
         }
 
         .social-link {
