@@ -158,13 +158,13 @@
 
     <!-- Boutons de filtrage par type -->
     <div class="type-filters">
-        <button class="type-btn active" data-type="pots">Pots</button>
-        <button class="type-btn" data-type="tubes">Tubes</button>
+        <a href="#pots" class="type-btn active">Pots</a>
+        <a href="#tubes" class="type-btn">Tubes</a>
     </div>
 
     <div class="container">
         <!-- Section des Pots (16 produits) -->
-        <div class="gallery pots-container active">
+        <div id="pots" class="gallery pots-container active">
             <!-- Carte 1 - Argent -->
             <div class="artwork-card">
                 <div class="artwork-image color-argent">
@@ -365,7 +365,7 @@
         </div>
 
         <!-- Section des Tubes (16 produits) -->
-        <div class="gallery tubes-container">
+        <div id="tubes" class="gallery tubes-container">
             <!-- Carte 1 - Argent Tube -->
             <div class="artwork-card">
                 <div class="artwork-image color-argent">
@@ -637,33 +637,6 @@
     </div>
 </footer>
 
-    <script>
-        // Script pour gérer le filtrage entre pots et tubes
-        document.addEventListener('DOMContentLoaded', function() {
-            const typeButtons = document.querySelectorAll('.type-btn');
-            const potsContainer = document.querySelector('.pots-container');
-            const tubesContainer = document.querySelector('.tubes-container');
-            
-            typeButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Retirer la classe active de tous les boutons
-                    typeButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Ajouter la classe active au bouton cliqué
-                    this.classList.add('active');
-                    
-                    // Afficher le conteneur correspondant
-                    const type = this.getAttribute('data-type');
-                    if (type === 'pots') {
-                        potsContainer.classList.add('active');
-                        tubesContainer.classList.remove('active');
-                    } else if (type === 'tubes') {
-                        tubesContainer.classList.add('active');
-                        potsContainer.classList.remove('active');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
+    

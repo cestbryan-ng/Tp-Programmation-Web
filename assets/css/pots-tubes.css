@@ -332,3 +332,24 @@ footer {
 .pots-container.active, .tubes-container.active {
     display: grid;
 }
+/* Règles CSS pour le fonctionnement sans JavaScript */
+.tubes-container {
+    display: none;
+}
+
+#pots:target,
+#tubes:target {
+    display: grid;
+}
+
+#tubes:target ~ #pots {
+    display: none;
+}
+
+/* Garder le style des boutons actifs basé sur l'ancre */
+.type-filters a[href="#pots"]:target,
+.type-filters a[href="#tubes"]:target {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
