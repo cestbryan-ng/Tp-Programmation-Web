@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achat - Artika</title>
+    <link rel="stylesheet" href="assets/css/panier.css">
+    <link rel="stylesheet" href="assets/css/artAbstrait.css">
+    <link rel="stylesheet" href="assets/css/accueil.css">
+    <link rel="stylesheet" href="assets/css/achat.css">
+</head>
+<body>
+    <!-- ================= BANNIÈRE PROMO ================= -->
+    <div class="promo-banner">
+        <p>Livraison gratuite pour les commandes de plus de 75 000 FCFA. Retours faciles.</p>
+    </div>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container-header">
+            <div class="logo">
+                <a href="artika.html">
+                    <img src="assets/images/artika.png" alt="Artika">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item has-megamenu"><a href="#" class="nav-link">Peintures</a></li>
+                    <li class="nav-item has-megamenu"><a href="#" class="nav-link">Accessoires</a></li>
+                    <li class="nav-item has-megamenu"><a href="#" class="nav-link">Dessins de beaux arts</a></li>
+                    <li class="nav-separator"></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Nos magasins</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">À propos</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-wrapper">
+                    <button class="search-icon"></button>
+                    <div class="search-dropdown">
+                        <input type="text" placeholder="Rechercher une œuvre..." class="search-input">
+                    </div>
+                </div>
+                <a href="#" class="icon-btn"></a>
+                <a href="panier.html" class="icon-btn cart-icon"></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= CONTENU ACHAT ================= -->
+    <section class="achat-section">
+        <h1>Finaliser votre achat</h1>
+
+        <!-- Produit -->
+        <div class="product-card">
+            <img src="assets/images/IMG_3433.JPG" alt="Rêves Abstraits">
+            <div class="product-info">
+                <h2>Rêves Abstraits</h2>
+                <p>Quantité: 1</p>
+                <p>Prix: 285.000 FCFA</p>
+            </div>
+        </div>
+
+        <!-- Choix de la méthode de paiement -->
+        <div class="payment-method">
+            <h3>Choisissez votre méthode de paiement</h3>
+            <form action="paiement.php" method="post">
+                <label>
+                    <input type="radio" name="paiement" value="orange" checked>
+                    Orange Money
+                    <img src="assets/images/orange.png" alt="Orange Money">
+                </label>
+                <label>
+                    <input type="radio" name="paiement" value="mtn">
+                    MTN Mobile Money
+                    <img src="assets/images/mtn.jpeg" alt="MTN">
+                </label>
+                <label>
+                    <input type="radio" name="paiement" value="bank">
+                    Carte bancaire
+                    <img src="assets/images/bank.jpeg" alt="Carte bancaire">
+                </label>
+                <label>
+                    <input type="radio" name="paiement" value="paiement-livraison">
+                    Paiement à la livraison
+                </label>
+                <br>
+                <button type="submit" class="checkout-btn">Confirmer et payer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 class="footer-title">Artika</h4>
+                    <p class="footer-text">Là où l'art prend vie.</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Peintures</a></li>
+                        <li><a href="#">Accessoires</a></li>
+                        <li><a href="#">Dessins</a></li>
+                        <li><a href="#">Nos magasins</a></li>
+                        <li><a href="#">À propos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@artika.com">contact@artika.com</a></li>
+                        <li><a href="tel:+237600000000">+237 6XX XX XX XX</a></li>
+                        <li>Yaoundé, Cameroun</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Artika. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JS -->
+    <script src="assets/js/achat.js"></script>
+</body>
+</html>
