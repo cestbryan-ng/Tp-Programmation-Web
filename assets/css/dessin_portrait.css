@@ -1,0 +1,771 @@
+/* 
+ 
+
+ 
+
+Structure du fichier:
+1. Variables CSS et réinitialisation globale
+2. Styles du header (navigation, logo, icônes)
+3. Styles de la galerie de produits
+4. Styles du footer
+5. Media queries pour le responsive design
+*/
+
+/* 
+ 
+1. VARIABLES CSS ET RÉINITIALISATION
+ 
+Définition des variables globales pour les couleurs,
+espacements et transitions utilisés dans toute la page
+*/
+
+:root {
+    /* PALETTE DE COULEURS */
+    --color-black: #111;           /* Noir pour les textes principaux */
+    --color-white: #ffffff;        /* Blanc pour les fonds */
+    --color-gray: #666;            /* Gris pour les textes secondaires */
+    --color-light-gray: #e5e5e5;  /* Gris clair pour les bordures */
+    
+    /* ESPACEMENTS STANDARDISÉS */
+    --spacing-sm: 20px;   /* Petit espacement */
+    --spacing-md: 40px;   /* Espacement moyen */
+    --spacing-lg: 80px;   /* Grand espacement */
+    
+    /* TRANSITIONS FLUIDES */
+    --transition-normal: 0.3s ease;  /* Transition standard */
+    --transition-fast: 0.15s ease;   /* Transition rapide */
+}
+
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+STYLES GLOBAUX DU BODY
+- Police système moderne et élégante
+- Fond blanc
+- Padding-top pour compenser le header fixe
+*/
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    padding-top: 70px;  /* Espace pour le header fixe */
+}
+
+/*  
+2. HEADER - NAVIGATION PRINCIPALE
+ 
+Le header est fixé en haut de la page avec un effet de transparence
+et un flou d'arrière-plan moderne (backdrop-filter)
+*/
+
+.header {
+    position: fixed;        /* Reste en haut lors du scroll */
+    top: 0; 
+    left: 0;
+    width: 100%;
+    /* Fond semi-transparent avec effet de flou moderne */
+    background-color: rgba(255, 255, 255, 0.98); 
+    backdrop-filter: blur(10px);  /* Effet de flou sur le contenu en dessous */
+    z-index: 1000;          /* Au-dessus de tout le contenu */
+    border-bottom: 1px solid var(--color-light-gray);
+    padding: 18px 0;
+    transition: all var(--transition-normal);
+}
+
+/* 
+CONTAINER DU HEADER
+Gère la disposition en flex des éléments:
+- Logo à gauche
+- Navigation au centre
+- Actions à droite
+*/
+.container-header {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+}
+
+/* 
+ 
+LOGO
+ 
+Le logo est un élément cliquable qui ne rétrécit jamais
+*/
+.logo {
+    flex-shrink: 0;  /* Ne rétrécit jamais */
+}
+
+.logo a {
+    display: block;
+    transition: opacity var(--transition-normal);
+}
+
+/* Dimensions du logo */
+.logo img {
+    height: 35px;
+    width: auto;
+}
+
+/* Effet de survol sur le logo */
+.logo a:hover {
+    opacity: 0.7;
+}
+
+/* 
+ 
+NAVIGATION PRINCIPALE
+ 
+Barre de navigation centrée avec des liens en majuscules
+*/
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Liste des liens de navigation */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    align-items: center;
+}
+
+/* Item de navigation (peut contenir un mega-menu) */
+.nav-item {
+    position: relative;
+}
+
+/* 
+STYLE DES LIENS DE NAVIGATION
+- Texte en majuscules avec espacement des lettres
+- Transition fluide sur la couleur au survol
+*/
+.nav-link {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--color-gray);
+    padding: 8px 0;
+    display: inline-block;
+    transition: color var(--transition-normal);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Changement de couleur au survol */
+.nav-link:hover {
+    color: var(--color-black);
+}
+
+/* 
+ITEM ACTIF
+Indique la page actuelle avec une couleur plus foncée et un poids plus gras
+*/
+.nav-item-active a {
+    color: var(--color-black) !important;
+    font-weight: 600;
+}
+
+/* 
+SÉPARATEUR VISUEL
+Ligne verticale pour séparer les différentes sections de navigation
+*/
+.nav-separator {
+    width: 1px;
+    height: 20px;
+    background-color: var(--color-light-gray);
+    margin: 0 10px;
+}
+
+/* 
+ 
+MEGA-MENU
+ 
+Menu déroulant qui apparaît au survol des items de navigation
+Contient des liens et des images pour une navigation enrichie
+*/
+
+.megamenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);  /* Centré sous l'item */
+    background-color: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    min-width: 600px;
+    /* État initial: invisible et non-interactif */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all var(--transition-normal);
+    margin-top: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);  /* Ombre portée subtile */
+}
+
+/* 
+AFFICHAGE DU MEGA-MENU AU SURVOL
+Devient visible et interactif quand on survole l'item parent
+*/
+.nav-item.has-megamenu:hover .megamenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    margin-top: 15px;  /* Animation de descente */
+}
+
+/* 
+CONTENU DU MEGA-MENU
+Disposition en flex avec deux zones:
+- Zone de liens à gauche
+- Zone d'images à droite
+*/
+.megamenu-content {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+/* Zone des liens */
+.megamenu-links {
+    flex: 1;
+}
+
+/* Titre du mega-menu */
+.megamenu-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-black);
+    letter-spacing: 0.5px;
+}
+
+/* Liste des liens dans le mega-menu */
+.megamenu-list {
+    list-style: none;
+}
+
+.megamenu-list li {
+    margin-bottom: 12px;
+}
+
+/* Liens du mega-menu avec animation de translation au survol */
+.megamenu-list a {
+    font-size: 14px;
+    color: var(--color-gray);
+    transition: all var(--transition-fast);
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* Effet de survol: couleur change et léger déplacement vers la droite */
+.megamenu-list a:hover {
+    color: var(--color-black);
+    transform: translateX(5px);
+}
+
+/* 
+ 
+IMAGES DU MEGA-MENU
+ Grille d'images illustratives dans le mega-menu
+*/
+.megamenu-images {
+    flex: 1.5;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 2 colonnes */
+    gap: 12px;
+    position: relative;
+}
+
+/* Style des images */
+.megamenu-img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform var(--transition-normal);
+}
+
+/* Zoom léger au survol */
+.megamenu-img:hover {
+    transform: scale(1.05);
+}
+
+/* 
+POSITIONNEMENT CRÉATIF DES IMAGES
+*/
+.megamenu-img.img-1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;  /* Occupe 2 lignes */
+    height: 100%;
+}
+
+.megamenu-img.img-2 {
+    grid-column: 2 / 3;
+}
+
+.megamenu-img.img-3 {
+    grid-column: 2 / 3;
+}
+
+/* 
+ 
+ACTIONS UTILISATEUR (DROITE DU HEADER)
+ Groupe d'icônes pour la recherche, connexion et panier
+*/
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;  /* Ne rétrécit jamais */
+}
+
+/*  
+RECHERCHE AVEC DROPDOWN
+La recherche affiche un champ au survol de l'icône
+*/
+.search-wrapper {
+    position: relative;
+}
+
+/* Icône de recherche */
+.search-icon {
+    background: none;
+    padding: 8px;
+    color: var(--color-gray);
+    transition: color var(--transition-normal);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+.search-icon:hover {
+    color: var(--color-black);
+}
+
+/* 
+DROPDOWN DE RECHERCHE
+Apparaît sous l'icône au survol avec une animation fluide
+*/
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 25px;  /* Coins très arrondis pour un look moderne */
+    padding: 8px 15px;
+    margin-top: 10px;
+    min-width: 300px;
+    /* État initial: invisible */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all var(--transition-normal);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Affichage du dropdown au survol du wrapper */
+.search-wrapper:hover .search-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    margin-top: 5px;  /* Animation de descente */
+}
+
+/* Champ de saisie de la recherche */
+.search-input {
+    width: 100%;
+    padding: 8px 10px;
+    border: none;
+    font-size: 14px;
+    color: var(--color-black);
+    background-color: transparent;
+}
+
+.search-input:focus {
+    outline: none;  /* Supprime le contour par défaut */
+}
+
+.search-input::placeholder {
+    color: var(--color-gray);
+}
+
+/* 
+BOUTONS ICÔNES (CONNEXION & PANIER)
+ Icônes SVG cliquables avec transitions
+*/
+.icon-btn {
+    padding: 8px;
+    color: var(--color-gray);
+    transition: color var(--transition-normal);
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+}
+
+.icon-btn:hover {
+    color: var(--color-black);
+}
+
+/* 
+COMPTEUR DU PANIER
+Badge circulaire affichant le nombre d'articles
+*/
+.cart-count {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* 
+ 3. GALERIE DE PRODUITS
+Section principale affichant les dessins de portrait
+en grille responsive
+*/
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* 
+GRILLE DE PRODUITS
+Grid CSS avec 4 colonnes sur desktop
+Les colonnes s'adaptent automatiquement à la largeur disponible
+*/
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 colonnes égales */
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/*  
+CARTE DE PRODUIT
+Chaque produit est présenté dans une carte avec:
+- Une image
+- Un titre (nom de l'artiste)
+- Une description
+- Un prix
+*/
+
+.artwork-card {
+    background: #fff;
+    cursor: pointer;
+    transition: transform 0.3s;  /* Animation de levée au survol */
+}
+
+/* 
+ANIMATION AU SURVOL
+La carte se soulève légèrement pour un effet de profondeur
+*/
+.artwork-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 
+CONTAINER DE L'IMAGE
+Ratio 3:4 pour une présentation élégante type galerie d'art
+*/
+.artwork-image {
+    width: 100%;
+    aspect-ratio: 3/4;  /* Format portrait */
+    background-color: #f5f5f5;
+    overflow: hidden;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Image du produit */
+.artwork-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Couvre tout l'espace sans déformation */
+}
+
+/* 
+BADGE "NOUVEAU"
+Badge en haut à gauche pour mettre en avant les nouveautés
+*/
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #000;
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 
+INFORMATIONS DU PRODUIT
+Zone contenant le titre, description et prix
+*/
+.artwork-info {
+    padding: 0 5px;
+}
+
+/* Nom de l'artiste / Titre principal */
+.artist-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+/* Description / Sous-titre en italique */
+.artwork-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+/* Détails techniques (dimensions, etc.) */
+.artwork-details {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+/* Prix en gras et de grande taille */
+.price {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+/* Informations de livraison */
+.shipping {
+    font-size: 12px;
+    color: #666;
+}
+
+/* 
+4. FOOTER
+Footer avec fond noir et 4 colonnes d'informations
+*/
+.footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: var(--spacing-lg) 0 var(--spacing-sm);
+}
+/* 
+CONTENU DU FOOTER EN GRILLE
+4 colonnes égales sur desktop
+*/
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+/* Colonne du footer */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+/* Titre de colonne en majuscules */
+.footer-title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Texte de description */
+.footer-text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);  /* Blanc semi-transparent */
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+/* Liste de liens dans le footer */
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+/* 
+LIENS DU FOOTER
+Couleur semi-transparente avec transition au survol
+*/
+.footer-links a {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color var(--transition-normal);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--color-white);  /* Blanc opaque au survol */
+}
+
+/* 
+RÉSEAUX SOCIAUX
+Icônes circulaires avec fond semi-transparent
+*/
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+/* Lien vers réseau social */
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--color-white);
+    transition: all var(--transition-normal);
+    text-decoration: none;
+}
+
+/* 
+EFFET DE SURVOL SUR LES ICÔNES SOCIALES
+Inversion des couleurs et légère levée
+*/
+.social-link:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    transform: translateY(-3px);
+}
+
+/* Ligne de séparation horizontale */
+.footer-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: var(--spacing-md) 0;
+}
+
+/* 
+BAS DU FOOTER
+Copyright et liens légaux sur une ligne
+*/
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Liens légaux alignés */
+.footer-legal {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Liens légaux */
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color var(--transition-normal);
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    color: var(--color-white);
+}
+
+/* 
+ 
+5. MEDIA QUERIES - RESPONSIVE DESIGN
+ Adaptations pour tablettes et mobiles
+*/
+/* 
+TABLETTES (max-width: 768px)
+- Passage de 4 à 2 colonnes dans la galerie
+- Footer en 2 colonnes
+- Réduction des espacements
+*/
+@media (max-width: 768px) {
+    /* Galerie en 2 colonnes */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Footer en 2 colonnes */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Navigation plus compacte */
+    nav ul {
+        gap: 20px;
+        font-size: 14px;
+    }
+}
+
+/* 
+MOBILES (max-width: 480px)
+- Galerie en 1 seule colonne
+- Footer en 1 colonne
+- Footer-bottom en colonne
+- Cache les séparateurs
+*/
+@media (max-width: 480px) {
+    /* Galerie en colonne unique */
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Footer en colonne unique */
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Footer-bottom en colonne */
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Liens légaux en colonne */
+    .footer-legal {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+    
+    /* Cache les séparateurs "|" sur mobile */
+    .footer-legal span {
+        display: none;
+    }
+}

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessins de Portrait | Artika</title>
+    <!-- Lien vers le fichier CSS modifié -->
+    <link rel="stylesheet" href="assets/css/dessin_portrait.css">
+</head>
+<body>
+    <!-- 
+         
+        HEADER PRINCIPAL  
+    -->
+    <header class="header">
+        <div class="container-header">
+            
+            <!-- LOGO ARTIKA -->
+            <div class="logo">
+                <a href="artika.html">
+                    <img src="assets/images/artika.png" alt="Artika">
+                </a>
+            </div>
+            
+            <!-- 
+                NAVIGATION PRINCIPALE AVEC MEGA-MENUS
+                Chaque élément de navigation peut avoir un mega-menu qui s'affiche au survol
+            -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    
+                    <!-- 
+                        MENU PEINTURES
+                        Affiche un mega-menu avec liens et images au survol
+                    -->
+                    <li class="nav-item has-megamenu">
+                        <a href="#" class="nav-link">Peintures</a>
+                        
+                        <!-- Mega-menu pour Peintures -->
+                        <div class="megamenu">
+                            <div class="megamenu-content">
+                                <!-- Liens de navigation dans le mega-menu -->
+                                <div class="megamenu-links">
+                                    <h3 class="megamenu-title">Explorez nos peintures</h3>
+                                    <ul class="megamenu-list">
+                                        <li><a href="#">Art Abstrait</a></li>
+                                        <li><a href="#">Peinture Paysage</a></li>
+                                        <li><a href="#">Peinture Pop Art</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Images illustratives dans le mega-menu -->
+                                <div class="megamenu-images">
+                                    <img src="assets/images/accueil/materiel.jpg" alt="Peinture 1" class="megamenu-img img-1">
+                                    <img src="assets/images/accueil/product1.jpg" alt="Peinture 2" class="megamenu-img img-2">
+                                    <img src="assets/images/accueil/materiel.jpg" alt="Peinture 3" class="megamenu-img img-3">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <!-- 
+                        MENU ACCESSOIRES
+                        Affiche un mega-menu avec liens et images au survol
+                    -->
+                    <li class="nav-item has-megamenu">
+                        <a href="#" class="nav-link">Accessoires</a>
+                        
+                        <!-- Mega-menu pour Accessoires -->
+                        <div class="megamenu">
+                            <div class="megamenu-content">
+                                <div class="megamenu-links">
+                                    <h3 class="megamenu-title">Matériel de création</h3>
+                                    <ul class="megamenu-list">
+                                        <li><a href="#">Toiles</a></li>
+                                        <li><a href="pinceaux.html">Pinceaux</a></li>
+                                        <li><a href="#">Pots de peinture</a></li>
+                                    </ul>
+                                </div>
+                                <div class="megamenu-images">
+                                    <img src="assets/images/accueil/materiel.jpg" alt="Accessoire 1" class="megamenu-img img-1">
+                                    <img src="assets/images/accueil/peintures.jpg" alt="Accessoire 2" class="megamenu-img img-2">
+                                    <img src="assets/images/accueil/sculptures.jpg" alt="Accessoire 3" class="megamenu-img img-3">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <!-- 
+                        MENU DESSINS DE BEAUX ARTS - ACTIF
+                        Ce menu est marqué comme actif car nous sommes sur cette page
+                    -->
+                    <li class="nav-item has-megamenu nav-item-active">
+                        <a href="#" class="nav-link">Dessins de beaux arts</a>
+                        
+                        <!-- Mega-menu pour Dessins -->
+                        <div class="megamenu">
+                            <div class="megamenu-content">
+                                <div class="megamenu-links">
+                                    <h3 class="megamenu-title">Art du dessin</h3>
+                                    <ul class="megamenu-list">
+                                        <li><a href="dessin_portrait.html">Dessin de portrait</a></li>
+                                        <li><a href="#">Dessin de rue</a></li>
+                                        <li><a href="#">Dessin à eau</a></li>
+                                    </ul>
+                                </div>
+                                <div class="megamenu-images">
+                                    <img src="assets/images/accueil/peintures.jpg" alt="Dessin 1" class="megamenu-img img-1">
+                                    <img src="assets/images/accueil/hero.jpg" alt="Dessin 2" class="megamenu-img img-2">
+                                    <img src="assets/images/accueil/product1.jpg" alt="Dessin 3" class="megamenu-img img-3">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <!-- Séparateur visuel entre les sections du menu -->
+                    <li class="nav-separator"></li>
+                    
+                    <!-- Liens simples sans mega-menu -->
+                    <li class="nav-item"><a href="#" class="nav-link">Nos magasins</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">À propos</a></li>
+                </ul>
+            </nav>
+            
+            <!-- 
+                ACTIONS UTILISATEUR (DROITE DU HEADER)
+                - Icône de recherche avec dropdown
+                - Icône de connexion
+                - Icône de panier avec compteur
+            -->
+            <div class="header-actions">
+                
+                <!-- Wrapper de recherche avec dropdown au survol -->
+                <div class="search-wrapper">
+                    <button class="search-icon" aria-label="Rechercher">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <!-- Dropdown de recherche qui apparaît au survol -->
+                    <div class="search-dropdown">
+                        <input type="text" placeholder="Rechercher une œuvre, un artiste..." class="search-input">
+                    </div>
+                </div>
+                
+                <!-- Icône de connexion utilisateur -->
+                <a href="#" class="icon-btn" aria-label="Se connecter" title="Se connecter">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="6" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M3 17c0-3 2.5-5.5 7-5.5s7 2.5 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                
+                <!-- Icône du panier avec compteur d'articles -->
+                <a href="#" class="icon-btn cart-icon" aria-label="Panier">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M1 1h2l2.5 10h10l2.5-8H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="8" cy="17" r="1.2" fill="currentColor"/>
+                        <circle cx="15" cy="17" r="1.2" fill="currentColor"/>
+                    </svg>
+                    <!-- Badge affichant le nombre d'articles dans le panier -->
+                    <span class="cart-count">0</span>
+                </a>
+                
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- 
+       
+        CONTENU PRINCIPAL - GALERIE DE DESSINS DE PORTRAIT
+         
+    -->
+    <main class="container">
+        <!-- 
+            GRILLE DE PRODUITS
+            Grid responsive avec 4 colonnes sur desktop
+            Chaque carte contient:
+            - Une image du dessin
+            - Le nom du dessin
+            - Une description courte
+            - Le prix
+        -->
+        <div class="gallery">
+            
+            <!-- 
+                PRODUIT 1 -  
+                Carte de produit avec image, informations et animation au survol
+            -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <!-- Badge "NOUVEAU" pour attirer l'attention -->
+                    <span class="badge">NOUVEAU</span>
+                    <img src="assets/images/dessin_portrait/enfant_01.jpeg" alt="Portrait enfant">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Portrait enfant</div>
+                    <div class="artwork-title">Par John Matos Crash</div>
+                    <div class="price">20 000 FCFA</div>
+                </div>
+            </div>
+            
+            <!-- PRODUIT 2 - -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/femme_01.jpeg" alt="Enfant nature">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Enfant nature</div>
+                    <div class="artwork-title">Par Barbara Kroll - Dessin 64 x 49 cm</div>
+                    <div class="price">4 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 3 -  -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/femme1_oeil.jpeg" alt="Œil">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Œil</div>
+                    <div class="artwork-title">Par Reinaldo Chavez - Dessin 16 x 11 cm</div>
+                    <div class="price">12 500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 4 -  -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/femme2.jpeg" alt="Portrait femme">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Portrait femme</div>
+                    <div class="artwork-title">Par Kirill Postovit - Dessin 50 x 71 cm</div>
+                    <div class="price">7 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 5 -   -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/femme3.jpeg" alt="Portrait admiratif">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Portrait admiratif</div>
+                    <div class="artwork-title">Par Frédéric Bruly Bouabré - Dessin 15 x 11 cm</div>
+                    <div class="price">8 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 6 -  -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/femme4.jpeg" alt="Le photographe">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Le photographe</div>
+                    <div class="artwork-title">Par Gabrielle Rul - Dessin 21 x 29 cm</div>
+                    <div class="price">15 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 7 - -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/femme4_levre.jpeg" alt="Lèvres">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Lèvres</div>
+                    <div class="artwork-title">Par Marie Dubois - Dessin 30 x 40 cm</div>
+                    <div class="price">10 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 8 -   -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/femme5_afrique.jpeg" alt="Visage abstrait">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Visage abstrait</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">12 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 9 - -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/femme5_levre.jpeg" alt="Lèvre milieu">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Lèvre milieu</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">10 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 10 -   -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/femme6.jpeg" alt="Visage persuasif">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Visage persuasif</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">5 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 11 -   -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/femme_tatoue1.jpeg" alt="Femme tatouée">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Femme tatouée</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">9 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 12 -  -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/masque.jpeg" alt="Masque">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Masque</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">9 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 13 - P  -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/nb_enfant1.jpeg" alt="Portrait d'histoire">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Portrait d'histoire</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">9 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 14   -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/nb_enfant2.jpeg" alt="Kids">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Kids</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">9 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 15   -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/nb_femme1.jpeg" alt="Femme NB">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Femme NB</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">9 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 16 -  -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/nb_femme2.jpeg" alt="Dessin de face">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Dessin de face</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">9 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 17 -  -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/nb_homme1.jpeg" alt="Portrait homme">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Portrait homme</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">9 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 18   -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/nb_homme2.jpeg" alt="Homme NB">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Homme NB</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">9 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 19 - -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/nb_homme3.jpeg" alt="Dessin Bob Marley">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Dessin Bob Marley</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">9 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 20 -   -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/nb_homme4.jpeg" alt="Dessin abstrait">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Dessin abstrait</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">9 000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 21 - -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/nb_homme5.jpeg" alt="Figure africaine">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Figure africaine</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">9 000 FCFA</div>
+                </div>
+            </div>
+
+            
+            <!-- PRODUIT 22 - -->
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="assets/images/dessin_portrait/femme_04.jpeg" alt="Figure africaine">
+                </div>
+                <div class="artwork-info">
+                    <div class="artist-name">Figure africaine</div>
+                    <div class="artwork-title">Par Sophie Martin - Dessin 42 x 30 cm</div>
+                    <div class="price">9 000 FCFA</div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- 
+        
+        Footer avec 4 colonnes:
+        1. Informations Artika
+        2. Navigation
+        3. Contact
+        4. Réseaux sociaux
+    -->
+    <footer class="footer">
+        <div class="container">
+            
+            <!-- Contenu principal du footer en grille -->
+            <div class="footer-content">
+                
+                <!-- COLONNE 1 - PRÉSENTATION ARTIKA -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Artika</h4>
+                    <p class="footer-text">Là où l'art prend vie.</p>
+                    <p class="footer-text">Votre galerie d'art en ligne pour découvrir et acquérir des œuvres uniques.</p>
+                </div>
+                
+                <!-- COLONNE 2 - LIENS DE NAVIGATION -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Peintures</a></li>
+                        <li><a href="#">Accessoires</a></li>
+                        <li><a href="#">Dessins</a></li>
+                        <li><a href="#">Nos magasins</a></li>
+                        <li><a href="#">À propos</a></li>
+                    </ul>
+                </div>
+                
+                <!-- COLONNE 3 - INFORMATIONS DE CONTACT -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@artika.com">contact@artika.com</a></li>
+                        <li><a href="tel:+237600000000">+237 6XX XX XX XX</a></li>
+                        <li>Yaoundé, Cameroun</li>
+                    </ul>
+                </div>
+                
+                <!-- COLONNE 4 - RÉSEAUX SOCIAUX -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Suivez-nous</h4>
+                    <!-- Icônes des réseaux sociaux avec SVG -->
+                    <div class="social-links">
+                        <!-- Facebook -->
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <!-- Twitter -->
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Ligne de séparation entre le contenu et le bas du footer -->
+            <div class="footer-divider"></div>
+            
+            <!-- 
+                BAS DU FOOTER
+                Contient le copyright et les liens légaux
+            -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Artika. Tous droits réservés.</p>
+                <!-- Liens légaux (CGV, Mentions légales, etc.) -->
+                <div class="footer-legal">
+                    <a href="#">Mentions légales</a>
+                    <span>|</span>
+                    <a href="#">Politique de confidentialité</a>
+                    <span>|</span>
+                    <a href="#">CGV</a>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+</body>
+</html>
