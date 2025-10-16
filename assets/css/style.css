@@ -762,7 +762,7 @@
 
         /* Contact Hero Section */
         .contact-hero {
-            background: linear-gradient(135deg, #c6c7ce 0%, #363536 100%);
+            background: linear-gradient(135deg, #0f0f0f 0%, #363536 100%);
             padding: 80px 20px;
             text-align: center;
             color: white;
@@ -850,7 +850,7 @@
 
         .btn-submit {
             width: 100%;
-            background: linear-gradient(135deg, #a9acb8 0%, #252525 100%);
+            background: linear-gradient(135deg, #111111 0%, #252525 100%);
             color: var(--color-white);
             padding: 16px 30px;
             font-size: 16px;
@@ -891,16 +891,16 @@
         }
 
         .info-card h3::before {
-            content: "📍";
+            /* content: "📍"; */
             font-size: 24px;
         }
 
         .info-card:nth-child(2) h3::before {
-            content: "📞";
+            /* content: "📞"; */
         }
 
         .info-card:nth-child(3) h3::before {
-            content: "❓";
+            /* content: "❓"; */
         }
 
         .info-item {
