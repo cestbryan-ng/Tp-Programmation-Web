@@ -1,0 +1,122 @@
+/* ===================== BASE ===================== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #1f2937;
+}
+
+/* ===================== PROMO BANNER ===================== */
+.promo-banner {
+    background-color: #000000; /* fond noir */
+    color: #ffffff;            /* texte blanc */
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* ===================== HEADER ===================== */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+.container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+.nav-link {
+    text-decoration: none;
+    color: #1f2937;
+}
+.nav-link:hover {
+    color: #10b981;
+}
+
+/* ===================== PRODUIT ===================== */
+.product-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+.product-card img {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+.product-info h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* ===================== MÉTHODE DE PAIEMENT ===================== */
+.payment-method {
+    margin: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+.payment-method label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.payment-method img {
+    width: 50px;
+    height: auto;
+}
+
+/* ===================== BOUTON ===================== */
+.checkout-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.checkout-btn:hover {
+    background-color: #111827;
+}
+
+/* ===================== FOOTER ===================== */
+.footer {
+    background-color: #1f2937;
+    color: white;
+    padding: 20px 0;
+}
+.footer-column {
+    margin-bottom: 15px;
+}
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+.footer-links li a {
+    color: white;
+    text-decoration: none;
+}
+.footer-links li a:hover {
+    text-decoration: underline;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
