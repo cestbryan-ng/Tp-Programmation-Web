@@ -1208,6 +1208,36 @@
             display: flex;
             gap: 15px;
         }
+        /* Ligne de séparation */
+        .footer-divider {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: var(--spacing-md) 0;
+        }
+
+        /* Bas du footer */
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .footer-legal a {
+            color: rgba(255, 255, 255, 0.5);
+            transition: color var(--transition-normal);
+        }
+
+        .footer-legal a:hover {
+            color: var(--color-white);
+        }
 
         .social-link {
             width: 40px;
