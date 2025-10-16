@@ -7,19 +7,22 @@
   --danger: #ef4444;
 }
 
+/* ================= GLOBAL ================= */
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
   background-color: var(--bg);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* pour que le footer reste en bas */
 }
 
-/* ================= HEADER & FOOTER ================= */
-header, footer {
-  background-color: var(--accent);
-  color: white;
-  padding: 1rem 2rem;
+main {
+  flex: 1; /* prend tout l'espace disponible */
+  padding: 2rem;
 }
 
+/* ================= HEADER ================= */
 nav a {
   color: white;
   margin-right: 1rem;
@@ -34,9 +37,6 @@ nav a {
 }
 
 /* ================= MAIN PANIER ================= */
-main, .panier-section {
-  padding: 2rem;
-}
 
 /* Conteneur des articles */
 .cart-items, .cart-container {
@@ -49,20 +49,33 @@ main, .panier-section {
 .cart-item {
   background-color: var(--card);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  gap: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* Image du produit */
 .cart-item img {
-  width: 120px;      /* taille fixe */
-  height: auto;      /* hauteur proportionnelle */
-  object-fit: cover; /* recadrage si nécessaire */
-  border-radius: 8px;
-  margin-right: 15px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* Infos du produit */
@@ -75,6 +88,7 @@ main, .panier-section {
 
 .cart-item p, .cart-item h3 {
   margin: 0;
+  color: var(--accent);
 }
 
 /* Bouton supprimer */
@@ -83,11 +97,14 @@ main, .panier-section {
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
 }
+
 .remove-btn:hover {
   opacity: 0.9;
+  transform: scale(1.05);
 }
 
 /* Résumé du panier */
@@ -99,6 +116,7 @@ main, .panier-section {
 .cart-summary h3 {
   font-weight: bold;
   font-size: 1.3rem;
+  color: var(--accent);
 }
 
 /* Bouton passer au paiement */
@@ -106,32 +124,43 @@ main, .panier-section {
   background-color: #000;
   color: white;
   border: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 5px;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
   cursor: pointer;
   margin-top: 10px;
+  transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
 .checkout-btn:hover {
   opacity: 0.9;
+  transform: scale(1.03);
 }
 
 /* ================= FOOTER ================= */
-footer .footer-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-footer .footer-column {
-  margin-bottom: 1rem;
-}
-
-footer a {
+footer {
+  width: 100%;
+  background-color: var(--accent);
   color: white;
-  text-decoration: none;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
 }
 
-footer a:hover {
-  text-decoration: underline;
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cart-item img {
+    width: 80%;
+    height: auto;
+  }
+
+  .cart-summary {
+    text-align: center;
+  }
 }
+
