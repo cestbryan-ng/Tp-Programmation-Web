@@ -50,7 +50,7 @@ STYLES GLOBAUX DU BODY
 - Padding-top pour compenser le header fixe
 */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
     background-color: #fff;
     color: #333;
     padding-top: 70px;  /* Espace pour le header fixe */
@@ -165,15 +165,16 @@ STYLE DES LIENS DE NAVIGATION
 /* Changement de couleur au survol */
 .nav-link:hover {
     color: var(--color-black);
+    font-weight: 800;
 }
 
 /* 
 ITEM ACTIF
 Indique la page actuelle avec une couleur plus foncée et un poids plus gras
 */
-.nav-item-active a {
+.nav-link-active {
     color: var(--color-black) !important;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 /* 
@@ -222,7 +223,7 @@ Devient visible et interactif quand on survole l'item parent
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    margin-top: 15px;  /* Animation de descente */
+    margin-top: 0px;  /* Animation de descente */
 }
 
 /* 

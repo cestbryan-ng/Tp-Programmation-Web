@@ -353,3 +353,8 @@ footer {
     color: #fff;
     border-color: #000;
 }
+
+.nav-link-active {
+    color: var(--color-black) !important;
+    font-weight: bold;
+}

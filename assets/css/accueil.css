@@ -162,6 +162,7 @@ button {
 
 .nav-link:hover {
     color: var(--color-black);
+    font-weight: 800;
 }
 
 /* Séparateur entre catégories et autres liens */

@@ -166,6 +166,7 @@ button {
 
 .nav-link:hover {
     color: var(--color-black);
+    font-weight: 800;
 }
 
 /* Séparateur entre catégories et autres liens */
@@ -199,7 +200,7 @@ button {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    margin-top: 15px;
+    margin-top: 0px;
 }
 
 .megamenu-content {
@@ -1104,4 +1105,9 @@ button {
         min-width: 250px;
         padding: 25px 20px;
     }
+}
+
+.nav-link-active {
+    color: var(--color-black) !important;
+    font-weight: bold;
 }
