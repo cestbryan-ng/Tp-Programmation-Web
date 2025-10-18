@@ -84,7 +84,6 @@
             margin: 0;
         }
 
-        /* Header */
         .header {
             position: fixed;
             top: 40px; /* Décalage pour la bannière promo */
@@ -158,6 +157,7 @@
 
         .nav-link:hover {
             color: var(--color-black);
+            font-weight: 800;
         }
 
         /* Séparateur entre catégories et autres liens */
@@ -168,7 +168,6 @@
             margin: 0 10px;
         }
 
-        /* Mega Menu */
         .megamenu {
             position: absolute;
             top: 100%;
@@ -183,7 +182,7 @@
             visibility: hidden;
             pointer-events: none;
             transition: all var(--transition-normal);
-            margin-top: 20px;
+            margin-top: 0px; /* Changé de 20px à 0px */
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
@@ -191,7 +190,17 @@
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
-            margin-top: 15px;
+            margin-top: 0px;
+        }
+
+        /* Zone invisible pour combler l'espace */
+        .nav-item.has-megamenu::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 20px; /* Zone tampon invisible */
         }
 
         .megamenu-content {
