@@ -32,7 +32,6 @@ header {
     align-items: center;
 }
 
-/* ... (le reste de votre CSS header) ... */
 
 .type-filters {
     max-width: 1400px;
@@ -79,7 +78,6 @@ header {
     z-index: 1;
 }
 
-/* ... (le reste de votre CSS) ... */
 
 .gallery {
     display: grid;
