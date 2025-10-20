@@ -8,37 +8,29 @@
 </head>
 <body>
 
-    <!-- 
-         BANNIÈRE PROMOTIONNELLE
-         Barre fixe en haut du site
-     -->
+    <!-- BANNIÈRE PROMOTIONNELLE -->
     <div class="promo-banner">
         <p>Livraison gratuite pour les commandes de plus de 75 000 FCFA. Retours faciles.</p>
     </div>
 
-    <!-- 
-         HEADER / NAVIGATION
-         Section réutilisable pour toutes les pages
-     -->
+    <!-- HEADER / NAVIGATION -->
     <header class="header">
         <div class="container-header">
             
-            <!-- Logo (image cliquable) -->
+            <!-- Logo -->
             <div class="logo">
                 <a href="artika.html">
                     <img src="assets/images/ARTIKA_blk.png" alt="Artika">
                 </a>
             </div>
             
-            <!-- Menu de navigation avec mega menu -->
+            <!-- Menu de navigation -->
             <nav class="main-nav">
                 <ul class="nav-list">
                     
-                    <!-- Menu Peintures avec sous-catégories -->
+                    <!-- Menu Peintures -->
                     <li class="nav-item has-megamenu">
                         <a href="#" class="nav-link">Peintures</a>
-                        
-                        <!-- Mega Menu Peintures -->
                         <div class="megamenu">
                             <div class="megamenu-content">
                                 <div class="megamenu-links">
@@ -49,7 +41,6 @@
                                         <li><a href="popArt.html">Peinture Pop Art</a></li>
                                     </ul>
                                 </div>
-                                <!-- Images décoratives -->
                                 <div class="megamenu-images">
                                     <img src="assets/images/accueil/materiel.jpg" alt="Peinture 1" class="megamenu-img img-1">
                                     <img src="assets/images/accueil/product1.jpg" alt="Peinture 2" class="megamenu-img img-2">
@@ -62,8 +53,6 @@
                     <!-- Menu Accessoires -->
                     <li class="nav-item has-megamenu">
                         <a href="#" class="nav-link">Accessoires</a>
-                        
-                        <!-- Mega Menu Accessoires -->
                         <div class="megamenu">
                             <div class="megamenu-content">
                                 <div class="megamenu-links">
@@ -86,8 +75,6 @@
                     <!-- Menu Dessins -->
                     <li class="nav-item has-megamenu">
                         <a href="#" class="nav-link">Dessins de beaux arts</a>
-                        
-                        <!-- Mega Menu Dessins -->
                         <div class="megamenu">
                             <div class="megamenu-content">
                                 <div class="megamenu-links">
@@ -107,19 +94,17 @@
                         </div>
                     </li>
                     
-                    <!-- Séparateur visuel (espace) -->
                     <li class="nav-separator"></li>
                     
-                    <!-- Liens simples -->
                     <li class="nav-item"><a href="magasins.html" class="nav-link">Nos magasins</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">À propos</a></li>
                 </ul>
             </nav>
             
-            <!-- Actions utilisateur (Recherche, Login, Panier) -->
+            <!-- Actions utilisateur -->
             <div class="header-actions">
                 
-                <!-- Icône de recherche (avec champ au survol) -->
+                <!-- Recherche -->
                 <div class="search-wrapper">
                     <button class="search-icon" aria-label="Rechercher">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -127,13 +112,12 @@
                             <path d="M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                         </svg>
                     </button>
-                    <!-- Champ de recherche qui apparaît au survol -->
                     <div class="search-dropdown">
                         <input type="text" placeholder="Rechercher une œuvre, un artiste..." class="search-input">
                     </div>
                 </div>
                 
-                <!-- Icône Login -->
+                <!-- Login -->
                 <a href="login.html" class="icon-btn" aria-label="Se connecter" title="Se connecter">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <circle cx="10" cy="6" r="3.5" stroke="currentColor" stroke-width="1.5"/>
@@ -141,7 +125,7 @@
                     </svg>
                 </a>
                 
-                <!-- Icône Panier -->
+                <!-- Panier (cliquable pour ouvrir le mini-panier) -->
                 <a href="#" class="icon-btn cart-icon" aria-label="Panier">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M1 1h2l2.5 10h10l2.5-8H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -156,18 +140,51 @@
         </div>
     </header>
 
-    <!-- 
-         HERO SECTION
-         Section d'accueil avec image principale
-     -->
+    <!-- MINI-PANIER (panneau latéral) -->
+    <div class="mini-panier" id="miniPanier">
+        <div class="mini-panier-header">
+            <h3>Mon Panier</h3>
+            <button class="mini-panier-close" onclick="fermerMiniPanier()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Message panier vide -->
+        <div class="mini-panier-vide" id="panierVide">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                <circle cx="40" cy="40" r="38" stroke="#E5E5E5" stroke-width="4"/>
+                <path d="M20 20l40 40M20 60l40-40" stroke="#E5E5E5" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+            <p>Votre panier est vide</p>
+            <button class="btn-continuer" onclick="fermerMiniPanier()">Continuer mes achats</button>
+        </div>
+        
+        <!-- Contenu du panier -->
+        <div class="mini-panier-contenu" id="panierContenu" style="display: none;">
+            <div class="mini-panier-liste" id="listeProduitsPanier">
+                <!-- Les produits seront ajoutés ici dynamiquement -->
+            </div>
+            
+            <div class="mini-panier-footer">
+                <div class="mini-panier-total">
+                    <span>Total :</span>
+                    <span class="total-prix" id="totalPanier">0 FCFA</span>
+                </div>
+                <a href="panier.html" class="btn-voir-panier">Voir le panier</a>
+                <button class="btn-continuer-achats" onclick="fermerMiniPanier()">Continuer mes achats</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overlay pour fermer le mini-panier -->
+    <div class="mini-panier-overlay" id="miniPanierOverlay"></div>
+
+    <!-- HERO SECTION -->
     <section class="hero">
-        <!-- Image de fond -->
         <div class="hero-image" style="background-image: url('assets/images/accueil/hero.jpg');"></div>
-        
-        <!-- Overlay pour assombrir l'image -->
         <div class="hero-overlay"></div>
-        
-        <!-- Contenu texte -->
         <div class="hero-content">
             <h1 class="hero-title">ARTIKA</h1>
             <p class="hero-subtitle">Là où l'art prend vie</p>
@@ -175,21 +192,16 @@
         </div>
     </section>
 
-    <!-- 
-         SECTION COLLECTIONS
-         Présentation des 3 catégories principales
-     -->
+    <!-- SECTION COLLECTIONS -->
     <section class="collections" id="collections">
         <div class="container">
             <h2 class="section-title">Nos Collections</h2>
             
             <div class="collections-grid">
                 
-                <!-- Collection 1 : Peintures -->
                 <div class="collection-card">
                     <div class="collection-image">
                         <img src="assets/images/accueil/peintures.jpg" alt="Peintures">
-                        <!-- Overlay au survol -->
                         <div class="collection-overlay">
                             <a href="#" class="collection-link">Explorer</a>
                         </div>
@@ -200,7 +212,6 @@
                     </div>
                 </div>
                 
-                <!-- Collection 2 : Accessoires -->
                 <div class="collection-card">
                     <div class="collection-image">
                         <img src="assets/images/accueil/materiel.jpg" alt="Accessoires">
@@ -214,7 +225,6 @@
                     </div>
                 </div>
                 
-                <!-- Collection 3 : Dessins -->
                 <div class="collection-card">
                     <div class="collection-image">
                         <img src="assets/images/accueil/sculptures.jpg" alt="Dessins de beaux arts">
@@ -232,21 +242,16 @@
         </div>
     </section>
 
-    <!-- 
-         SECTION ŒUVRES VEDETTES
-         Mise en avant de 4 produits phares
-     -->
+    <!-- SECTION ŒUVRES VEDETTES -->
     <section class="featured-products">
         <div class="container">
             <h2 class="section-title">Œuvres Vedettes</h2>
             
             <div class="products-grid">
                 
-                <!-- Produit 1 -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="assets/images/accueil/hero.jpg" alt="Harmonie">
-                        <!-- Badge "Nouveau" -->
                         <span class="product-badge">Nouveau</span>
                     </div>
                     <div class="product-info">
@@ -257,7 +262,6 @@
                     </div>
                 </div>
                 
-                <!-- Produit 2 -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="assets/images/accueil/sculptures.jpg" alt="Rythmes">
@@ -270,7 +274,6 @@
                     </div>
                 </div>
                 
-                <!-- Produit 3 -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="assets/images/accueil/product1.jpg" alt="Essence">
@@ -284,7 +287,6 @@
                     </div>
                 </div>
                 
-                <!-- Produit 4 -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="assets/images/accueil/peintures.jpg" alt="Lumière">
@@ -301,20 +303,15 @@
         </div>
     </section>
 
-    <!-- 
-         SECTION TÉMOIGNAGES + FORMULAIRE
-         Avis clients avec carousel + formulaire d'ajout
-     -->
+    <!-- SECTION TÉMOIGNAGES + FORMULAIRE -->
     <section class="testimonials-section">
         <div class="container">
             
             <h2 class="section-title">Ce que disent nos clients</h2>
             
-            <!-- Carousel de témoignages -->
             <div class="testimonials-carousel">
                 <div class="testimonial-track">
                     
-                    <!-- Témoignage 1 -->
                     <div class="testimonial-card">
                         <div class="testimonial-avatar">
                             <img src="assets/images/accueil/hero.jpg" alt="Client">
@@ -324,7 +321,6 @@
                         <div class="testimonial-stars">★★★★★</div>
                     </div>
                     
-                    <!-- Témoignage 2 -->
                     <div class="testimonial-card">
                         <div class="testimonial-avatar">
                             <img src="assets/images/accueil/hero.jpg" alt="Client">
@@ -334,7 +330,6 @@
                         <div class="testimonial-stars">★★★★★</div>
                     </div>
                     
-                    <!-- Témoignage 3 -->
                     <div class="testimonial-card">
                         <div class="testimonial-avatar">
                             <img src="assets/images/accueil/hero.jpg" alt="Client">
@@ -344,7 +339,6 @@
                         <div class="testimonial-stars">★★★★☆</div>
                     </div>
                     
-                    <!-- Témoignage 4 -->
                     <div class="testimonial-card">
                         <div class="testimonial-avatar">
                             <img src="assets/images/accueil/product1.jpg" alt="Client">
@@ -354,7 +348,6 @@
                         <div class="testimonial-stars">★★★★★</div>
                     </div>
                     
-                    <!-- Dupliquer les témoignages pour l'effet de boucle infinie -->
                     <div class="testimonial-card">
                         <div class="testimonial-avatar">
                             <img src="assets/images/accueil/product1.jpg" alt="Client">
@@ -408,36 +401,29 @@
         </div>
     </section>
 
-    <!-- 
-         FOOTER
-         Section réutilisable pour toutes les pages
-     -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             
-            <!-- Contenu principal du footer -->
             <div class="footer-content">
                 
-                <!-- Colonne 1 : À propos -->
                 <div class="footer-column">
                     <h4 class="footer-title">Artika</h4>
                     <p class="footer-text">Là où l'art prend vie.</p>
                     <p class="footer-text">Votre galerie d'art en ligne pour découvrir et acquérir des œuvres uniques.</p>
                 </div>
                 
-                <!-- Colonne 2 : Navigation -->
                 <div class="footer-column">
                     <h4 class="footer-title">Navigation</h4>
                     <ul class="footer-links">
                         <li><a href="#">Peintures</a></li>
                         <li><a href="#">Accessoires</a></li>
                         <li><a href="#">Dessins</a></li>
-                        <li><a href="#">Nos magasins</a></li>
+                        <li><a href="magasins.html">Nos magasins</a></li>
                         <li><a href="#">À propos</a></li>
                     </ul>
                 </div>
                 
-                <!-- Colonne 3 : Contact -->
                 <div class="footer-column">
                     <h4 class="footer-title">Contact</h4>
                     <ul class="footer-links">
@@ -447,7 +433,6 @@
                     </ul>
                 </div>
                 
-                <!-- Colonne 4 : Réseaux sociaux -->
                 <div class="footer-column">
                     <h4 class="footer-title">Suivez-nous</h4>
                     <div class="social-links">
@@ -471,10 +456,8 @@
                 
             </div>
             
-            <!-- Ligne de séparation -->
             <div class="footer-divider"></div>
             
-            <!-- Copyright -->
             <div class="footer-bottom">
                 <p>&copy; 2025 Artika. Tous droits réservés.</p>
                 <div class="footer-legal">
@@ -489,10 +472,8 @@
         </div>
     </footer>
 
-    <!-- 
-         JAVASCRIPT
-         Le JavaScript sera ajouté au TP2
-     -->
+    
+    <script src="assets/js/accueil.js"></script>
 
 </body>
 </html>
