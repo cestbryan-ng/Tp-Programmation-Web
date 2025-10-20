@@ -317,7 +317,7 @@ button {
     border: 1px solid var(--color-light-gray);
     border-radius: 25px;
     padding: 8px 15px;
-    margin-top: 10px;
+    margin-top: 0px; 
     min-width: 300px;
     opacity: 0;
     visibility: hidden;
@@ -330,7 +330,17 @@ button {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    margin-top: 5px;
+    margin-top: 0px; 
+}
+
+/* Zone invisible pour combler l'espace */
+.search-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 15px; /* Zone tampon invisible */
 }
 
 .search-input {
