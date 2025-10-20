@@ -26,7 +26,7 @@
         <!-- Logo (image cliquable) -->
         <div class="logo">
             <a href="artika.html">
-                <img src="assets/images/ARTIKA_blk.png" alt="Artika">
+                <img src="assets/images/artika.png" alt="Artika">
             </a>
         </div>
         
@@ -44,9 +44,9 @@
                             <div class="megamenu-links">
                                 <h3 class="megamenu-title">Explorez nos peintures</h3>
                                 <ul class="megamenu-list">
-                                    <li><a href="artAbstrait.html">Art Abstrait</a></li>
-                                    <li><a href="peinturepaysage.html">Peinture Paysage</a></li>
-                                    <li><a href="popArt.html">Peinture Pop Art</a></li>
+                                    <li><a href="#">Art Abstrait</a></li>
+                                    <li><a href="#">Peinture Paysage</a></li>
+                                    <li><a href="#">Peinture Pop Art</a></li>
                                 </ul>
                             </div>
                             <!-- Images décoratives -->
@@ -61,7 +61,7 @@
                 
                 <!-- Menu Accessoires -->
                 <li class="nav-item has-megamenu">
-                    <a href="#" class="nav-link nav-link-active">Accessoires</a>
+                    <a href="#" class="nav-link">Accessoires</a>
                     
                     <!-- Mega Menu Accessoires -->
                     <div class="megamenu">
@@ -69,9 +69,9 @@
                             <div class="megamenu-links">
                                 <h3 class="megamenu-title">Matériel de création</h3>
                                 <ul class="megamenu-list">
-                                    <li><a href="latoilehtml2.html">Toiles</a></li>
-                                    <li><a href="pinceaux.html">Pinceaux</a></li>
-                                    <li><a href="pots-tubes.html">Pots de peinture</a></li>
+                                    <li><a href="pots-tubes.html">Pots et tubes</a></li>
+                                    <li><a href="#">Toiles</a></li>
+                                    <li><a href="#">Pinceaux</a></li>
                                 </ul>
                             </div>
                             <div class="megamenu-images">
@@ -93,9 +93,9 @@
                             <div class="megamenu-links">
                                 <h3 class="megamenu-title">Art du dessin</h3>
                                 <ul class="megamenu-list">
-                                    <li><a href="dessin_portrait.html">Dessin de portrait</a></li>
-                                    <li><a href="DessinRue.html">Dessin de rue</a></li>
-                                    <li><a href="dessins.html">Dessin à eau</a></li>
+                                    <li><a href="#">Dessin de portrait</a></li>
+                                    <li><a href="#">Dessin de rue</a></li>
+                                    <li><a href="#">Dessin à eau</a></li>
                                 </ul>
                             </div>
                             <div class="megamenu-images">
@@ -111,8 +111,8 @@
                 <li class="nav-separator"></li>
                 
                 <!-- Liens simples -->
-                <li class="nav-item"><a href="magasins.html" class="nav-link">Nos magasins</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">À propos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Nos magasins</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">À propos</a></li>
             </ul>
         </nav>
         
@@ -134,7 +134,7 @@
             </div>
             
             <!-- Icône Login -->
-            <a href="login.html" class="icon-btn" aria-label="Se connecter" title="Se connecter">
+            <a href="#" class="icon-btn" aria-label="Se connecter" title="Se connecter">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <circle cx="10" cy="6" r="3.5" stroke="currentColor" stroke-width="1.5"/>
                     <path d="M3 17c0-3 2.5-5.5 7-5.5s7 2.5 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -158,13 +158,13 @@
 
     <!-- Boutons de filtrage par type -->
     <div class="type-filters">
-        <a href="#pots" class="type-btn active">Pots</a>
-        <a href="#tubes" class="type-btn">Tubes</a>
+        <button class="type-btn active" data-type="pots">Pots</button>
+        <button class="type-btn" data-type="tubes">Tubes</button>
     </div>
 
     <div class="container">
         <!-- Section des Pots (16 produits) -->
-        <div id="pots" class="gallery pots-container active">
+        <div class="gallery pots-container active">
             <!-- Carte 1 - Argent -->
             <div class="artwork-card">
                 <div class="artwork-image color-argent">
@@ -365,7 +365,7 @@
         </div>
 
         <!-- Section des Tubes (16 produits) -->
-        <div id="tubes" class="gallery tubes-container">
+        <div class="gallery tubes-container">
             <!-- Carte 1 - Argent Tube -->
             <div class="artwork-card">
                 <div class="artwork-image color-argent">
@@ -637,6 +637,33 @@
     </div>
 </footer>
 
+    <script>
+        // Script pour gérer le filtrage entre pots et tubes
+        document.addEventListener('DOMContentLoaded', function() {
+            const typeButtons = document.querySelectorAll('.type-btn');
+            const potsContainer = document.querySelector('.pots-container');
+            const tubesContainer = document.querySelector('.tubes-container');
+            
+            typeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Retirer la classe active de tous les boutons
+                    typeButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Ajouter la classe active au bouton cliqué
+                    this.classList.add('active');
+                    
+                    // Afficher le conteneur correspondant
+                    const type = this.getAttribute('data-type');
+                    if (type === 'pots') {
+                        potsContainer.classList.add('active');
+                        tubesContainer.classList.remove('active');
+                    } else if (type === 'tubes') {
+                        tubesContainer.classList.add('active');
+                        potsContainer.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-    
