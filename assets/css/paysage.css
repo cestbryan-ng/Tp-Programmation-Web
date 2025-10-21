@@ -86,6 +86,13 @@ nav a:hover {
     background: transparent;
 }
 
+/* Liste du megamenu en vertical */
+.megamenu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .hero {
     background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
     padding: 60px 40px;
