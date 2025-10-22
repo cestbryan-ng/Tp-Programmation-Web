@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessoires / Pinceaux</title>
     <link rel="stylesheet" href="assets/css/pinceaux.css">
+    <script src="pinceaux.js"></script>
+
 </head>
 <body>
     <header class="header">
@@ -12,7 +14,7 @@
             
             <div class="logo">
                 <a href="artika.html">
-                    <img src="assets/images/ARTIKA_blk.png" alt="Artika">
+                    <img src="assets/images/artika.png" alt="Artika">
                 </a>
             </div>
             
@@ -27,9 +29,9 @@
                                 <div class="megamenu-links">
                                     <h3 class="megamenu-title">Explorez nos peintures</h3>
                                     <ul class="megamenu-list">
-                                        <li><a href="artAbstrait.html">Art Abstrait</a></li>
-                                        <li><a href="peinturepaysage.html">Peinture Paysage</a></li>
-                                        <li><a href="popArt.html">Peinture Pop Art</a></li>
+                                        <li><a href="#">Art Abstrait</a></li>
+                                        <li><a href="#">Peinture Paysage</a></li>
+                                        <li><a href="#">Peinture Pop Art</a></li>
                                     </ul>
                                 </div>
                                 <div class="megamenu-images">
@@ -42,16 +44,15 @@
                     </li>
                     
                     <li class="nav-item has-megamenu">
-                        <a href="#" class="nav-link nav-link-active">Accessoires</a>
+                        <a href="#" class="nav-link">Accessoires</a>
                         
                         <div class="megamenu">
                             <div class="megamenu-content">
                                 <div class="megamenu-links">
                                     <h3 class="megamenu-title">Matériel de création</h3>
                                     <ul class="megamenu-list">
-                                        <li><a href="latoilehtml2.html">Toiles</a></li>
-                                        <li><a href="pinceaux.html">Pinceaux</a></li>
-                                        <li><a href="pots-tubes.html">Pots de peinture</a></li>
+                                        <li><a href="#">Toiles</a></li>
+                                        <li class="nav-item-active"><a href="#">Pinceaux</a></li> <li><a href="#">Pots de peinture</a></li>
                                     </ul>
                                 </div>
                                 <div class="megamenu-images">
@@ -71,9 +72,9 @@
                                 <div class="megamenu-links">
                                     <h3 class="megamenu-title">Art du dessin</h3>
                                     <ul class="megamenu-list">
-                                        <li><a href="dessin_portrait.html">Dessin de portrait</a></li>
-                                        <li><a href="DessinRue.html">Dessin de rue</a></li>
-                                        <li><a href="dessins.html">Dessin à eau</a></li>
+                                        <li><a href="#">Dessin de portrait</a></li>
+                                        <li><a href="#">Dessin de rue</a></li>
+                                        <li><a href="#">Dessin à eau</a></li>
                                     </ul>
                                 </div>
                                 <div class="megamenu-images">
@@ -87,8 +88,8 @@
                     
                     <li class="nav-separator"></li>
                     
-                    <li class="nav-item"><a href="magasins.html" class="nav-link">Nos magasins</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">À propos</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Nos magasins</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">À propos</a></li>
                 </ul>
             </nav>
             
@@ -106,7 +107,7 @@
                     </div>
                 </div>
                 
-                <a href="login.html" class="icon-btn" aria-label="Se connecter" title="Se connecter">
+                <a href="#" class="icon-btn" aria-label="Se connecter" title="Se connecter">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <circle cx="10" cy="6" r="3.5" stroke="currentColor" stroke-width="1.5"/>
                         <path d="M3 17c0-3 2.5-5.5 7-5.5s7 2.5 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -128,471 +129,31 @@
     </header>
 
     <main class="container">
+
+        <div class="filter-layout">
+            <aside class="filter-sidebar">
+              <h2 class="filter-title">Filtres</h2>
+        
+              <div class="filter-group">
+                <label for="filterName">Nom du pinceau</label>
+                <input type="text" id="filterName" placeholder="Ex : rond, plat...">
+              </div>
+        
+              <div class="filter-group">
+                <label>Prix maximum (FCFA)</label>
+                <input type="number" id="maxPrice" placeholder="Ex : 3000">
+              </div>
+        
+              <button id="applyFilter" class="filter-btn">Appliquer</button>
+              <button id="resetFilter" class="filter-reset">Réinitialiser</button>
+            </aside>
+            
         <div class="gallery">
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/09effbaa086a00978ab4a93b745d67b8.jpg" alt="Pinceau professionnel à pointe ronde">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Pointe Ronde N°4</div>
-                    <div class="artwork-title">Fibre synthétique, idéal pour les détails fins et l'aquarelle.</div>
-                    <div class="price">2 500 FCFA</div>
-                </div>
             </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/0917b9ffee0f07d58f2a63ee77a7b26c.jpg" alt="Pinceau Plat Acrylique">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Plat Carré N°10</div>
-                    <div class="artwork-title">Soies synthétiques rigides, parfait pour les aplats et l'acrylique.</div>
-                    <div class="price">3 200 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/1cf933e6ad16b2356851a6843e26f0a9.jpg" alt="Pinceau Langue de Chat Huile/Acrylique">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Langue de Chat N°8</div>
-                    <div class="artwork-title">Idéal pour les bords doux, les dégradés et le travail en épaisseur (huile/acrylique).</div>
-                    <div class="price">4 500 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/219acf043cadd3b510ecf34982cc469d.jpg" alt="Kit de Pinceaux Calligraphie">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Set Calligraphie Chine (5pcs)</div>
-                    <div class="artwork-title">Pinceaux en poils de chèvre/loup pour encre et Sumi-e, pointe très fine.</div>
-                    <div class="price">12 000 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/36000cccedf589f2791101b6b27da0f7.jpg" alt="Pinceau éventail">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Éventail N°6</div>
-                    <div class="artwork-title">Permet des effets de texture, d'herbe, ou d'adoucir des contours sur huile et acrylique.</div>
-                    <div class="price">2 900 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/36ad309418f4dfe259fad34df15f5c97.jpg" alt="Brosse plate grande taille">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Spalter Synthétique (50mm)</div>
-                    <div class="artwork-title">Grande brosse plate pour lavis larges, fonds et gesso sur toile.</div>
-                    <div class="price">5 800 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/380cda2546b07825eec13bc58347f3f5.jpg" alt="Pinceau traceur / Liner">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Traceur/Liner N°0</div>
-                    <div class="artwork-title">Poils extra longs pour des lignes très fines, fluides et de la calligraphie.</div>
-                    <div class="price">2 100 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/3daa56639249c1649bc88f0b5c26a08e.jpg" alt="Pinceau à Lavis / Mouilleur">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Lavis Petit-Gris N°6</div>
-                    <div class="artwork-title">Poils très absorbants, idéal pour les grands lavis et mouiller le papier aquarelle.</div>
-                    <div class="price">6 500 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/40b6461c0d9357316754d8778cc2e8f6.jpg" alt="Pinceau Biseauté Acrylique">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Biseauté N°12</div>
-                    <div class="artwork-title">Permet de tracer des lignes nettes et de couvrir de petites surfaces.</div>
-                    <div class="price">3 500 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/42e200b4d2e62f6089661a96c47f1652.jpg" alt="Pinceau Biseauté pour détails">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Biseauté Précision N°2</div>
-                    <div class="artwork-title">Pointe précise pour les petits détails et les lignes dures en acrylique/huile.</div>
-                    <div class="price">2 400 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/4d18920f3e5c5932c641047b35d5791b.jpg" alt="Pinceau Ronde Pointe Fine (Martre Kolinsky)">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Ronde Martre Kolinsky N°6</div>
-                    <div class="artwork-title">Haut de gamme, élasticité et rétention d'eau maximales pour aquarelle et détails.</div>
-                    <div class="price">15 000 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/73ab2677e804c696ed8b854f98edd14c.jpg" alt="Pinceau plat usé bombée/Langue de chat">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Usé Bombé N°14</div>
-                    <div class="artwork-title">Pour estomper les bords, fondre les couleurs et créer des effets de feuilles (huile/acrylique).</div>
-                    <div class="price">4 100 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/74f66bdbea5d8eb2d4aab978e3ef6d17.jpg" alt="Pinceau rond large aquarelle">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Ronde Aquarelle N°16</div>
-                    <div class="artwork-title">Pointe fine sur brosse large, excellent pour les lavis et les détails en aquarelle.</div>
-                    <div class="price">7 500 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/9bf2fab0bf79734b85b74541e7b4740c.jpg" alt="Pinceau éventail">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Éventail N°4</div>
-                    <div class="artwork-title">Pour la création de textures légères, le lissage et les effets spéciaux.</div>
-                    <div class="price">2 700 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/9d6c285a79664b26998f795f9f58e56a.jpg" alt="Pinceau plat/Spalter petit">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Plat Carré N°6</div>
-                    <div class="artwork-title">Pour les surfaces moyennes, les lignes épaisses et le travail à l'acrylique.</div>
-                    <div class="price">2 500 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/9e996efeabf5124c21d5c206ba441308.jpg" alt="Pinceau de retouche/Détail">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Retouche N°00</div>
-                    <div class="artwork-title">Pinceau à poils très courts pour les points, les retouches et le micro-détail.</div>
-                    <div class="price">1 900 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/ab2f6aa16509ecd059bea2d6d873b1a7.jpg" alt="Brosse plate large">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Brosse Plate N°20</div>
-                    <div class="artwork-title">Pour les grands aplats de couleur à l'huile ou à l'acrylique.</div>
-                    <div class="price">5 100 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/abby-tait-mwLRxFKPNPg-unsplash.jpg" alt="Photo artiste utilisant un pinceau">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Trousse de l'Artiste</div>
-                    <div class="artwork-title">Inspiration : le pinceau dans l'action de la création.</div>
-                    <div class="price">Sur Demande</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/alireza-valizadeh-o6WViBEzOWU-unsplash.jpg" alt="Photo avec pinceaux et gouache">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Atelier Créatif</div>
-                    <div class="artwork-title">Set de gouache et pinceaux variés pour débutants et artistes.</div>
-                    <div class="price">18 000 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/amoon-ra-e3LTikv7Uug-unsplash.jpg" alt="Photo encre et pinceau de calligraphie">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Pinceau pour Encre de Chine</div>
-                    <div class="artwork-title">Brosse en poils naturels pour la calligraphie et le dessin à l'encre.</div>
-                    <div class="price">4 800 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/andrew-d-dyBQ8b3JJ_g-unsplash.jpg" alt="Photo aquarelle sur papier">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Papier Aquarelle Épais</div>
-                    <div class="artwork-title">Support de haute qualité 300g/m² pour des effets mouillés parfaits.</div>
-                    <div class="price">4 000 FCFA (Feuille A3)</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/anna-daudelin-GwrW3qCrpZY-unsplash.jpg" alt="Photo palette d'aquarelle">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Palette d'Aquarelle Semi-Sèche</div>
-                    <div class="artwork-title">12 couleurs vives et un pinceau à réservoir pour la peinture nomade.</div>
-                    <div class="price">9 500 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/anna-evans-W69XtU15eRM-unsplash.jpg" alt="Photo main tenant un pinceau et de l'aquarelle">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Set de Démarrage Aquarelle</div>
-                    <div class="artwork-title">Comprend pinceaux, godets de peinture et papier pour débuter.</div>
-                    <div class="price">15 000 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/anna-ozola-BDNLe0vj1Xo-unsplash.jpg" alt="Photo tubes de peinture à l'huile et pinceaux">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Set Huile / Acrylique PRO</div>
-                    <div class="artwork-title">Assortiment de pinceaux rigides et souples pour textures et mélanges.</div>
-                    <div class="price">25 000 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/annie-spratt-b_pSSMpQgLI-unsplash.jpg" alt="Photo artiste peignant un paysage">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Kit Peinture Plein Air</div>
-                    <div class="artwork-title">Inspiration : Pinceaux, toile et pigments pour les paysages en extérieur.</div>
-                    <div class="price">Non Disponible à la Vente</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/cb101683710fe685891175f1242fdb60.jpg" alt="Pinceau rond gros plan">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Ronde Synthétique PRO</div>
-                    <div class="artwork-title">Fibre de haute qualité pour toutes les techniques, excellente résilience.</div>
-                    <div class="price">4 900 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/colin-redwood-85QWDfLhJAE-unsplash.jpg" alt="Photo rouleau et brosse de peinture">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Spalter pour Lavis (Large)</div>
-                    <div class="artwork-title">Brosse large et plate pour l'application uniforme des fonds et des vernis.</div>
-                    <div class="price">7 200 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/crystal-de-passille-chabot-TTwwVG4Isjw-unsplash.jpg" alt="Photo personne peignant avec pinceau plat">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Brosse Plate N°16</div>
-                    <div class="artwork-title">Manche court, poils rigides pour les empâtements à l'huile ou à l'acrylique.</div>
-                    <div class="price">3 900 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/d739aa0b2407be55316d2bf722e40d9f.jpg" alt="Pinceau rond fin">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Ronde Précision N°0</div>
-                    <div class="artwork-title">Pinceau très fin pour les micro-détails, les signatures et les cils.</div>
-                    <div class="price">2 300 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/dcc66868b5b836b1325f89b98ed27281.jpg" alt="Set de pinceaux pour toutes techniques">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Kit Pinceaux Polyvalents (10pcs)</div>
-                    <div class="artwork-title">Assortiment de formes et tailles pour huile, acrylique et aquarelle.</div>
-                    <div class="price">19 900 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/debby-hudson-GkZoz3gVG8c-unsplash.jpg" alt="Photo personne écrivant à l'encre">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Pinceau de Calligraphie Fine</div>
-                    <div class="artwork-title">Pointe souple pour le lettrage au pinceau et les déliés élégants.</div>
-                    <div class="price">3 800 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/e5eafd0998133b4afb7eaf7927e097cb.jpg" alt="Pinceau plat pour le fond">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Brosse Plate N°24 (Manche Long)</div>
-                    <div class="artwork-title">Idéal pour les fonds de toile, les grands aplats et l'application du gesso.</div>
-                    <div class="price">6 100 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/edz-norton-weS5yN6P3vE-unsplash.jpg" alt="Photo détail de peinture acrylique">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Médium Acrylique Liquide</div>
-                    <div class="artwork-title">Fluidifie la peinture et prolonge le temps de travail pour les dégradés.</div>
-                    <div class="price">6 500 FCFA (250ml)</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/emma-theron-KkkpIt_-7OM-unsplash.jpg" alt="Photo artiste tenant un pinceau et une palette">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Palette à Pouce en Bois</div>
-                    <div class="artwork-title">Légère et ergonomique, pour le mélange des couleurs huile et acrylique.</div>
-                    <div class="price">4 200 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/erfan-amiri-2YDsH_hRGWg-unsplash.jpg" alt="Photo gros plan de pinceaux">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Set de Pinceaux Ronds (3pcs)</div>
-                    <div class="artwork-title">Tailles N°2, N°6, N°12, essentiels pour le détail et le remplissage.</div>
-                    <div class="price">6 900 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/f615dff5e1e454196b8a3d04b11e774b.jpg" alt="Pinceau plat usé">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Plat Usé N°10</div>
-                    <div class="artwork-title">Poils rigides pour les effets de texture et la pose d'empâtements.</div>
-                    <div class="price">3 400 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/hairapetyann-G8lgGfRh0Uc-unsplash.jpg" alt="Photo personne utilisant un pinceau rond">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Pinceau Maître (Martre)</div>
-                    <div class="artwork-title">Pinceau premium pour l'aquarelle et l'huile, excellent contrôle du médium.</div>
-                    <div class="price">11 500 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/jennie-razumnaya-euZfWU_nbO8-unsplash.jpg" alt="Photo pinceau et aquarelle sur palette">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Pinceau Réservoir d'Eau</div>
-                    <div class="artwork-title">Parfait pour l'aquarelle et le croquis à l'encre en déplacement.</div>
-                    <div class="price">4 500 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/jingyu-liu-RhPM8AE51f8-unsplash.jpg" alt="Photo calligraphie et encre">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Bloc d'Encre de Chine Solide</div>
-                    <div class="artwork-title">Encre noire traditionnelle pour la calligraphie et le lavis.</div>
-                    <div class="price">5 000 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/jon-tyson-rhaM4-nzhp4-unsplash.jpg" alt="Photo ensemble de pinceaux et ciseaux">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Kit Collage et Mixte</div>
-                    <div class="artwork-title">Outils essentiels pour le collage, l'assemblage et les techniques mixtes.</div>
-                    <div class="price">10 500 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/karen-bullaro-i4ciDEuzE8M-unsplash.jpg" alt="Photo pinceau et pigments naturels">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Pinceau Naturel N°8 (Sable)</div>
-                    <div class="artwork-title">Fibre douce, excellente rétention pour les pigments en poudre et les glacis.</div>
-                    <div class="price">6 800 FCFA</div>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/kasturi-roy-mgAjrBPU0pc-unsplash.jpg" alt="Photo artiste peignant un masque">
-                </div>
-                <div class="artwork-info">
-                    <div class="artist-name">Pinceaux pour Masque et Déco</div>
-                    <div class="artwork-title">Set de pinceaux variés pour peinture sur objet et loisirs créatifs.</div>
-                    <div class="price">14 500 FCFA</div>
-                </div>
-            </div>
+
         </div>
     </main>
-
+    
     <footer class="footer">
         <div class="container">
             

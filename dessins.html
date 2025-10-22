@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>accesoires/dessins a eau</title>
     <link rel="stylesheet" href="assets/css/pinceaux.css">
+    <script src="dessins.js"></script>
 </head>
 <body>
     
@@ -13,7 +14,7 @@
             
             <div class="logo">
                 <a href="artika.html">
-                    <img src="assets/images/ARTIKA_blk.png" alt="Artika">
+                    <img src="assets/images/artika.png" alt="Artika">
                 </a>
             </div>
             
@@ -28,9 +29,9 @@
                                 <div class="megamenu-links">
                                     <h3 class="megamenu-title">Explorez nos peintures</h3>
                                     <ul class="megamenu-list">
-                                        <li><a href="artAbstrait.html">Art Abstrait</a></li>
-                                        <li><a href="peinturepaysage.html">Peinture Paysage</a></li>
-                                        <li><a href="popArt.html">Peinture Pop Art</a></li>
+                                        <li><a href="#">Art Abstrait</a></li>
+                                        <li><a href="#">Peinture Paysage</a></li>
+                                        <li><a href="#">Peinture Pop Art</a></li>
                                     </ul>
                                 </div>
                                 <div class="megamenu-images">
@@ -50,9 +51,8 @@
                                 <div class="megamenu-links">
                                     <h3 class="megamenu-title">Matériel de création</h3>
                                     <ul class="megamenu-list">
-                                        <li><a href="latoilehtml2.html">Toiles</a></li>
-                                        <li><a href="pinceaux.html">Pinceaux</a></li>
-                                        <li><a href="pots-tubes.html">Pots de peinture</a></li>
+                                        <li><a href="#">Toiles</a></li>
+                                        <li class="nav-item-active"><a href="#">Pinceaux</a></li> <li><a href="#">Pots de peinture</a></li>
                                     </ul>
                                 </div>
                                 <div class="megamenu-images">
@@ -65,16 +65,16 @@
                     </li>
                     
                     <li class="nav-item has-megamenu">
-                        <a href="#" class="nav-link nav-link-active">Dessins de beaux arts</a>
+                        <a href="#" class="nav-link">Dessins de beaux arts</a>
                         
                         <div class="megamenu">
                             <div class="megamenu-content">
                                 <div class="megamenu-links">
                                     <h3 class="megamenu-title">Art du dessin</h3>
                                     <ul class="megamenu-list">
-                                        <li><a href="dessin_portrait.html">Dessin de portrait</a></li>
-                                        <li><a href="DessinRue.html">Dessin de rue</a></li>
-                                        <li><a href="dessins.html">Dessin à eau</a></li>
+                                        <li><a href="#">Dessin de portrait</a></li>
+                                        <li><a href="#">Dessin de rue</a></li>
+                                        <li><a href="#">Dessin à eau</a></li>
                                     </ul>
                                 </div>
                                 <div class="megamenu-images">
@@ -88,8 +88,8 @@
                     
                     <li class="nav-separator"></li>
                     
-                    <li class="nav-item"><a href="magasins.html" class="nav-link">Nos magasins</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">À propos</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Nos magasins</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">À propos</a></li>
                 </ul>
             </nav>
             
@@ -107,7 +107,7 @@
                     </div>
                 </div>
                 
-                <a href="login.html" class="icon-btn" aria-label="Se connecter" title="Se connecter">
+                <a href="#" class="icon-btn" aria-label="Se connecter" title="Se connecter">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <circle cx="10" cy="6" r="3.5" stroke="currentColor" stroke-width="1.5"/>
                         <path d="M3 17c0-3 2.5-5.5 7-5.5s7 2.5 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -128,560 +128,29 @@
         </div>
     </header>
 
-    <main class="container" >
-    
+    <main class="container">
+
+        <div class="filter-layout">
+            <aside class="filter-sidebar">
+              <h2 class="filter-title">Filtres</h2>
+        
+              <div class="filter-group">
+                <label for="filterName">Nom du pinceau</label>
+                <input type="text" id="filterName" placeholder="Ex : rond, plat...">
+              </div>
+        
+              <div class="filter-group">
+                <label>Prix maximum (FCFA)</label>
+                <input type="number" id="maxPrice" placeholder="Ex : 3000">
+              </div>
+        
+              <button id="applyFilter" class="filter-btn">Appliquer</button>
+              <button id="resetFilter" class="filter-reset">Réinitialiser</button>
+            </aside>
+            
         <div class="gallery">
-        
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/the-new-york-public-library-aN2vUZXy1WY-unsplash.jpg" alt="Aquarelle Matinale">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Aquarelle Matinale</h3>
-                    <p class="artwork-title">Une scène douce inspirée des paysages urbains au lever du soleil.</p>
-                    <span class="price">10 000 FCFA</span>
-                </div>
             </div>
-        
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/the-new-york-public-library-B6utjpRWmlw-unsplash.jpg" alt="Rivière Enchantée">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Rivière Enchantée</h3>
-                    <p class="artwork-title">Un cours d’eau calme avec des reflets de lumière délicats.</p>
-                    <span class="price">12 000 FCFA</span>
-                </div>
-            </div>
-        
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/the-new-york-public-library-_BFkoqX5vN4-unsplash.jpg" alt="Forêt Brumeuse">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Forêt Brumeuse</h3>
-                    <p class="artwork-title">Atmosphère mystérieuse capturée avec des nuances subtiles de bleu et vert.</p>
-                    <span class="price">11 500 FCFA</span>
-                </div>
-            </div>
-        
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/the-new-york-public-library-Iu7GUGhV7qA-unsplash.jpg" alt="Ciel Crépusculaire">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Ciel Crépusculaire</h3>
-                    <p class="artwork-title">Nuances chaudes et froides mêlées pour un coucher de soleil apaisant.</p>
-                    <span class="price">9 800 FCFA</span>
-                </div>
-            </div>
-        
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/the-new-york-public-library-NEBCw50RarM-unsplash.jpg" alt="Paysage Marin">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Paysage Marin</h3>
-                    <p class="artwork-title">Vagues et lumière douce pour capturer la tranquillité de la mer.</p>
-                    <span class="price">13 000 FCFA</span>
-                </div>
-            </div>
-        
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/the-new-york-public-library-Oy46b6eOfys-unsplash.jpg" alt="Jardin Printanier">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Jardin Printanier</h3>
-                    <p class="artwork-title">Fleurs éclatantes et feuillages frais dans une harmonie colorée.</p>
-                    <span class="price">10 500 FCFA</span>
-                </div>
-            </div>
-        
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/the-new-york-public-library-p4faImzsN2Y-unsplash.jpg" alt="Pont Ancien">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Pont Ancien</h3>
-                    <p class="artwork-title">Un pont historique rendu avec des couleurs légères et transparentes.</p>
-                    <span class="price">11 200 FCFA</span>
-                </div>
-            </div>
-        
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/the-new-york-public-library-PPLRYRZ8iJM-unsplash.jpg" alt="Montagne Lointaine">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Montagne Lointaine</h3>
-                    <p class="artwork-title">Perspective profonde et touches de bleu pour l’atmosphère de l’altitude.</p>
-                    <span class="price">12 500 FCFA</span>
-                </div>
-            </div>
-        
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/the-new-york-public-library-Qt3Pf1fNaqs-unsplash.jpg" alt="Village Paisible">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Village Paisible</h3>
-                    <p class="artwork-title">Maisons et ruelles capturées avec des couleurs douces et harmonieuses.</p>
-                    <span class="price">9 900 FCFA</span>
-                </div>
-            </div>
-        
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/the-new-york-public-library-Sai6QVPi8Aw-unsplash.jpg" alt="Cascades Calmes">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Cascades Calmes</h3>
-                    <p class="artwork-title">Chute d’eau paisible avec effets aquarelle et transparence.</p>
-                    <span class="price">13 500 FCFA</span>
-                </div>
-            </div>
-        
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/the-new-york-public-library-wtx3HO4amVU-unsplash.jpg" alt="Ruelle Ancienne">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Ruelle Ancienne</h3>
-                    <p class="artwork-title">Ambiance vintage et jeux de lumière capturés à l’aquarelle.</p>
-                    <span class="price">10 800 FCFA</span>
-                </div>
-            </div>
-        
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/the-new-york-public-library-zPxCdKcj-PQ-unsplash.jpg" alt="Plage au Crépuscule">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Plage au Crépuscule</h3>
-                    <p class="artwork-title">Reflets du ciel et mer dans des tons doux et apaisants.</p>
-                    <span class="price">12 800 FCFA</span>
-                </div>
-            </div>
-         
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/20fc23fb6127861eb8149c77ec42ac40.jpg" alt="Motif Abstrait">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Motif Abstrait</h3>
-                    <p class="artwork-title">Une œuvre dynamique de couleurs et de formes inattendues.</p>
-                    <span class="price">9 500 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/alex-dukhanov-ZxZQk7777R4-unsplash.jpg" alt="Composition Minimaliste">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Composition Minimaliste</h3>
-                    <p class="artwork-title">Dessin épuré basé sur la simplicité et l'espace.</p>
-                    <span class="price">8 900 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/chaozzy-lin-Y1ge0B9_oGE-unsplash.jpg" alt="Lumière Diffuse">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Lumière Diffuse</h3>
-                    <p class="artwork-title">Capture d'une atmosphère douce et enveloppante.</p>
-                    <span class="price">10 100 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/chenghe-huang-pGoYnmFuo-o-unsplash.jpg" alt="Architecture d'Eau">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Architecture d'Eau</h3>
-                    <p class="artwork-title">Reflets et structures urbaines dans l'eau.</p>
-                    <span class="price">11 800 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/clarisse-croset-zKRtZ1o5nvk-unsplash.jpg" alt="Feuille de Vigne">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Feuille de Vigne</h3>
-                    <p class="artwork-title">Détail de la nature avec un rendu précis et délicat.</p>
-                    <span class="price">7 500 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/d-koi-Vvp3RZZYS-Q-unsplash.jpg" alt="Cercles d'Énergie">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Cercles d'Énergie</h3>
-                    <p class="artwork-title">Motif hypnotique et répétitif de cercles concentriques.</p>
-                    <span class="price">10 300 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/europeana-RI3ecKsrSn4-unsplash.jpg" alt="Nature Morte Fruits">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Nature Morte Fruits</h3>
-                    <p class="artwork-title">Une composition classique de fruits de saison.</p>
-                    <span class="price">9 000 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/flyd--d1T-Gpgwtc-unsplash.jpg" alt="Oiseau en Vol">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Oiseau en Vol</h3>
-                    <p class="artwork-title">Dessin capturant la légèreté du mouvement aérien.</p>
-                    <span class="price">12 200 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/gor-davtyan-dNgIbpz90Tg-unsplash.jpg" alt="Visage Coloré">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Visage Coloré</h3>
-                    <p class="artwork-title">Portrait moderne aux couleurs éclatantes.</p>
-                    <span class="price">13 900 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/leandro-souza-gyBnDczshzk-unsplash.jpg" alt="Végétation Profonde">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Végétation Profonde</h3>
-                    <p class="artwork-title">Exploration des formes et ombres de la jungle.</p>
-                    <span class="price">11 400 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/lindy-baker-pgBLZjJmPW4-unsplash.jpg" alt="Fleurs Stylisées">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Fleurs Stylisées</h3>
-                    <p class="artwork-title">Motifs floraux avec une touche de fantaisie.</p>
-                    <span class="price">8 800 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/linus-belanger-nCLs6KzOFAo-unsplash(1).jpg" alt="Composition Linéaire">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Composition Linéaire</h3>
-                    <p class="artwork-title">Jeu de lignes fines et d'aplats de couleurs.</p>
-                    <span class="price">9 700 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/linus-belanger-nCLs6KzOFAo-unsplash.jpg" alt="Nuances de Gris">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Nuances de Gris</h3>
-                    <p class="artwork-title">Étude de l'ombre et de la lumière en monochrome.</p>
-                    <span class="price">8 500 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/logan-voss-S7TMlozGJSY-unsplash.jpg" alt="Explosion Pastel">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Explosion Pastel</h3>
-                    <p class="artwork-title">Éclatement de couleurs douces et vibrantes.</p>
-                    <span class="price">11 900 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/logan-voss-w7US2bu0QFc-unsplash.jpg" alt="Mouvements Verticaux">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Mouvements Verticaux</h3>
-                    <p class="artwork-title">Lignes dynamiques créant une impression de hauteur.</p>
-                    <span class="price">10 900 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/luca-fontanive-dkNuU4KRG08-unsplash.jpg" alt="Motif Organique">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Motif Organique</h3>
-                    <p class="artwork-title">Formes inspirées du vivant et de la nature.</p>
-                    <span class="price">9 200 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/mariola-grobelska-H126BdTn14Y-unsplash.jpg" alt="Silhouettes Douces">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Silhouettes Douces</h3>
-                    <p class="artwork-title">Rendu flou et poétique de formes humaines.</p>
-                    <span class="price">12 400 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/matheus-viana-p5YTll-28k0-unsplash.jpg" alt="Gouttes de Pluie">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Gouttes de Pluie</h3>
-                    <p class="artwork-title">Effet mouillé et texture unique capturant l'eau.</p>
-                    <span class="price">13 200 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/maxwell-ingham-OPTFUK_OBrE-unsplash.jpg" alt="Exploration Spatiale">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Exploration Spatiale</h3>
-                    <p class="artwork-title">Représentation abstraite d'un paysage céleste.</p>
-                    <span class="price">14 000 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/pawel-czerwinski-5EUWCwDW2aI-unsplash.jpg" alt="Motif Géométrique Bleu">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Motif Géométrique Bleu</h3>
-                    <p class="artwork-title">Design structuré avec des tons de bleu profond.</p>
-                    <span class="price">10 700 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/pawel-czerwinski-j5I0p3R_P_c-unsplash.jpg" alt="Éclaboussures Noires">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Éclaboussures Noires</h3>
-                    <p class="artwork-title">Contraste fort et dynamique, style action painting.</p>
-                    <span class="price">9 400 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/pawel-czerwinski-mTgO05cbQ8Y-unsplash.jpg" alt="Texture Rouille">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Texture Rouille</h3>
-                    <p class="artwork-title">Rendu détaillé d'une surface altérée par le temps.</p>
-                    <span class="price">8 700 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/pure-julia-A_Ksufxi1D4-unsplash.jpg" alt="Océan Abstrait I">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Océan Abstrait I</h3>
-                    <p class="artwork-title">Vagues et mouvement de l'eau, effet apaisant.</p>
-                    <span class="price">11 300 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/pure-julia-fN9df_b-mGk-unsplash.jpg" alt="Océan Abstrait II">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Océan Abstrait II</h3>
-                    <p class="artwork-title">Variations de bleu et de turquoise.</p>
-                    <span class="price">11 600 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/pure-julia-Go1WX2eyA-s-unsplash.jpg" alt="Océan Abstrait III">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Océan Abstrait III</h3>
-                    <p class="artwork-title">Profondeur et mystère des fonds marins.</p>
-                    <span class="price">12 100 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/pure-julia-_qQngPxOySU-unsplash.jpg" alt="Motif Floral Délicat">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Motif Floral Délicat</h3>
-                    <p class="artwork-title">Fleurs fines aux contours légèrement estompés.</p>
-                    <span class="price">9 100 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/pure-julia-SBSKTha6ltI-unsplash.jpg" alt="Éclatement de Lumière">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Éclatement de Lumière</h3>
-                    <p class="artwork-title">Composition abstraite autour de la source lumineuse.</p>
-                    <span class="price">10 600 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/pure-julia-VwAvq_KDOp4-unsplash.jpg" alt="Nuages et Météo">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Nuages et Météo</h3>
-                    <p class="artwork-title">Peinture atmosphérique capturant les cieux orageux.</p>
-                    <span class="price">12 700 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/qiuhao-wu-ac9r7TBNm3w-unsplash.jpg" alt="Calligraphie Liquide">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Calligraphie Liquide</h3>
-                    <p class="artwork-title">Mouvements fluides comme de l'encre sur papier mouillé.</p>
-                    <span class="price">13 100 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/solen-feyissa-bg6keHKDf4A-unsplash.jpg" alt="Terre Brûlée">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Terre Brûlée</h3>
-                    <p class="artwork-title">Tons chauds et texture rappelant un paysage aride.</p>
-                    <span class="price">9 300 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/solen-feyissa-vmIyW9jdD7E-unsplash.jpg" alt="Horizon Lointain">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Horizon Lointain</h3>
-                    <p class="artwork-title">Perspective ouverte et couleurs d'un ciel dégagé.</p>
-                    <span class="price">11 100 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/stanley-kustamin-OKR8bAiU_sY-unsplash.jpg" alt="Mur de Briques">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Mur de Briques</h3>
-                    <p class="artwork-title">Rendu réaliste d'une texture architecturale.</p>
-                    <span class="price">8 200 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/susan-wilkinson-HwRiIX60p9M-unsplash.jpg" alt="Motif Aérodynamique">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Motif Aérodynamique</h3>
-                    <p class="artwork-title">Formes en mouvement et lignes de vitesse.</p>
-                    <span class="price">12 600 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/susan-wilkinson-OeVC4pYLWH4-unsplash.jpg" alt="Jeu de Miroirs">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Jeu de Miroirs</h3>
-                    <p class="artwork-title">Effets de reflet et de symétrie abstraite.</p>
-                    <span class="price">13 300 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/susan-wilkinson-pYquLiPamPc-unsplash.jpg" alt="Spirale Hypnotique">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Spirale Hypnotique</h3>
-                    <p class="artwork-title">Mouvement en boucle et dégradé de couleurs.</p>
-                    <span class="price">10 400 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/susan-wilkinson-Sl1h2dP4cyU-unsplash.jpg" alt="Couches Abstraites">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Couches Abstraites</h3>
-                    <p class="artwork-title">Superposition de formes et de transparence.</p>
-                    <span class="price">11 700 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/susan-wilkinson-ZqDz4s56h0M-unsplash.jpg" alt="Fusion Éthérée">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Fusion Éthérée</h3>
-                    <p class="artwork-title">Mélange de couleurs douces et fluides.</p>
-                    <span class="price">12 300 FCFA</span>
-                </div>
-            </div>
-            
-            <div class="artwork-card">
-                <div class="artwork-image">
-                    <img src="assets/images/susan-wilkinson-zzzpgcaPMTc-unsplash.jpg" alt="Ondes Sonores">
-                </div>
-                <div class="artwork-info">
-                    <h3 class="artist-name">Ondes Sonores</h3>
-                    <p class="artwork-title">Représentation visuelle d'un motif auditif.</p>
-                    <span class="price">13 600 FCFA</span>
-                </div>
-            </div>
-            
+
         </div>
     </main>
     
