@@ -303,6 +303,25 @@
             color: var(--color-black);
         }
 
+                /* Wrapper de recherche */
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-icon {
+            background: none;
+            padding: 8px;
+            color: var(--color-gray);
+            transition: color var(--transition-normal);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-icon:hover {
+            color: var(--color-black);
+        }
+
         /* Dropdown de recherche qui apparaît au survol */
         .search-dropdown {
             position: absolute;
@@ -358,7 +377,6 @@
         .icon-btn:hover {
             color: var(--color-black);
         }
-
         /* Compteur du panier */
         .cart-count {
             position: absolute;
@@ -900,16 +918,18 @@
         }
 
         .info-card h3::before {
-            /* content: "📍"; */
+            content: "📍";
             font-size: 24px;
         }
 
         .info-card:nth-child(2) h3::before {
-            /* content: "📞"; */
+            content: "📞";
+            font-size: 24px;
         }
 
         .info-card:nth-child(3) h3::before {
-            /* content: "❓"; */
+            content: "❓";
+            font-size: 24px;
         }
 
         .info-item {
