@@ -1,314 +1,128 @@
-/* pots-tubes.css - Version complète corrigée */
+/* pots-tubes.css - Styles spécifiques pour la page Pots et Tubes */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #fff;
-    color: #333;
-    padding-top: 80px; /* Compensation pour le header fixe */
-}
-
-header {
-    background-color: #fff;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 20px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-}
-
-.header-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.type-filters {
-    max-width: 1400px;
-    margin: 40px auto;
-    padding: 0 40px;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    position: relative;
-    z-index: 50;
-}
-
-.type-btn {
-    padding: 12px 30px;
-    border: 1px solid #ddd;
-    background: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s;
-    border-radius: 4px;
-}
-
-.type-btn.active {
-    background: #000;
-    color: #fff;
-    border-color: #000;
-}
-
-.type-btn:hover {
-    border-color: #000;
-    background: #f9f9f9;
-}
-
-.type-btn.active:hover {
-    background: #000;
-    color: #fff;
-}
-
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 40px;
-    position: relative;
-    z-index: 1;
-}
-
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.artwork-card {
-    background: #fff;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.artwork-card:hover {
-    transform: translateY(-5px);
-}
-
-.artwork-image {
-    width: 100%;
-    aspect-ratio: 3/4;
-    background-color: #f5f5f5;
-    overflow: hidden;
-    margin-bottom: 15px;
-    position: relative;
-}
-
-.artwork-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Styles de couleurs pour les cartes sans images */
-.color-argent {
-    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
-}
-
-.color-beige {
-    background: linear-gradient(135deg, #f5f5dc 0%, #e6e6c8 100%);
-}
-
-.color-blanc {
-    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-}
-
-.color-bleu {
-    background: linear-gradient(135deg, #0000ff 0%, #4169e1 100%);
-}
-
-.color-cyan {
-    background: linear-gradient(135deg, #00ffff 0%, #40e0d0 100%);
-}
-
-.color-gris {
-    background: linear-gradient(135deg, #808080 0%, #a9a9a9 100%);
-}
-
-.color-jaune {
-    background: linear-gradient(135deg, #ffff00 0%, #ffd700 100%);
-}
-
-.color-magenta {
-    background: linear-gradient(135deg, #ff00ff 0%, #d87093 100%);
-}
-
-.color-marron {
-    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
-}
-
-.color-noir {
-    background: linear-gradient(135deg, #000000 0%, #333333 100%);
-}
-
-.color-orange {
-    background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
-}
-
-.color-rose {
-    background: linear-gradient(135deg, #ffc0cb 0%, #ff69b4 100%);
-}
-
-.color-rouge {
-    background: linear-gradient(135deg, #ff0000 0%, #dc143c 100%);
-}
-
-.color-turquoise {
-    background: linear-gradient(135deg, #40e0d0 0%, #48d1cc 100%);
-}
-
-.color-vert {
-    background: linear-gradient(135deg, #008000 0%, #32cd32 100%);
-}
-
-.color-violet {
-    background: linear-gradient(135deg, #800080 0%, #9932cc 100%);
-}
-
-.badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: #000;
-    color: #fff;
-    padding: 5px 12px;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.artwork-info {
-    padding: 0 10px;
-    text-align: left;
-}
-
-.color-name {
+/* Styles pour les cartes de produits */
+.artwork-title {
     font-size: 16px;
     font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 8px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.artwork-color-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin-bottom: 5px;
-    color: #000;
+}
+
+.color-preview {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .color-code {
-    font-size: 14px;
+    font-size: 12px;
     color: #666;
-    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
+}
+
+.artwork-type {
+    font-size: 13px;
+    color: #999;
+    margin: 0;
     font-style: italic;
 }
 
-.price {
-    font-size: 20px;
-    font-weight: 600;
-    color: #000;
-    margin-bottom: 5px;
+/* Styles pour les cercles de couleur dans les filtres */
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.shipping {
-    font-size: 12px;
-    color: #666;
+.color-option {
+    cursor: pointer;
+    position: relative;
 }
 
-footer {
-    background-color: #f9f9f9;
-    border-top: 1px solid #e5e5e5;
-    padding: 40px 0;
-    margin-top: 60px;
+.color-option input[type="checkbox"] {
+    display: none;
 }
 
-.footer-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+.color-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid #e0e0e0;
+    transition: all 0.2s ease;
 }
 
-.footer-section h3 {
-    font-size: 16px;
-    margin-bottom: 20px;
-    font-weight: 600;
+.color-option:hover .color-circle {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.footer-section ul {
-    list-style: none;
+.color-option input[type="checkbox"]:checked + .color-circle {
+    border-color: #2c3e50;
+    border-width: 3px;
+    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.2);
 }
 
-.footer-section ul li {
-    margin-bottom: 12px;
+/* Styles pour les badges de statut */
+.artwork-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #e74c3c;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
 }
 
-.footer-section a {
-    color: #666;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.footer-section a:hover {
-    color: #000;
-}
-
-@media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+/* Adaptation responsive pour les filtres de couleur */
+@media (max-width: 968px) {
+    .color-options {
+        gap: 10px;
     }
-
-    .hero h1 {
-        font-size: 32px;
+    
+    .color-circle {
+        width: 32px;
+        height: 32px;
     }
+}
 
-    nav ul {
-        gap: 20px;
+@media (max-width: 640px) {
+    .color-options {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .color-circle {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .artwork-title {
         font-size: 14px;
     }
-}
-
-@media (max-width: 480px) {
-    .gallery {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    
+    .color-code {
+        font-size: 11px;
     }
-}
-
-/* Styles pour cacher/montrer les types */
-.pots-container, .tubes-container {
-    display: none;
-}
-
-.pots-container.active, .tubes-container.active {
-    display: grid;
-}
-/* Règles CSS pour le fonctionnement sans JavaScript */
-.tubes-container {
-    display: none;
-}
-
-#pots:target,
-#tubes:target {
-    display: grid;
-}
-
-#tubes:target ~ #pots {
-    display: none;
-}
-
-/* Garder le style des boutons actifs basé sur l'ancre */
-.type-filters a[href="#pots"]:target,
-.type-filters a[href="#tubes"]:target {
-    background: #000;
-    color: #fff;
-    border-color: #000;
+    
+    .artwork-type {
+        font-size: 12px;
+    }
 }
