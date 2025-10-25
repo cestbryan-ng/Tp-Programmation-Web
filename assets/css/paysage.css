@@ -1,5 +1,6 @@
-/* style.css */
-
+/* ====================================
+   BASE ET RESET
+   ==================================== */
 * {
     margin: 0;
     padding: 0;
@@ -14,25 +15,21 @@
 body {
     background-color: #fff;
     color: #333;
-    padding-top: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Espace pour compenser le header fixe */
-body::before {
-    content: '';
-    display: block;
-    height: 80px; /* Hauteur approximative du header + promo banner */
-}
-
-/* Correction pour le header fixe */
+/* ====================================
+   HEADER
+   ==================================== */
 header {
     background-color: #fff;
     border-bottom: 1px solid #e5e5e5;
     padding: 20px 0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .header-container {
@@ -67,295 +64,370 @@ nav a:hover {
     color: #000;
 }
 
-/* Styles pour les mega menus */
+/* Ajout de délai pour les mega menus */
 .nav-item.has-megamenu {
     position: relative;
 }
 
 .megamenu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #fff;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    border-radius: 8px;
-    padding: 30px;
-    min-width: 600px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
     transition-delay: 0s;
-    z-index: 1000;
-    margin-top: 10px;
 }
 
 .nav-item.has-megamenu:hover .megamenu {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0.15s;
+    transition-delay: 0.2s;
 }
 
-.megamenu:hover {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Délai avant fermeture du mega menu pour navigation confortable */
-.nav-item.has-megamenu .megamenu {
-    pointer-events: none;
-}
-
-.nav-item.has-megamenu:hover .megamenu,
-.megamenu:hover {
-    pointer-events: auto;
-}
-
-.nav-item.has-megamenu:hover .megamenu {
-    transition-delay: 0.15s, 0.15s;
-}
-
-.nav-item.has-megamenu .megamenu:hover {
-    transition-delay: 0s, 0s;
-}
-
-/* Délai de 500ms avant que le menu ne se ferme */
-.nav-item.has-megamenu .megamenu::before {
+/* Zone tampon invisible pour éviter la fermeture accidentelle */
+.nav-item.has-megamenu::before {
     content: '';
     position: absolute;
-    top: -20px;
-    left: 0;
-    right: 0;
-    height: 20px;
+    top: 100%;
+    left: -30px;
+    right: -30px;
+    height: 30px;
+    z-index: 999;
+    background: transparent;
 }
 
-.megamenu-content {
-    display: flex;
-    gap: 40px;
-}
-
-.megamenu-links {
-    flex: 1;
-}
-
-.megamenu-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #000;
-}
-
+/* Liste du megamenu en vertical */
 .megamenu-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.megamenu-list li {
-    margin-bottom: 10px;
-}
-
-.megamenu-list a {
-    color: #666;
-    text-decoration: none;
-    font-size: 15px;
-    transition: color 0.2s ease, padding-left 0.2s ease;
-    display: block;
-    padding: 5px 0;
-}
-
-.megamenu-list a:hover {
-    color: #000;
-    padding-left: 5px;
-}
-
-.megamenu-images {
     display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
-.megamenu-img {
-    width: 100px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-/* Bouton de filtre dans le header */
-.filter-toggle-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 16px;
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-    font-family: inherit;
-}
-
-.filter-toggle-btn:hover {
-    background: #f5f5f5;
-    border-color: #000;
-}
-
-.filter-toggle-btn.active {
-    background: #000;
-    color: #fff;
-    border-color: #000;
-}
-
-.filter-toggle-btn svg {
-    width: 20px;
-    height: 20px;
-}
-
-.filter-toggle-btn span {
-    font-size: 14px;
-}
-
-/* Section de filtres */
-.filter-section {
-    position: fixed;
-    top: -300px;
-    left: 0;
-    right: 0;
-    background: #fff;
-    z-index: 99;
-    padding: 20px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: top 0.4s ease;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.filter-section.visible {
-    top: 120px; /* Position sous le header (ajuster selon la hauteur de votre header + promo banner) */
-}
-
-.filter-section .container {
-    max-width: 1400px;
+/* ====================================
+   LAYOUT PRINCIPAL
+   ==================================== */
+.main-container {
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 40px;
+    position: relative;
+    z-index: 1;
+    margin-top: 100px;
+    background: white;
 }
 
-/* Ajuster l'espacement de la galerie quand les filtres sont visibles */
-.gallery {
-    margin-top: 40px;
+/* ====================================
+   BOUTON ENCOCHE FILTRES
+   ==================================== */
+.filter-trigger-wrapper {
+    margin: 30px 0 20px 0;
+    position: relative;
+    z-index: 10;
 }
 
-/* Transition smooth pour éviter les sauts */
-.filter-section.visible ~ .container .gallery {
-    padding-top: 200px; /* Espace pour les filtres fixes */
-    transition: padding-top 0.4s ease;
+.filter-trigger-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 10;
 }
 
-body:not(.filters-open) .gallery {
-    padding-top: 20px;
-    transition: padding-top 0.4s ease;
+.filter-trigger-btn:hover {
+    border-color: #2c3e50;
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.filter-header {
+.filter-trigger-btn .chevron {
+    transition: transform 0.3s ease;
+}
+
+.filter-trigger-btn.active .chevron {
+    transform: rotate(180deg);
+}
+
+.filter-trigger-btn.active {
+    border-color: #2c3e50;
+    background: #f0f4f8;
+    color: #2c3e50;
+}
+
+/* ====================================
+   BANNIÈRE DE FILTRES
+   ==================================== */
+.filter-banner {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    max-height: 1000px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease, max-height 0.5s ease;
+    position: relative;
+    z-index: 5;
+    visibility: visible;
+}
+
+.filter-banner.collapsed {
+    opacity: 0;
+    transform: translateY(-20px);
+    max-height: 0 !important;
+    margin-bottom: 0;
+    margin-top: 0;
+    border: none;
+    padding: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.filter-banner-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #f0f0f0;
+    padding: 20px 25px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #fafafa;
+    position: relative;
+    z-index: 6;
 }
 
-.filter-title {
-    font-size: 32px;
-    font-weight: 400;
-    color: #000;
-    letter-spacing: -0.5px;
+.filter-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.result-count {
-    font-size: 15px;
+.filter-toggle-btn:hover {
+    color: #2c3e50;
+}
+
+.filter-toggle-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.filter-banner.inner-collapsed .filter-toggle-btn svg:first-child {
+    transform: rotate(180deg);
+}
+
+.filter-toggle-btn .results-count {
     color: #666;
     font-weight: 400;
 }
 
-.filters {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 0;
-}
-
-.filter-btn {
-    padding: 12px 24px;
-    border: 2px solid #e0e0e0;
-    background: #fff;
-    cursor: pointer;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    border-radius: 50px;
+.reset-filters-btn {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: inherit;
+    background: none;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
     font-weight: 500;
-    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.filter-icon {
-    font-size: 18px;
-    line-height: 1;
+.reset-filters-btn:hover {
+    background: #e74c3c;
+    color: white;
 }
 
-.filter-name {
-    line-height: 1;
+.filter-content {
+    max-height: 800px;
+    overflow: visible;
+    transition: max-height 0.5s ease, padding 0.3s ease;
 }
 
-.filter-btn:hover {
-    border-color: #000;
-    background: #f9f9f9;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.filter-banner.inner-collapsed .filter-content {
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-.filter-btn.active {
-    background: #000;
-    color: #fff;
-    border-color: #000;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+.filter-sections {
+    display: flex;
+    gap: 40px;
+    padding: 30px 25px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 5;
 }
 
-.filter-btn.active:hover {
-    background: #222;
-    border-color: #222;
+.filter-group {
+    flex: 1;
+    min-width: 200px;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 40px 40px 40px 40px;
+.filter-group-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 15px 0;
+    letter-spacing: 0.5px;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+}
+
+.filter-option input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #2c3e50;
+}
+
+.filter-option:hover {
+    color: #2c3e50;
+}
+
+/* Prix Filter */
+.price-filter-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.price-inputs {
+    display: flex;
+    gap: 15px;
+}
+
+.price-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.price-input-group label {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+.price-input-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.price-input-group span {
+    font-size: 12px;
+    color: #999;
+    margin-top: -5px;
+}
+
+.price-apply-btn {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.price-apply-btn:hover {
+    background: #34495e;
+}
+
+/* Couleurs */
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.color-option {
+    cursor: pointer;
+    position: relative;
+}
+
+.color-option input[type="checkbox"] {
+    display: none;
+}
+
+.color-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid #e0e0e0;
+    transition: all 0.2s ease;
+}
+
+.color-option:hover .color-circle {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.color-option input[type="checkbox"]:checked + .color-circle {
+    border-color: #2c3e50;
+    border-width: 3px;
+    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.2);
+}
+
+/* ====================================
+   GALERIE
+   ==================================== */
+.gallery-wrapper {
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
 }
 
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    margin-bottom: 60px;
-    padding-top: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .artwork-card {
     background: #fff;
     cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 4px;
 }
 
 .artwork-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .artwork-image {
@@ -365,66 +437,18 @@ body:not(.filters-open) .gallery {
     overflow: hidden;
     margin-bottom: 15px;
     position: relative;
+    border-radius: 4px 4px 0 0;
 }
 
 .artwork-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.3s;
 }
 
 .artwork-card:hover .artwork-image img {
     transform: scale(1.05);
-}
-
-/* Styles de couleurs pour les cartes sans images */
-.color-purple {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.color-pink {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-}
-
-.color-blue {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-}
-
-.color-sunset {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-}
-
-.color-dark-blue {
-    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
-}
-
-.color-pastel {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-}
-
-.color-rose {
-    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-}
-
-.color-peach {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-}
-
-.color-sky {
-    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-}
-
-.color-green {
-    background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
-}
-
-.color-orange {
-    background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);
-}
-
-.color-mint {
-    background: linear-gradient(135deg, #96fbc4 0%, #f9f586 100%);
 }
 
 .badge {
@@ -433,17 +457,16 @@ body:not(.filters-open) .gallery {
     left: 15px;
     background: #000;
     color: #fff;
-    padding: 6px 14px;
+    padding: 5px 12px;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
+    border-radius: 2px;
     font-weight: 600;
-    border-radius: 4px;
-    z-index: 2;
 }
 
 .artwork-info {
-    padding: 0 15px 15px 15px;
+    padding: 0 15px 15px;
 }
 
 .artist-name {
@@ -473,11 +496,9 @@ body:not(.filters-open) .gallery {
     margin-bottom: 5px;
 }
 
-.shipping {
-    font-size: 12px;
-    color: #666;
-}
-
+/* ====================================
+   FOOTER
+   ==================================== */
 footer {
     background-color: #f9f9f9;
     border-top: 1px solid #e5e5e5;
@@ -519,55 +540,44 @@ footer {
     color: #000;
 }
 
-/* Responsive Design */
+/* ====================================
+   RESPONSIVE DESIGN
+   ==================================== */
 @media (max-width: 1024px) {
     .gallery {
         grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
+    }
+}
+
+@media (max-width: 968px) {
+    .filter-sections {
+        flex-direction: column;
+        gap: 30px;
     }
     
-    .filter-title {
-        font-size: 28px;
+    .filter-group {
+        min-width: 100%;
+    }
+    
+    .color-options {
+        gap: 10px;
+    }
+    
+    .color-circle {
+        width: 32px;
+        height: 32px;
     }
 }
 
 @media (max-width: 768px) {
+    .main-container {
+        padding: 0 20px;
+        margin-top: 90px;
+    }
+
     .gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-    }
-
-    .filter-title {
-        font-size: 24px;
-    }
-    
-    .filter-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-    }
-    
-    .filters {
-        gap: 8px;
-    }
-    
-    .filter-btn {
-        padding: 10px 18px;
-        font-size: 14px;
-    }
-    
-    .container {
-        padding: 20px;
-    }
-    
-    .filter-section.visible {
-        top: 110px; /* Ajuster pour mobile */
-    }
-    
-    .filter-section .container {
-        padding: 0 20px;
     }
 
     nav ul {
@@ -575,43 +585,57 @@ footer {
         font-size: 14px;
     }
     
-    .filter-toggle-btn span {
-        display: none;
+    .filter-banner-header {
+        padding: 15px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
     }
     
-    .filter-toggle-btn {
-        padding: 8px 12px;
+    .filter-sections {
+        padding: 20px 15px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+    .main-container {
+        padding: 0 15px;
+    }
+    
     .gallery {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    
-    .filter-title {
-        font-size: 22px;
+
+    .header-container {
+        padding: 0 20px;
     }
     
-    .filter-btn {
-        padding: 8px 16px;
+    .artwork-info {
+        padding: 10px;
+    }
+    
+    .artist-name {
+        font-size: 14px;
+    }
+    
+    .artwork-title {
         font-size: 13px;
-        flex: 1 1 auto;
-        min-width: calc(50% - 4px);
-        justify-content: center;
     }
     
-    .artwork-card {
-        border-radius: 6px;
+    .price-inputs {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
-/* Animations */
+/* ====================================
+   ANIMATIONS
+   ==================================== */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
@@ -620,5 +644,12 @@ footer {
 }
 
 .artwork-card {
-    animation: fadeIn 0.5s ease forwards;
+    animation: fadeIn 0.5s ease-out;
 }
+
+.artwork-card:nth-child(1) { animation-delay: 0.05s; }
+.artwork-card:nth-child(2) { animation-delay: 0.1s; }
+.artwork-card:nth-child(3) { animation-delay: 0.15s; }
+.artwork-card:nth-child(4) { animation-delay: 0.2s; }
+.artwork-card:nth-child(5) { animation-delay: 0.25s; }
+.artwork-card:nth-child(6) { animation-delay: 0.3s; }
