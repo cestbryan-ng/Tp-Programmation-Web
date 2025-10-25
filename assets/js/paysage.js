@@ -1,392 +1,506 @@
-// Base de données des œuvres d'art (avec catégories multiples)
-const artworks = [
+// ====================================
+// BASE DE DONNÉES FICTIVE DES ŒUVRES PAYSAGE
+// ====================================
+const artworksDatabase = [
     {
         id: 1,
-        image: "assets/images/paysage1.jpg",
         title: "les pyramides d'Egypte",
         artist: "Sophie Dubois",
-        details: "Estampe numérique • 60 × 80 cm",
-        price: "285.000 FCFA",
-        badge: "Best-seller",
-        categories: ["desert", "ciel"]
+        price: 285000,
+        dimensions: "60 × 80 cm",
+        image: "assets/images/paysage1.jpg",
+        size: "moyen",
+        technique: "estampe",
+        colors: ["beige", "orange", "bleu"],
+        bestseller: true,
+        detailPage: "artwork-detail.html?id=1"
     },
     {
         id: 2,
-        image: "assets/images/paysage2.jpg",
         title: "Horizon d'elephant",
         artist: "Jean-Marc Laurent",
-        details: "Sérigraphie • 50 × 70 cm",
-        price: "195.000 FCFA",
-        badge: null,
-        categories: ["campagne", "ciel"]
+        price: 195000,
+        dimensions: "50 × 70 cm",
+        image: "assets/images/paysage2.jpg",
+        size: "moyen",
+        technique: "sérigraphie",
+        colors: ["orange", "marron", "beige"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=2"
     },
     {
         id: 3,
-        image: "assets/images/paysage3.jpg",
         title: "beau marche",
         artist: "Amina Kamara",
-        details: "Lithographie • 70 × 90 cm",
-        price: "425.000 FCFA",
-        badge: "Nouveau",
-        categories: ["urbain"]
+        price: 425000,
+        dimensions: "70 × 90 cm",
+        image: "assets/images/paysage3.jpg",
+        size: "grand",
+        technique: "lithographie",
+        colors: ["vert", "marron", "beige"],
+        bestseller: false,
+        nouveau: true,
+        detailPage: "artwork-detail.html?id=3"
     },
     {
         id: 4,
-        image: "assets/images/paysage4.jpg",
         title: "Lumière du Soir",
         artist: "Pierre Nkomo",
-        details: "Estampe • 40 × 60 cm",
-        price: "155.000 FCFA",
-        badge: null,
-        categories: ["ciel", "campagne"]
+        price: 155000,
+        dimensions: "40 × 60 cm",
+        image: "assets/images/paysage4.jpg",
+        size: "petit",
+        technique: "estampe",
+        colors: ["orange", "rose", "jaune"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=4"
     },
     {
         id: 5,
-        image: "assets/images/paysage5.jpg",
         title: "vue du quartier",
         artist: "Claire Mbarga",
-        details: "Gravure • 55 × 75 cm",
-        price: "320.000 FCFA",
-        badge: "Best-seller",
-        categories: ["urbain", "ciel"]
+        price: 320000,
+        dimensions: "55 × 75 cm",
+        image: "assets/images/paysage5.jpg",
+        size: "moyen",
+        technique: "gravure",
+        colors: ["marron", "vert", "gris"],
+        bestseller: true,
+        detailPage: "artwork-detail.html?id=5"
     },
     {
         id: 6,
-        image: "assets/images/paysage6.jpg",
         title: "Douceur Matinale",
         artist: "David Essono",
-        details: "Estampe numérique • 45 × 65 cm",
-        price: "175.000 FCFA",
-        badge: null,
-        categories: ["campagne", "ciel"]
+        price: 175000,
+        dimensions: "45 × 65 cm",
+        image: "assets/images/paysage6.jpg",
+        size: "petit",
+        technique: "estampe",
+        colors: ["bleu", "vert", "beige"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=6"
     },
     {
         id: 7,
-        image: "assets/images/paysage7.jpg",
         title: "Plage Éternel",
         artist: "Isabelle Fotso",
-        details: "Sérigraphie • 60 × 80 cm",
-        price: "265.000 FCFA",
-        badge: null,
-        categories: ["plages", "ciel"]
+        price: 265000,
+        dimensions: "60 × 80 cm",
+        image: "assets/images/paysage7.jpg",
+        size: "moyen",
+        technique: "sérigraphie",
+        colors: ["bleu", "beige", "jaune"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=7"
     },
     {
         id: 8,
-        image: "assets/images/paysage8.jpg",
         title: "mont Cameroun",
         artist: "Thomas Onana",
-        details: "Lithographie • 50 × 70 cm",
-        price: "235.000 FCFA",
-        badge: "Best-seller",
-        categories: ["montagnes", "ciel"]
+        price: 235000,
+        dimensions: "50 × 70 cm",
+        image: "assets/images/paysage8.jpg",
+        size: "moyen",
+        technique: "lithographie",
+        colors: ["vert", "gris", "bleu"],
+        bestseller: true,
+        detailPage: "artwork-detail.html?id=8"
     },
     {
         id: 9,
-        image: "assets/images/paysage9.jpg",
         title: "Col boreal",
         artist: "Marie Ngono",
-        details: "Estampe • 70 × 90 cm",
-        price: "385.000 FCFA",
-        badge: null,
-        categories: ["montagnes", "ciel"]
+        price: 385000,
+        dimensions: "70 × 90 cm",
+        image: "assets/images/paysage9.jpg",
+        size: "grand",
+        technique: "estampe",
+        colors: ["bleu", "gris", "beige"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=9"
     },
     {
         id: 10,
-        image: "assets/images/paysage10.jpg",
         title: "Jardin Secret",
         artist: "Léa Tchoumba",
-        details: "Estampe • 55 × 75 cm",
-        price: "295.000 FCFA",
-        badge: null,
-        categories: ["forets", "campagne"]
+        price: 295000,
+        dimensions: "55 × 75 cm",
+        image: "assets/images/paysage10.jpg",
+        size: "moyen",
+        technique: "estampe",
+        colors: ["vert", "marron", "beige"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=10"
     },
     {
         id: 11,
-        image: "assets/images/paysage11.jpg",
         title: "Expression Moderne",
         artist: "Marc Atangana",
-        details: "Sérigraphie • 65 × 85 cm",
-        price: "340.000 FCFA",
-        badge: "Nouveau",
-        categories: ["urbain", "ciel"]
+        price: 340000,
+        dimensions: "65 × 85 cm",
+        image: "assets/images/paysage11.jpg",
+        size: "grand",
+        technique: "sérigraphie",
+        colors: ["marron", "beige", "orange"],
+        bestseller: false,
+        nouveau: true,
+        detailPage: "artwork-detail.html?id=11"
     },
     {
         id: 12,
-        image: "assets/images/paysage12.jpg",
         title: "Fraîcheur de montagne",
         artist: "Nadège Manga",
-        details: "Lithographie • 50 × 70 cm",
-        price: "215.000 FCFA",
-        badge: null,
-        categories: ["montagnes", "forets"]
+        price: 215000,
+        dimensions: "50 × 70 cm",
+        image: "assets/images/paysage12.jpg",
+        size: "moyen",
+        technique: "lithographie",
+        colors: ["vert", "bleu", "gris"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=12"
     },
     {
         id: 13,
-        image: "assets/images/paysage13.jpg",
         title: "Fraîcheur Tropicale",
         artist: "Nadège Manga",
-        details: "Lithographie • 50 × 70 cm",
-        price: "215.000 FCFA",
-        badge: null,
-        categories: ["forets", "plages"]
+        price: 215000,
+        dimensions: "50 × 70 cm",
+        image: "assets/images/paysage13.jpg",
+        size: "moyen",
+        technique: "lithographie",
+        colors: ["vert", "bleu", "beige"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=13"
     },
     {
         id: 14,
-        image: "assets/images/paysage14.jpg",
         title: "lac Tropicale",
         artist: "Nadège Manga",
-        details: "Lithographie • 50 × 70 cm",
-        price: "215.000 FCFA",
-        badge: null,
-        categories: ["plages", "forets"]
+        price: 215000,
+        dimensions: "50 × 70 cm",
+        image: "assets/images/paysage14.jpg",
+        size: "moyen",
+        technique: "lithographie",
+        colors: ["bleu", "vert", "gris"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=14"
     },
     {
         id: 15,
-        image: "assets/images/paysage15.jpg",
         title: "Fraîcheur Tropicale",
         artist: "Nadège Manga",
-        details: "Lithographie • 50 × 70 cm",
-        price: "215.000 FCFA",
-        badge: null,
-        categories: ["forets", "campagne"]
+        price: 215000,
+        dimensions: "50 × 70 cm",
+        image: "assets/images/paysage15.jpg",
+        size: "moyen",
+        technique: "lithographie",
+        colors: ["vert", "marron", "beige"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=15"
     },
     {
         id: 16,
-        image: "assets/images/paysage16.jpg",
-        title: "Harmonie Colorée",
+        title: "Harmonie du desert",
         artist: "Paul Bekolo",
-        details: "Estampe • 60 × 80 cm",
-        price: "275.000 FCFA",
-        badge: null,
-        categories: ["desert", "ciel"]
+        price: 275000,
+        dimensions: "60 × 80 cm",
+        image: "assets/images/paysage16.jpg",
+        size: "moyen",
+        technique: "estampe",
+        colors: ["orange", "beige", "jaune"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=16"
     },
     {
         id: 17,
-        image: "assets/images/paysage17.jpg",
         title: "Le nil du Soir",
         artist: "Pierre Nkomo",
-        details: "Estampe • 40 × 60 cm",
-        price: "155.000 FCFA",
-        badge: null,
-        categories: ["plages", "ciel"]
+        price: 155000,
+        dimensions: "40 × 60 cm",
+        image: "assets/images/paysage17.jpg",
+        size: "petit",
+        technique: "estampe",
+        colors: ["bleu", "orange", "beige"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=17"
     },
     {
         id: 18,
-        image: "assets/images/paysage18.jpg",
         title: "Le pecheur du Soir",
         artist: "Pierre Nkomo",
-        details: "Estampe • 40 × 60 cm",
-        price: "155.000 FCFA",
-        badge: null,
-        categories: ["plages", "ciel"]
+        price: 155000,
+        dimensions: "40 × 60 cm",
+        image: "assets/images/paysage18.jpg",
+        size: "petit",
+        technique: "estampe",
+        colors: ["orange", "rose", "bleu"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=18"
     },
     {
         id: 19,
-        image: "assets/images/paysage0.jpg",
         title: "Le spinx",
         artist: "Pierre Nkomo",
-        details: "Estampe • 40 × 60 cm",
-        price: "155.000 FCFA",
-        badge: null,
-        categories: ["desert", "ciel"]
+        price: 155000,
+        dimensions: "40 × 60 cm",
+        image: "assets/images/paysage0.jpg",
+        size: "petit",
+        technique: "estampe",
+        colors: ["beige", "orange", "gris"],
+        bestseller: false,
+        detailPage: "artwork-detail.html?id=19"
     }
 ];
 
-// Catégories de filtres
-const filterCategories = [
-    { name: "Tout", value: "all", icon: "🎨" },
-    { name: "Montagnes", value: "montagnes", icon: "⛰️" },
-    { name: "Plages / Océans", value: "plages", icon: "🏖️" },
-    { name: "Forêts", value: "forets", icon: "🌲" },
-    { name: "Désert", value: "desert", icon: "🏜️" },
-    { name: "Campagne", value: "campagne", icon: "🌾" },
-    { name: "Urbain", value: "urbain", icon: "🏙️" },
-    { name: "Ciel", value: "ciel", icon: "☁️" }
-];
+// ====================================
+// ÉTAT DES FILTRES
+// ====================================
+let filters = {
+    size: [],
+    technique: [],
+    color: [],
+    priceMin: null,
+    priceMax: null
+};
 
-// Variable pour stocker le filtre actuel
-let currentFilter = "all";
-let filterVisible = false;
+// ====================================
+// INITIALISATION
+// ====================================
+document.addEventListener('DOMContentLoaded', function() {
+    renderGallery(artworksDatabase);
+    initializeFilters();
+    initializeFilterToggle();
+    initializeFilterTrigger();
+});
 
-// Fonction pour créer une carte d'œuvre d'art
-function createArtworkCard(artwork) {
-    return `
-        <div class="artwork-card" data-categories="${artwork.categories.join(',')}">
+// ====================================
+// RENDU DE LA GALERIE
+// ====================================
+function renderGallery(artworks) {
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = '';
+    
+    artworks.forEach(artwork => {
+        const card = document.createElement('div');
+        card.className = 'artwork-card';
+        card.onclick = () => window.location.href = artwork.detailPage;
+        
+        let badgeHTML = '';
+        if (artwork.bestseller) {
+            badgeHTML = '<span class="badge">Best-seller</span>';
+        } else if (artwork.nouveau) {
+            badgeHTML = '<span class="badge">Nouveau</span>';
+        }
+        
+        card.innerHTML = `
             <div class="artwork-image">
                 <img src="${artwork.image}" alt="${artwork.title}">
-                ${artwork.badge ? `<span class="badge">${artwork.badge}</span>` : ''}
+                ${badgeHTML}
             </div>
             <div class="artwork-info">
                 <div class="artist-name">${artwork.artist}</div>
                 <div class="artwork-title">${artwork.title}</div>
-                <div class="artwork-details">${artwork.details}</div>
-                <div class="price">${artwork.price}</div>
+                <div class="artwork-details">${artwork.technique} • ${artwork.dimensions}</div>
+                <div class="price">${formatPrice(artwork.price)} FCFA</div>
             </div>
-        </div>
-    `;
-}
-
-// Fonction pour afficher les œuvres filtrées
-function displayArtworks(filter = "all") {
-    const gallery = document.querySelector('.gallery');
-    
-    if (!gallery) return;
-    
-    // Filtrer les œuvres (une œuvre est affichée si elle contient la catégorie)
-    const filteredArtworks = filter === "all" 
-        ? artworks 
-        : artworks.filter(artwork => artwork.categories.includes(filter));
-    
-    // Afficher les œuvres
-    gallery.innerHTML = filteredArtworks.map(artwork => createArtworkCard(artwork)).join('');
-    
-    // Animation d'apparition
-    const cards = gallery.querySelectorAll('.artwork-card');
-    cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-            card.style.transition = 'all 0.5s ease';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, index * 50);
+        `;
+        
+        gallery.appendChild(card);
     });
     
-    // Afficher le nombre de résultats
-    updateResultCount(filteredArtworks.length);
+    updateResultsCount(artworks.length);
 }
 
-// Fonction pour mettre à jour le compteur de résultats
-function updateResultCount(count) {
-    const resultCount = document.querySelector('.result-count');
-    if (resultCount) {
-        resultCount.textContent = `${count} œuvre${count > 1 ? 's' : ''} disponible${count > 1 ? 's' : ''}`;
-    }
-}
-
-// Fonction pour afficher/masquer les filtres
-function toggleFilters() {
-    const filterSection = document.querySelector('.filter-section');
-    const filterToggleBtn = document.querySelector('.filter-toggle-btn');
-    
-    if (!filterSection || !filterToggleBtn) return;
-    
-    filterVisible = !filterVisible;
-    
-    if (filterVisible) {
-        filterSection.classList.add('visible');
-        filterToggleBtn.classList.add('active');
-        document.body.classList.add('filters-open');
-        filterToggleBtn.innerHTML = `
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M5 5L15 15M5 15L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            <span>Fermer</span>
-        `;
-    } else {
-        filterSection.classList.remove('visible');
-        filterToggleBtn.classList.remove('active');
-        document.body.classList.remove('filters-open');
-        filterToggleBtn.innerHTML = `
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M2 4h16M5 10h10M8 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            <span>Filtres</span>
-        `;
-    }
-}
-
-// Fonction pour créer le bouton de filtre dans le header
-function createFilterToggleButton() {
-    const headerActions = document.querySelector('.header-actions');
-    
-    if (!headerActions) return;
-    
-    // Créer le bouton de filtre
-    const filterToggleBtn = document.createElement('button');
-    filterToggleBtn.className = 'filter-toggle-btn icon-btn';
-    filterToggleBtn.setAttribute('aria-label', 'Afficher les filtres');
-    filterToggleBtn.innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M2 4h16M5 10h10M8 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <span>Filtres</span>
-    `;
-    
-    // Insérer le bouton avant l'icône de recherche
-    const searchWrapper = headerActions.querySelector('.search-wrapper');
-    headerActions.insertBefore(filterToggleBtn, searchWrapper);
-    
-    // Ajouter l'événement click
-    filterToggleBtn.addEventListener('click', toggleFilters);
-}
-
-// Fonction pour créer les boutons de filtre
-function createFilterButtons() {
-    const body = document.body;
-    
-    // Créer la section de filtres fixe
-    const filterSection = document.createElement('div');
-    filterSection.className = 'filter-section';
-    filterSection.innerHTML = `
-        <div class="container">
-            <div class="filter-header">
-                <h2 class="filter-title">Explorer nos paysages</h2>
-                <p class="result-count">${artworks.length} œuvres disponibles</p>
-            </div>
-            <div class="filters">
-                ${filterCategories.map(category => `
-                    <button class="filter-btn ${category.value === 'all' ? 'active' : ''}" 
-                            data-filter="${category.value}">
-                        <span class="filter-icon">${category.icon}</span>
-                        <span class="filter-name">${category.name}</span>
-                    </button>
-                `).join('')}
-            </div>
-        </div>
-    `;
-    
-    // Insérer après le header
-    const header = document.querySelector('.header');
-    if (header && header.parentNode) {
-        header.parentNode.insertBefore(filterSection, header.nextSibling);
-    }
-    
-    // Ajouter les événements aux boutons
-    const filterButtons = filterSection.querySelectorAll('.filter-btn');
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Retirer la classe active de tous les boutons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Ajouter la classe active au bouton cliqué
-            this.classList.add('active');
-            
-            // Obtenir la valeur du filtre
-            const filter = this.getAttribute('data-filter');
-            currentFilter = filter;
-            
-            // Afficher les œuvres filtrées
-            displayArtworks(filter);
+// ====================================
+// SYSTÈME DE FILTRES
+// ====================================
+function initializeFilters() {
+    // Filtres taille
+    document.querySelectorAll('input[name="size"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            updateFilter('size', this.value, this.checked);
         });
     });
+    
+    // Filtres technique
+    document.querySelectorAll('input[name="technique"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            updateFilter('technique', this.value, this.checked);
+        });
+    });
+    
+    // Filtres couleur
+    document.querySelectorAll('input[name="color"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            updateFilter('color', this.value, this.checked);
+        });
+    });
+    
+    // Filtre prix
+    document.getElementById('priceApplyBtn').addEventListener('click', function() {
+        const minValue = document.getElementById('priceMin').value;
+        const maxValue = document.getElementById('priceMax').value;
+        
+        filters.priceMin = minValue ? parseInt(minValue) : null;
+        filters.priceMax = maxValue ? parseInt(maxValue) : null;
+        
+        applyFilters();
+    });
+    
+    // Réinitialiser tous les filtres
+    document.getElementById('resetFiltersBtn').addEventListener('click', resetAllFilters);
 }
 
-// Fonction d'initialisation
-function init() {
-    // Créer le bouton de filtre dans le header
-    createFilterToggleButton();
+function updateFilter(filterType, value, isChecked) {
+    if (isChecked) {
+        if (!filters[filterType].includes(value)) {
+            filters[filterType].push(value);
+        }
+    } else {
+        filters[filterType] = filters[filterType].filter(v => v !== value);
+    }
     
-    // Créer les boutons de filtre
-    createFilterButtons();
-    
-    // Afficher toutes les œuvres au chargement
-    displayArtworks("all");
+    applyFilters();
 }
 
-// Lancer l'initialisation quand le DOM est chargé
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-} else {
-    init();
+function applyFilters() {
+    let filteredArtworks = artworksDatabase.filter(artwork => {
+        // Filtre taille
+        if (filters.size.length > 0 && !filters.size.includes(artwork.size)) {
+            return false;
+        }
+        
+        // Filtre technique
+        if (filters.technique.length > 0 && !filters.technique.includes(artwork.technique)) {
+            return false;
+        }
+        
+        // Filtre couleur
+        if (filters.color.length > 0) {
+            const hasMatchingColor = filters.color.some(color => artwork.colors.includes(color));
+            if (!hasMatchingColor) {
+                return false;
+            }
+        }
+        
+        // Filtre prix
+        if (filters.priceMin !== null && artwork.price < filters.priceMin) {
+            return false;
+        }
+        if (filters.priceMax !== null && artwork.price > filters.priceMax) {
+            return false;
+        }
+        
+        return true;
+    });
+    
+    renderGallery(filteredArtworks);
+    updateResetButton();
 }
+
+function resetAllFilters() {
+    // Réinitialiser l'état
+    filters = {
+        size: [],
+        technique: [],
+        color: [],
+        priceMin: null,
+        priceMax: null
+    };
+    
+    // Décocher toutes les checkboxes
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
+    });
+    
+    // Réinitialiser les champs de prix
+    document.getElementById('priceMin').value = '';
+    document.getElementById('priceMax').value = '';
+    
+    // Réafficher toutes les œuvres
+    renderGallery(artworksDatabase);
+    updateResetButton();
+}
+
+function updateResetButton() {
+    const hasActiveFilters = 
+        filters.size.length > 0 ||
+        filters.technique.length > 0 ||
+        filters.color.length > 0 ||
+        filters.priceMin !== null ||
+        filters.priceMax !== null;
+    
+    const resetBtn = document.getElementById('resetFiltersBtn');
+    resetBtn.style.display = hasActiveFilters ? 'flex' : 'none';
+}
+
+// ====================================
+// TOGGLE DE LA BANNIÈRE DE FILTRES
+// ====================================
+function initializeFilterTrigger() {
+    const triggerBtn = document.getElementById('filterTriggerBtn');
+    const filterBanner = document.getElementById('filterBanner');
+    
+    triggerBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const isCollapsed = filterBanner.classList.contains('collapsed');
+        
+        if (isCollapsed) {
+            // Ouvrir la bannière
+            filterBanner.classList.remove('collapsed');
+            filterBanner.classList.remove('inner-collapsed');
+            triggerBtn.classList.add('active');
+        } else {
+            // Fermer la bannière
+            filterBanner.classList.add('collapsed');
+            triggerBtn.classList.remove('active');
+        }
+    });
+}
+
+function initializeFilterToggle() {
+    const toggleBtn = document.getElementById('filterToggleBtn');
+    const filterBanner = document.getElementById('filterBanner');
+    
+    if (!toggleBtn) {
+        console.error('Bouton toggle non trouvé');
+        return;
+    }
+    
+    toggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        filterBanner.classList.toggle('inner-collapsed');
+        
+        const isCollapsed = filterBanner.classList.contains('inner-collapsed');
+        const textSpan = toggleBtn.querySelector('span');
+        if (textSpan) {
+            textSpan.textContent = isCollapsed ? 'AFFICHER LES FILTRES' : 'RÉDUIRE LES FILTRES';
+        }
+    });
+}
+
+// ====================================
+// UTILITAIRES
+// ====================================
+function formatPrice(price) {
+    return price.toLocaleString('fr-FR').replace(/\s/g, ' ');
+}
+
+function updateResultsCount(count) {
+    const resultsCount = document.getElementById('resultsCount');
+    resultsCount.textContent = `(${count} produit${count > 1 ? 's' : ''})`;
+}
+
+// ====================================
+// GESTION DU PANIER (Simplifié)
+// ====================================
+function updateCartCount() {
+    // Simulation - à adapter selon votre système
+    document.querySelector('.cart-count').textContent = '0';
+}
+
+updateCartCount();
