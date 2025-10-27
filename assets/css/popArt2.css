@@ -2,16 +2,9 @@
    FIX POUR LE HEADER - SUPPRIMER L'ÉCART
    ==================================== */
 .promo-banner {
-    position: relative;
+    position: sticky;
     z-index: 1001;
     margin-bottom: 0 !important;
-}
-
-.header {
-    position: relative;
-    z-index: 1000;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
 }
 
 /* ====================================
@@ -25,13 +18,14 @@
     z-index: 1;
     margin-top: 20px;
     background: white;
+    padding-top: 0.1px;
 }
 
 /* ====================================
    BOUTON ENCOCHE FILTRES
    ==================================== */
 .filter-trigger-wrapper {
-    margin: 30px 0 20px 0;
+    margin: 80px 0 20px 0;
     position: relative;
     z-index: 10;
 }

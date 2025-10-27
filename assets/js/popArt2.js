@@ -109,7 +109,7 @@ const artworksDatabase = [
     {
         id: 9,
         title: "The romantic city",
-        artist: "Marie curir",
+        artist: "Marie curie",
         price: 385000,
         dimensions: "70 × 90 cm",
         image: "assets/images/Paris by Lobo.jpeg",
