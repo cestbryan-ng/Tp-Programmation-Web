@@ -1,6 +1,5 @@
-// ====================================
-// BASE DE DONNÉES DES DESSINS DE PORTRAIT
-// ====================================
+ 
+// BASE DE DONNÉES DES DESSINS DE PORTRAIT 
 const artworksDatabase = [
     {
         id: 1,
@@ -246,10 +245,8 @@ const artworksDatabase = [
         colors: ["orange", "marron", "beige"]
     }
 ];
-
-// ====================================
 // ÉTAT DES FILTRES
-// ====================================
+ 
 let filters = {
     size: [],
     style: [],
@@ -261,9 +258,7 @@ let filters = {
 // Sauvegarder la galerie originale pour le rendu
 let originalGallery = null;
 
-// ====================================
 // INITIALISATION
-// ====================================
 document.addEventListener('DOMContentLoaded', function() {
     // Sauvegarder la galerie HTML originale
     const gallery = document.querySelector('.gallery');
@@ -277,9 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateResultsCount(artworksDatabase.length);
 });
 
-// ====================================
 // RENDU DE LA GALERIE
-// ====================================
 function renderGallery(artworks) {
     const gallery = document.querySelector('.gallery');
     if (!gallery) return;
@@ -306,11 +299,8 @@ function renderGallery(artworks) {
     });
     
     updateResultsCount(artworks.length);
-}
-
-// ====================================
+} 
 // SYSTÈME DE FILTRES
-// ====================================
 function initializeFilters() {
     // Filtres taille
     document.querySelectorAll('input[name="size"]').forEach(checkbox => {
@@ -440,10 +430,9 @@ function updateResetButton() {
         resetBtn.style.display = hasActiveFilters ? 'flex' : 'none';
     }
 }
-
-// ====================================
+ 
 // TOGGLE DE LA BANNIÈRE DE FILTRES
-// ====================================
+
 function initializeFilterTrigger() {
     const triggerBtn = document.getElementById('filterTriggerBtn');
     const filterBanner = document.getElementById('filterBanner');
@@ -488,9 +477,9 @@ function initializeFilterToggle() {
     });
 }
 
-// ====================================
+ 
 // UTILITAIRES
-// ====================================
+
 function formatPrice(price) {
     return price.toLocaleString('fr-FR').replace(/\s/g, ' ');
 }
@@ -501,10 +490,8 @@ function updateResultsCount(count) {
         resultsCount.textContent = `(${count} produit${count > 1 ? 's' : ''})`;
     }
 }
-
-// ====================================
 // GESTION DU PANIER
-// ====================================
+ 
 function updateCartCount() {
     const cartCountElement = document.querySelector('.cart-count');
     if (cartCountElement) {

@@ -770,9 +770,9 @@ MOBILES (max-width: 480px)
         display: none;
     }
 }
-/* ====================================
+/*  
    SYSTÈME DE FILTRES INTERACTIF
-   ==================================== */
+    */
 
 /* Wrapper du bouton déclencheur */
 .filter-trigger-wrapper {
