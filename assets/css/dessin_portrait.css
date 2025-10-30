@@ -450,7 +450,7 @@ en grille responsive
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 40px;
+    padding: 2.5px;
 }
 
 /* 
@@ -768,5 +768,333 @@ MOBILES (max-width: 480px)
     /* Cache les séparateurs "|" sur mobile */
     .footer-legal span {
         display: none;
+    }
+}
+/* ====================================
+   SYSTÈME DE FILTRES INTERACTIF
+   ==================================== */
+
+/* Wrapper du bouton déclencheur */
+.filter-trigger-wrapper {
+    margin: 40px 0 20px 0;
+    position: relative;
+    z-index: 10;
+}
+
+/* Bouton encoche filtres */
+.filter-trigger-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 10;
+}
+
+.filter-trigger-btn:hover {
+    border-color: var(--color-black);
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.filter-trigger-btn .chevron {
+    transition: transform 0.3s ease;
+}
+
+.filter-trigger-btn.active .chevron {
+    transform: rotate(180deg);
+}
+
+.filter-trigger-btn.active {
+    border-color: var(--color-black);
+    background: #f0f4f8;
+    color: var(--color-black);
+}
+
+/* Bannière de filtres */
+.filter-banner {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    max-height: 1000px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease, max-height 0.5s ease;
+    position: relative;
+    z-index: 5;
+    visibility: visible;
+}
+
+.filter-banner.collapsed {
+    opacity: 0;
+    transform: translateY(-20px);
+    max-height: 0 !important;
+    margin-bottom: 0;
+    margin-top: 0;
+    border: none;
+    padding: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+/* En-tête de la bannière */
+.filter-banner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #fafafa;
+    position: relative;
+    z-index: 6;
+}
+
+.filter-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-toggle-btn:hover {
+    color: var(--color-black);
+}
+
+.filter-toggle-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.filter-banner.inner-collapsed .filter-toggle-btn svg:first-child {
+    transform: rotate(180deg);
+}
+
+.filter-toggle-btn .results-count {
+    color: #666;
+    font-weight: 400;
+}
+
+/* Bouton réinitialiser */
+.reset-filters-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-filters-btn:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Contenu des filtres */
+.filter-content {
+    max-height: 800px;
+    overflow: visible;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+.filter-banner.inner-collapsed .filter-content {
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.filter-sections {
+    display: flex;
+    gap: 40px;
+    padding: 30px 25px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 5;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 15px 0;
+    letter-spacing: 0.5px;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+}
+
+.filter-option input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--color-black);
+}
+
+.filter-option:hover {
+    color: var(--color-black);
+}
+
+/* Filtre de prix */
+.price-filter-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.price-inputs {
+    display: flex;
+    gap: 15px;
+}
+
+.price-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.price-input-group label {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+.price-input-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.price-input-group span {
+    font-size: 12px;
+    color: #999;
+    margin-top: -5px;
+}
+
+.price-apply-btn {
+    background: var(--color-black);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.price-apply-btn:hover {
+    background: #333;
+}
+
+/* Couleurs - Cercles cliquables */
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.color-option {
+    cursor: pointer;
+    position: relative;
+}
+
+.color-option input[type="checkbox"] {
+    display: none;
+}
+
+.color-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid #e0e0e0;
+    transition: all 0.2s ease;
+}
+
+.color-option:hover .color-circle {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.color-option input[type="checkbox"]:checked + .color-circle {
+    border-color: var(--color-black);
+    border-width: 3px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustements responsive pour les filtres */
+@media (max-width: 768px) {
+    .filter-sections {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .filter-group {
+        min-width: 100%;
+    }
+    
+    .filter-banner-header {
+        padding: 15px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .price-inputs {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .color-options {
+        gap: 10px;
+    }
+    
+    .color-circle {
+        width: 32px;
+        height: 32px;
     }
 }
