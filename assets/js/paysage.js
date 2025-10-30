@@ -12,7 +12,7 @@ const artworksDatabase = [
         size: "moyen",
         technique: "estampe",
         colors: ["beige", "orange", "bleu"],
-        bestseller: true,
+        bestseller: false,
         detailPage: "artwork-detail.html?id=1"
     },
     {
@@ -65,7 +65,7 @@ const artworksDatabase = [
         size: "moyen",
         technique: "gravure",
         colors: ["marron", "vert", "gris"],
-        bestseller: true,
+        bestseller: false,
         detailPage: "artwork-detail.html?id=5"
     },
     {
@@ -104,7 +104,7 @@ const artworksDatabase = [
         size: "moyen",
         technique: "lithographie",
         colors: ["vert", "gris", "bleu"],
-        bestseller: true,
+        bestseller: false,
         detailPage: "artwork-detail.html?id=8"
     },
     {
