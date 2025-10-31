@@ -1,24 +1,22 @@
 // ====================================
-// TABLEAU DES ACCESSOIRES (CHEMINS CORRIGÉS)
-// Les chemins d'images commencent par '/' pour un lien absolu depuis la racine
-// de votre projet (dossier Tp-Programmation-Web-tp1-dev).
+// TABLEAU DES ACCESSOIRES (DESSINS SPÉCIFIQUES)
 // ==================================== 
 const accessoires = [
-    { id: 1, nom: "Pointe Ronde N°4", description: "Fibre synthétique, idéal pour les détails fins et l'aquarelle.", prix: 2500, image: "assets/images/36000cccedf589f2791101b6b27da0f7.jpg" },
-    { id: 2, nom: "Plat Carré N°10", description: "Soies synthétiques rigides, parfait pour les aplats et l'acrylique.", prix: 3200, image: "assets/images/0917b9ffee0f07d58f2a63ee77a7b26c.jpg" },
-    { id: 3, nom: "Langue de Chat N°8", description: "Idéal pour les bords doux, les dégradés et le travail en épaisseur (huile/acrylique).", prix: 4500, image: "assets/images/1cf933e6ad16b2356851a6843e26f0a9.jpg" },
-    { id: 4, nom: "Set Calligraphie Chine (5pcs)", description: "Pinceaux en poils de chèvre/loup pour encre et Sumi-e, pointe très fine.", prix: 12000, image: "assets/images/219acf043cadd3b510ecf34982cc469d.jpg" },
-    { id: 5, nom: "Éventail N°6", description: "Permet des effets de texture, d'herbe, ou d'adoucir des contours sur huile et acrylique.", prix: 2900, image: "assets/images/36000cccedf589f2791101b6b27da0f7.jpg" },
-    { id: 6, nom: "Spalter Synthétique (50mm)", description: "Grande brosse plate pour lavis larges, fonds et gesso sur toile.", prix: 5800, image: "assets/images/36ad309418f4dfe259fad34df15f5c97.jpg" },
-    { id: 7, nom: "Traceur/Liner N°0", description: "Poils extra longs pour des lignes très fines, fluides et de la calligraphie.", prix: 2100, image: "assets/images/380cda2546b07825eec13bc58347f3f5.jpg" },
-    { id: 8, nom: "Lavis Petit-Gris N°6", description: "Poils très absorbants, idéal pour les grands lavis et mouiller le papier aquarelle.", prix: 6500, image: "assets/images/3daa56639249c1649bc88f0b5c26a08e.jpg" },
-    { id: 9, nom: "Biseauté N°12", description: "Permet de tracer des lignes nettes et de couvrir de petites surfaces.", prix: 3500, image: "assets/images/40b6461c0d9357316754d8778cc2e8f6.jpg" },
-    { id: 10, nom: "Biseauté Précision N°2", description: "Pointe précise pour les petits détails et les lignes dures en acrylique/huile.", prix: 2400, image: "assets/images/42e200b4d2e62f6089661a96c47f1652.jpg" },
-    { id: 11, nom: "Ronde Martre Kolinsky N°6", description: "Haut de gamme, élasticité et rétention d'eau maximales pour aquarelle et détails.", prix: 15000, image: "assets/images/4d18920f3e5c5932c641047b35d5791b.jpg" },
-    { id: 12, nom: "Usé Bombé N°14", description: "Pour estomper les bords, fondre les couleurs et créer des effets de feuilles (huile/acrylique).", prix: 4100, image: "assets/images/73ab2677e804c696ed8b854f98edd14c.jpg" },
-    { id: 13, nom: "Ronde Aquarelle N°16", description: "Pointe fine sur brosse large, excellent pour les lavis et les détails en aquarelle.", prix: 7500, image: "assets/images/74f66bdbea5d8eb2d4aab978e3ef6d17.jpg" },
-    { id: 14, nom: "Éventail N°4", description: "Pour la création de textures légères, le lissage et les effets spéciaux.", prix: 2700, image: "assets/images/9bf2fab0bf79734b85b74541e7b4740c.jpg" },
-    { id: 15, nom: "Plat Carré N°6", description: "Pour les surfaces moyennes, les lignes épaisses et le travail à l'acrylique.", prix: 2500, image: "assets/images/9d6c285a79664b26998f795f9f58e56a.jpg" }
+    { id: 1, nom: "Esquisse Moderne", description: "Dessin au fusain de Stanley Kustamin.", prix: 15000, image: "assets/images/stanley-kustamin-OKR8bAiU_sY-unsplash.jpg" },
+    { id: 2, nom: "Abstraction Bleue", description: "Oeuvre numérique de Susan Wilkinson.", prix: 22000, image: "assets/images/susan-wilkinson-HwRiIX60p9M-unsplash.jpg" },
+    { id: 3, nom: "Formes Géométriques", description: "Dessin abstrait de Susan Wilkinson.", prix: 18000, image: "assets/images/susan-wilkinson-OeVC4pYLWH4-unsplash.jpg" },
+    { id: 4, nom: "Composition Rose", description: "Design minimaliste par Susan Wilkinson.", prix: 19500, image: "assets/images/susan-wilkinson-pYquLiPamPc-unsplash.jpg" },
+    { id: 5, nom: "Palette Pastel", description: "Couleurs douces de Susan Wilkinson.", prix: 17000, image: "assets/images/susan-wilkinson-Sl1h2dP4cyU-unsplash.jpg" },
+    { id: 6, nom: "Contraste Vif", description: "Illustration haute en couleur de Susan Wilkinson.", prix: 21000, image: "assets/images/susan-wilkinson-ZqDz4s56h0M-unsplash.jpg" },
+    { id: 7, nom: "Motif Répétitif", description: "Œuvre de Susan Wilkinson explorant la répétition.", prix: 16500, image: "assets/images/susan-wilkinson-zzzpgcaPMTc-unsplash.jpg" },
+    { id: 8, nom: "Vieille Carte I", description: "Collection de la New York Public Library.", prix: 11000, image: "assets/images/the-new-york-public-library-aN2vUZXy1WY-unsplash.jpg" },
+    { id: 9, nom: "Illustration Botanique", description: "Planche d'herbier de la NY Public Library.", prix: 13500, image: "assets/images/the-new-york-public-library-B6utjpRWmlw-unsplash.jpg" },
+    { id: 10, nom: "Lavis Architectural", description: "Dessin d'architecture de la NY Public Library.", prix: 14000, image: "assets/images/the-new-york-public-library-_BFkoqX5vN4-unsplash.jpg" },
+    { id: 11, nom: "Faune Exotique", description: "Gravure d'animaux de la NY Public Library.", prix: 16000, image: "assets/images/the-new-york-public-library-PPLRYRZ8iJM-unsplash.jpg" },
+    { id: 12, nom: "Étude d'Oiseau", description: "Dessin classique de la NY Public Library.", prix: 12500, image: "assets/images/the-new-york-public-library-Qt3Pf1fNaqs-unsplash.jpg" },
+    { id: 13, nom: "Plan Urbain", description: "Ancien plan de ville de la NY Public Library.", prix: 18500, image: "assets/images/the-new-york-public-library-Sai6QVPi8Aw-unsplash.jpg" },
+    { id: 14, nom: "Fragment Historique", description: "Document ancien de la NY Public Library.", prix: 9500, image: "assets/images/the-new-york-public-library-wtx3HO4amVU-unsplash.jpg" },
+    { id: 15, nom: "Gravure Bleue", description: "Illustration encre de la NY Public Library.", prix: 14500, image: "assets/images/the-new-york-public-library-zPxCdKcj-PQ-unsplash.jpg" }
 ];
 
 // ====================================
@@ -56,7 +54,7 @@ function initializeSearch() {
 }
 
 // ====================================
-// RENDU DE LA GALERIE
+// RENDU DE LA GALERIE (CORRECTION DE CHEMIN INCLUSE)
 // ====================================
 function renderGallery(items) {
     const gallery = document.getElementById('gallery');
@@ -65,11 +63,14 @@ function renderGallery(items) {
     gallery.innerHTML = ''; 
 
     items.forEach(item => {
+        // CORRECTION: Ajout du '/' pour un chemin absolu si non présent
+        const imagePath = item.image.startsWith('/') ? item.image : '/' + item.image;
+
         const card = document.createElement('div');
         card.className = 'artwork-card';
         card.innerHTML = `
             <div class="artwork-image">
-                <img src="${item.image}" alt="${item.nom}">
+                <img src="${imagePath}" alt="${item.nom}">
             </div>
             <div class="artwork-info">
                 <div class="artwork-title">${item.nom}</div>
