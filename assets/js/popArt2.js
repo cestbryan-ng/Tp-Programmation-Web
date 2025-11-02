@@ -12,7 +12,7 @@ const artworksDatabase = [
         size: "grand",
         technique: "portrait",
         colors: ["rouge", "noir", "blanc"],
-        bestseller: true,
+        bestseller: false,
         detailPage: "artwork-detail.html?id=1"
     },
     {
@@ -51,7 +51,7 @@ const artworksDatabase = [
         size: "petit",
         technique: "portrait",
         colors: ["rose", "noir", "blanc"],
-        bestseller: true,
+        bestseller: false ,
         detailPage: "artwork-detail.html?id=4"
     },
     {
@@ -86,11 +86,11 @@ const artworksDatabase = [
         artist: "Anabelle Ngono",
         price: 305000,
         dimensions: "60 × 80 cm",
-        image: "assets/images/Estampes.jpeg",
+        image: "assets/images/arc-en-ciel eternel.jpeg",
         size: "moyen",
         technique: "portrait",
         colors: ["rouge", "bleu", "vert", "jaune", "orange"],
-        bestseller: true,
+        bestseller: false,
         detailPage: "artwork-detail.html?id=7"
     },
     {
