@@ -1,6 +1,7 @@
 // Compte admin prédéfini
 const compteAdmin = {
     email: 'admin@gmail.com',
+    nomUtilisateur: 'admin',
     motdepasse: '12345'
 };
 
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Récupération des éléments du formulaire
     const formulaire = document.querySelector('form');
     const champEmail = document.getElementById('email');
+    const champNomUtilisateur = document.getElementById('nom-utilisateur');
     const champMotDePasse = document.getElementById('motdepasse');
     const champConfirmerMotDePasse = document.getElementById('confirmer-motdepasse');
     const boutonInscription = document.querySelector('button[type="submit"]');
@@ -74,6 +76,11 @@ document.addEventListener('DOMContentLoaded', function() {
         return email.toLowerCase() === compteAdmin.email.toLowerCase();
     }
 
+    // Fonction pour vérifier si le nom d'utilisateur existe déjà
+    function nomUtilisateurDejaUtilise(nomUtilisateur) {
+        return nomUtilisateur.toLowerCase() === compteAdmin.nomUtilisateur.toLowerCase();
+    }
+
     // Fonction pour afficher un message d'erreur
     function afficherMessageErreur(champ, texteErreur) {
         const conteneurChamp = champ.parentElement;
@@ -115,11 +122,22 @@ document.addEventListener('DOMContentLoaded', function() {
         evenement.preventDefault();
         
         // Réinitialiser toutes les erreurs
+        effacerMessageErreur(champNomUtilisateur);
         effacerMessageErreur(champEmail);
         effacerMessageErreur(champMotDePasse);
         effacerMessageErreur(champConfirmerMotDePasse);
 
         let formulaireEstValide = true;
+
+        // Validation du nom d'utilisateur
+        const valeurNomUtilisateur = champNomUtilisateur.value.trim();
+        if (!valeurNomUtilisateur) {
+            afficherMessageErreur(champNomUtilisateur, 'Le nom d\'utilisateur est requis');
+            formulaireEstValide = false;
+        } else if (nomUtilisateurDejaUtilise(valeurNomUtilisateur)) {
+            afficherMessageErreur(champNomUtilisateur, 'Ce nom d\'utilisateur est déjà utilisé');
+            formulaireEstValide = false;
+        }
 
         // Validation de l'email
         const valeurEmail = champEmail.value.trim();
