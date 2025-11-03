@@ -1,5 +1,5 @@
 /* ====================================
-   RESET & BASE
+   BASE ET RESET
    ==================================== */
 * {
     margin: 0;
@@ -16,7 +16,6 @@ body {
     background-color: #fff;
     color: #333;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    padding-top: 70px;
 }
 
 /* ====================================
@@ -65,13 +64,20 @@ nav a:hover {
     color: #000;
 }
 
-/* ====================================
-   MEGA MENU AVEC LISTE VERTICALE
-   ==================================== */
+/* Ajout de délai pour les mega menus */
 .nav-item.has-megamenu {
     position: relative;
 }
 
+.megamenu {
+    transition-delay: 0s;
+}
+
+.nav-item.has-megamenu:hover .megamenu {
+    transition-delay: 0.2s;
+}
+
+/* Zone tampon invisible pour éviter la fermeture accidentelle */
 .nav-item.has-megamenu::before {
     content: '';
     position: absolute;
@@ -83,130 +89,59 @@ nav a:hover {
     background: transparent;
 }
 
-.megamenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    border: 1px solid #e5e5e5;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    min-width: 800px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.nav-item.has-megamenu:hover .megamenu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    transition-delay: 0.2s;
-}
-
-.megamenu-content {
-    display: flex;
-    gap: 40px;
-}
-
-.megamenu-links {
-    flex: 0 0 250px;
-}
-
-.megamenu-title {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #000;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* LISTE VERTICALE */
+/* Liste du megamenu en vertical */
 .megamenu-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.megamenu-list li {
-    margin: 0;
-    padding: 0;
-}
-
-.megamenu-list a {
-    display: block;
-    padding: 8px 0;
-    color: #666;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.megamenu-list a:hover {
-    color: #000;
-}
-
-/* Images du mega menu */
-.megamenu-images {
-    display: flex;
-    gap: 15px;
-    flex: 1;
-}
-
-.megamenu-img {
-    flex: 1;
-    height: 200px;
-    object-fit: cover;
+    gap: 10px;
 }
 
 /* ====================================
-   CONTAINER PRINCIPAL
+   LAYOUT PRINCIPAL
    ==================================== */
-.container {
-    max-width: 1400px;
-    margin: 55 px;
-    padding: 60px;
+.main-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 1;
+    margin-top: 140px; /* Augmenté de 100px à 140px */
+    background: white;
 }
 
 /* ====================================
-   SYSTÈME DE FILTRES - COMME DESSIN PORTRAIT
+   BOUTON ENCOCHE FILTRES
    ==================================== */
-
-/* Wrapper du bouton déclencheur */
 .filter-trigger-wrapper {
-    margin: 0 0 20px 0;
+    margin: 80px 0 25px 0; /* Augmenté la marge supérieure */
     position: relative;
     z-index: 10;
 }
 
-/* Bouton encoche filtres */
 .filter-trigger-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     background: white;
-    border: 2px solid #e0e0e0;
-    padding: 12px 24px;
+    border: 2px solid #2c3e50; /* Bordure plus visible */
+    padding: 15px 30px; /* Padding augmenté */
     border-radius: 30px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #1a1a1a;
+    font-size: 16px; /* Taille de police augmentée */
+    font-weight: 700; /* Graisse augmentée */
+    color: #2c3e50; /* Couleur plus contrastée */
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée */
+    position: relative;
+    z-index: 10;
 }
 
 .filter-trigger-btn:hover {
-    border-color: #000;
-    background: #f8f9fa;
+    border-color: #1a252f;
+    background: #2c3e50;
+    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .filter-trigger-btn .chevron {
@@ -218,12 +153,14 @@ nav a:hover {
 }
 
 .filter-trigger-btn.active {
-    border-color: #000;
-    background: #f0f4f8;
-    color: #000;
+    border-color: #2c3e50;
+    background: #2c3e50;
+    color: white;
 }
 
-/* Bannière de filtres */
+/* ====================================
+   BANNIÈRE DE FILTRES
+   ==================================== */
 .filter-banner {
     background: white;
     border: 1px solid #e0e0e0;
@@ -251,7 +188,6 @@ nav a:hover {
     visibility: hidden;
 }
 
-/* En-tête de la bannière */
 .filter-banner-header {
     display: flex;
     justify-content: space-between;
@@ -259,6 +195,8 @@ nav a:hover {
     padding: 20px 25px;
     border-bottom: 1px solid #e0e0e0;
     background: #fafafa;
+    position: relative;
+    z-index: 6;
 }
 
 .filter-toggle-btn {
@@ -275,7 +213,7 @@ nav a:hover {
 }
 
 .filter-toggle-btn:hover {
-    color: #000;
+    color: #2c3e50;
 }
 
 .filter-toggle-btn svg {
@@ -291,7 +229,6 @@ nav a:hover {
     font-weight: 400;
 }
 
-/* Bouton réinitialiser */
 .reset-filters-btn {
     display: flex;
     align-items: center;
@@ -312,7 +249,6 @@ nav a:hover {
     color: white;
 }
 
-/* Contenu des filtres */
 .filter-content {
     max-height: 800px;
     overflow: visible;
@@ -331,6 +267,8 @@ nav a:hover {
     gap: 40px;
     padding: 30px 25px;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 5;
 }
 
 .filter-group {
@@ -365,14 +303,14 @@ nav a:hover {
     width: 18px;
     height: 18px;
     cursor: pointer;
-    accent-color: #000;
+    accent-color: #2c3e50;
 }
 
 .filter-option:hover {
-    color: #000;
+    color: #2c3e50;
 }
 
-/* Filtre de prix */
+/* Prix Filter */
 .price-filter-wrapper {
     display: flex;
     flex-direction: column;
@@ -405,8 +343,14 @@ nav a:hover {
     width: 100%;
 }
 
+.price-input-group span {
+    font-size: 12px;
+    color: #999;
+    margin-top: -5px;
+}
+
 .price-apply-btn {
-    background: #000;
+    background: #2c3e50;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -419,10 +363,10 @@ nav a:hover {
 }
 
 .price-apply-btn:hover {
-    background: #333;
+    background: #34495e;
 }
 
-/* Couleurs - Cercles cliquables */
+/* Couleurs */
 .color-options {
     display: flex;
     flex-wrap: wrap;
@@ -453,19 +397,26 @@ nav a:hover {
 }
 
 .color-option input[type="checkbox"]:checked + .color-circle {
-    border-color: #000;
+    border-color: #2c3e50;
     border-width: 3px;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.2);
 }
 
 /* ====================================
    GALERIE
    ==================================== */
+.gallery-wrapper {
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
 }
 
 .artwork-card {
@@ -597,35 +548,9 @@ footer {
     .gallery {
         grid-template-columns: repeat(3, 1fr);
     }
-    
-    .filter-sections {
-        flex-wrap: wrap;
-    }
-    
-    .megamenu {
-        min-width: 600px;
-    }
-    
-    .megamenu-img {
-        height: 180px;
-    }
 }
 
-@media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    nav ul {
-        gap: 20px;
-        font-size: 14px;
-    }
-
-    .container {
-        padding: 30px 20px;
-    }
-    
+@media (max-width: 968px) {
     .filter-sections {
         flex-direction: column;
         gap: 30px;
@@ -633,37 +558,6 @@ footer {
     
     .filter-group {
         min-width: 100%;
-    }
-    
-    .filter-banner-header {
-        padding: 15px;
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-    }
-    
-    .price-inputs {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .megamenu-content {
-        flex-direction: column;
-    }
-    
-    .megamenu-images {
-        display: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .header-container {
-        padding: 0 20px;
     }
     
     .color-options {
@@ -675,3 +569,88 @@ footer {
         height: 32px;
     }
 }
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 0 20px;
+        margin-top: 90px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 20px;
+        font-size: 14px;
+    }
+    
+    .filter-banner-header {
+        padding: 15px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .filter-sections {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 640px) {
+    .main-container {
+        padding: 0 15px;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .header-container {
+        padding: 0 20px;
+    }
+    
+    .artwork-info {
+        padding: 10px;
+    }
+    
+    .artist-name {
+        font-size: 14px;
+    }
+    
+    .artwork-title {
+        font-size: 13px;
+    }
+    
+    .price-inputs {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* ====================================
+   ANIMATIONS
+   ==================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.artwork-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.artwork-card:nth-child(1) { animation-delay: 0.05s; }
+.artwork-card:nth-child(2) { animation-delay: 0.1s; }
+.artwork-card:nth-child(3) { animation-delay: 0.15s; }
+.artwork-card:nth-child(4) { animation-delay: 0.2s; }
+.artwork-card:nth-child(5) { animation-delay: 0.25s; }
+.artwork-card:nth-child(6) { animation-delay: 0.3s; }
