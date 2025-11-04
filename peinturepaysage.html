@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/paysage.css">
 </head>
 <body>
-   <!-- BANNIÈRE PROMOTIONNELLE -->
+<!-- BANNIÈRE PROMOTIONNELLE -->
 <div class="promo-banner">
     <p>Livraison gratuite pour les commandes de plus de 75 000 FCFA. Retours faciles.</p>
 </div>
@@ -150,154 +150,157 @@
     </div>
 </header>
 
-    <div class="container">
-        <!-- BOUTON ENCOCHE FILTRES -->
-        <div class="filter-trigger-wrapper">
-            <button class="filter-trigger-btn" id="filterTriggerBtn">
-                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M2 4h16M6 10h8M9 16h2" stroke-linecap="round"/>
+<!-- CONTENEUR PRINCIPAL -->
+<div class="main-container">
+    
+    <!-- BOUTON ENCOCHE FILTRES -->
+    <div class="filter-trigger-wrapper">
+        <button class="filter-trigger-btn" id="filterTriggerBtn">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 4h16M6 10h8M9 16h2" stroke-linecap="round"/>
+            </svg>
+            <span>Filtres</span>
+            <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- BANNIÈRE DE FILTRES (cachée par défaut) -->
+    <div class="filter-banner collapsed" id="filterBanner">
+        <div class="filter-banner-header">
+            <button class="filter-toggle-btn" id="filterToggleBtn">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 4h16M2 10h10M2 16h6" stroke-linecap="round"/>
                 </svg>
-                <span>Filtres</span>
-                <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 6l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+                <span>RÉDUIRE LES FILTRES</span>
+                <span class="results-count" id="resultsCount">(19 produits)</span>
+            </button>
+            <button class="reset-filters-btn" id="resetFiltersBtn" style="display: none;">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+                    <path d="M12 4L4 12M4 4l8 8" stroke-width="2" stroke-linecap="round"/>
                 </svg>
+                Réinitialiser
             </button>
         </div>
-
-        <!-- BANNIÈRE DE FILTRES (cachée par défaut) -->
-        <div class="filter-banner collapsed" id="filterBanner">
-            <div class="filter-banner-header">
-                <button class="filter-toggle-btn" id="filterToggleBtn">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M2 4h16M2 10h10M2 16h6" stroke-linecap="round"/>
-                    </svg>
-                    <span>RÉDUIRE LES FILTRES</span>
-                    <span class="results-count" id="resultsCount">(19 produits)</span>
-                </button>
-                <button class="reset-filters-btn" id="resetFiltersBtn" style="display: none;">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
-                        <path d="M12 4L4 12M4 4l8 8" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    Réinitialiser
-                </button>
-            </div>
-            
-            <div class="filter-content" id="filterContent">
-                <div class="filter-sections">
-                    
-                    <!-- PRIX -->
-                    <div class="filter-group">
-                        <h3 class="filter-group-title">PRIX (FCFA)</h3>
-                        <div class="price-filter-wrapper">
-                            <div class="price-inputs">
-                                <div class="price-input-group">
-                                    <label>De</label>
-                                    <input type="number" id="priceMin" placeholder="0" min="0" step="1000">
-                                </div>
-                                <div class="price-input-group">
-                                    <label>À</label>
-                                    <input type="number" id="priceMax" placeholder="500000" min="0" step="1000">
-                                </div>
-                            </div>
-                            <button class="price-apply-btn" id="priceApplyBtn">APPLIQUER</button>
-                        </div>
+        
+        <div class="filter-content" id="filterContent">
+            <div class="filter-sections">
+                
+                <!-- TAILLE -->
+                <div class="filter-group">
+                    <h3 class="filter-group-title">TAILLE</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="size" value="petit">
+                            <span>Petit (&lt; 50×70 cm)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="size" value="moyen">
+                            <span>Moyen (50×70 - 70×90 cm)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="size" value="grand">
+                            <span>Grand (&gt; 70×90 cm)</span>
+                        </label>
                     </div>
-                    
-                    <!-- TAILLE -->
-                    <div class="filter-group">
-                        <h3 class="filter-group-title">TAILLE</h3>
-                        <div class="filter-options">
-                            <label class="filter-option">
-                                <input type="checkbox" name="size" value="petit">
-                                <span>Petit (40×60 - 45×65 cm)</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="size" value="moyen">
-                                <span>Moyen (50×70 - 60×80 cm)</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="size" value="grand">
-                                <span>Grand (70×90 - 80×100 cm)</span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <!-- TECHNIQUE -->
-                    <div class="filter-group">
-                        <h3 class="filter-group-title">TECHNIQUE</h3>
-                        <div class="filter-options">
-                            <label class="filter-option">
-                                <input type="checkbox" name="technique" value="estampe">
-                                <span>Estampe</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="technique" value="sérigraphie">
-                                <span>Sérigraphie</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="technique" value="lithographie">
-                                <span>Lithographie</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="technique" value="gravure">
-                                <span>Gravure</span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <!-- COULEUR -->
-                    <div class="filter-group">
-                        <h3 class="filter-group-title">COULEURS DOMINANTES</h3>
-                        <div class="color-options">
-                            <label class="color-option" title="Bleu">
-                                <input type="checkbox" name="color" value="bleu">
-                                <span class="color-circle" style="background-color: #4facfe;"></span>
-                            </label>
-                            <label class="color-option" title="Vert">
-                                <input type="checkbox" name="color" value="vert">
-                                <span class="color-circle" style="background-color: #5cb85c;"></span>
-                            </label>
-                            <label class="color-option" title="Orange">
-                                <input type="checkbox" name="color" value="orange">
-                                <span class="color-circle" style="background-color: #ff8c42;"></span>
-                            </label>
-                            <label class="color-option" title="Jaune">
-                                <input type="checkbox" name="color" value="jaune">
-                                <span class="color-circle" style="background-color: #ffd700;"></span>
-                            </label>
-                            <label class="color-option" title="Rouge">
-                                <input type="checkbox" name="color" value="rouge">
-                                <span class="color-circle" style="background-color: #e74c3c;"></span>
-                            </label>
-                            <label class="color-option" title="Rose">
-                                <input type="checkbox" name="color" value="rose">
-                                <span class="color-circle" style="background-color: #ff69b4;"></span>
-                            </label>
-                            <label class="color-option" title="Blanc">
-                                <input type="checkbox" name="color" value="blanc">
-                                <span class="color-circle" style="background-color: #ffffff; border: 1px solid #ddd;"></span>
-                            </label>
-                            <label class="color-option" title="Gris">
-                                <input type="checkbox" name="color" value="gris">
-                                <span class="color-circle" style="background-color: #95a5a6;"></span>
-                            </label>
-                            <label class="color-option" title="Noir">
-                                <input type="checkbox" name="color" value="noir">
-                                <span class="color-circle" style="background-color: #000;"></span>
-                            </label>
-                        </div>
-                    </div>
-                    
                 </div>
+                
+                <!-- TECHNIQUE -->
+                <div class="filter-group">
+                    <h3 class="filter-group-title">TECHNIQUE</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="technique" value="estampe">
+                            <span>Estampe</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="technique" value="sérigraphie">
+                            <span>Sérigraphie</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="technique" value="lithographie">
+                            <span>Lithographie</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="technique" value="gravure">
+                            <span>Gravure</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- PRIX -->
+                <div class="filter-group">
+                    <h3 class="filter-group-title">PRIX</h3>
+                    <div class="price-filter-wrapper">
+                        <div class="price-inputs">
+                            <div class="price-input-group">
+                                <label>De</label>
+                                <input type="number" id="priceMin" placeholder="0" min="0" step="10000">
+                                <span>FCFA</span>
+                            </div>
+                            <div class="price-input-group">
+                                <label>À</label>
+                                <input type="number" id="priceMax" placeholder="500000" min="0" step="10000">
+                                <span>FCFA</span>
+                            </div>
+                        </div>
+                        <button class="price-apply-btn" id="priceApplyBtn">APPLIQUER</button>
+                    </div>
+                </div>
+                
+                <!-- COULEUR -->
+                <div class="filter-group">
+                    <h3 class="filter-group-title">COULEUR</h3>
+                    <div class="color-options">
+                        <label class="color-option" title="Beige">
+                            <input type="checkbox" name="color" value="beige">
+                            <span class="color-circle" style="background-color: #F5F5DC;"></span>
+                        </label>
+                        <label class="color-option" title="Bleu">
+                            <input type="checkbox" name="color" value="bleu">
+                            <span class="color-circle" style="background-color: #3498db;"></span>
+                        </label>
+                        <label class="color-option" title="Marron">
+                            <input type="checkbox" name="color" value="marron">
+                            <span class="color-circle" style="background-color: #8B4513;"></span>
+                        </label>
+                        <label class="color-option" title="Vert">
+                            <input type="checkbox" name="color" value="vert">
+                            <span class="color-circle" style="background-color: #2ecc71;"></span>
+                        </label>
+                        <label class="color-option" title="Gris">
+                            <input type="checkbox" name="color" value="gris">
+                            <span class="color-circle" style="background-color: #95a5a6;"></span>
+                        </label>
+                        <label class="color-option" title="Orange">
+                            <input type="checkbox" name="color" value="orange">
+                            <span class="color-circle" style="background-color: #e67e22;"></span>
+                        </label>
+                        <label class="color-option" title="Jaune">
+                            <input type="checkbox" name="color" value="jaune">
+                            <span class="color-circle" style="background-color: #f1c40f;"></span>
+                        </label>
+                        <label class="color-option" title="Rose">
+                            <input type="checkbox" name="color" value="rose">
+                            <span class="color-circle" style="background-color: #ff69b4;"></span>
+                        </label>
+                    </div>
+                </div>
+                
             </div>
-        </div>
-
-        <div id="gallery" class="gallery">
-            <!-- Les cartes seront générées par JavaScript -->
         </div>
     </div>
 
-   <!-- FOOTER -->
+    <!-- GALERIE -->
+    <div class="gallery-wrapper">
+        <div class="gallery" id="gallery">
+            <!-- Les cartes seront générées par JavaScript -->
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
 <footer class="footer">
     <div class="container">
         
@@ -375,6 +378,7 @@
     </div>
 </footer>
 
+<!-- SCRIPTS -->
 <script src="assets/js/paysage.js"></script>
 </body>
 </html>
