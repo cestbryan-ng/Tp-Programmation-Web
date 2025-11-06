@@ -1,0 +1,21 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "APIs pour la gestion du site d'e-commerce",
+        "description": "Des APIs pour gérer les articles du site",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/test": {
+            "get": {
+                "summary": "Route de test",
+                "operationId": "dc097032a606e8d42c32d872872316c6",
+                "responses": {
+                    "200": {
+                        "description": "Test OK"
+                    }
+                }
+            }
+        }
+    }
+}
