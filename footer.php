@@ -1,7 +1,6 @@
-    <!-- 
-         FOOTER
-         Section réutilisable pour toutes les pages
-     -->
+    </main>
+
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             
@@ -18,13 +17,14 @@
                 <!-- Colonne 2 : Navigation -->
                 <div class="footer-column">
                     <h4 class="footer-title">Navigation</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Peintures</a></li>
-                        <li><a href="#">Accessoires</a></li>
-                        <li><a href="#">Dessins</a></li>
-                        <li><a href="#">Nos magasins</a></li>
-                        <li><a href="#">À propos</a></li>
-                    </ul>
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'footer-menu',
+                        'container' => false,
+                        'menu_class' => 'footer-links',
+                        'fallback_cb' => false
+                    ));
+                    ?>
                 </div>
                 
                 <!-- Colonne 3 : Contact -->
@@ -66,23 +66,19 @@
             
             <!-- Copyright -->
             <div class="footer-bottom">
-                <p>&copy; 2025 Artika. Tous droits réservés.</p>
+                <p>&copy; <?php echo date('Y'); ?> Artika. Tous droits réservés.</p>
                 <div class="footer-legal">
-                    <a href="#">Mentions légales</a>
+                    <a href="<?php echo get_permalink(get_page_by_path('mentions-legales')); ?>">Mentions légales</a>
                     <span>|</span>
-                    <a href="#">Politique de confidentialité</a>
+                    <a href="<?php echo get_permalink(get_page_by_path('politique-de-confidentialite')); ?>">Politique de confidentialité</a>
                     <span>|</span>
-                    <a href="#">CGV</a>
+                    <a href="<?php echo get_permalink(wc_get_page_id('terms')); ?>">CGV</a>
                 </div>
             </div>
             
         </div>
     </footer>
 
-    <!-- 
-         JAVASCRIPT
-         Le JavaScript sera ajouté au TP2
-     -->
-
+    <?php wp_footer(); ?>
 </body>
 </html>

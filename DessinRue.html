@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessin de Rue - Galerie Artika</title>
+    <link rel="stylesheet" href="assets/css/accueil.css">
+    <link rel="stylesheet" href="assets/css/paysage.css">
+</head>
+<body>
+<!-- BANNIÈRE PROMOTIONNELLE -->
+<div class="promo-banner">
+    <p>Livraison gratuite pour les commandes de plus de 75 000 FCFA. Retours faciles.</p>
+</div>
+
+<!-- HEADER / NAVIGATION -->
+<header class="header">
+    <div class="container-header">
+        
+        <!-- Logo (image cliquable) -->
+        <div class="logo">
+            <a href="artika.html">
+                <img src="assets/images/ARTIKA_blk.png" alt="Artika">
+            </a>
+        </div>
+        
+        <!-- Menu de navigation avec mega menu -->
+        <nav class="main-nav">
+            <ul class="nav-list">
+                
+                <!-- Menu Peintures avec sous-catégories -->
+                <li class="nav-item has-megamenu">
+                    <a href="#" class="nav-link nav-link-active">Peintures</a>
+                    
+                    <!-- Mega Menu Peintures -->
+                    <div class="megamenu">
+                        <div class="megamenu-content">
+                            <div class="megamenu-links">
+                                <h3 class="megamenu-title">Explorez nos peintures</h3>
+                                <ul class="megamenu-list">
+                                    <li><a href="artAbstrait.html">Art Abstrait</a></li>
+                                    <li><a href="peinturepaysage.html">Peinture Paysage</a></li>
+                                    <li><a href="popArt.html">Peinture Pop Art</a></li>
+                                </ul>
+                            </div>
+                            <!-- Images décoratives -->
+                            <div class="megamenu-images">
+                                <img src="assets/images/accueil/materiel.jpg" alt="Peinture 1" class="megamenu-img img-1">
+                                <img src="assets/images/accueil/product1.jpg" alt="Peinture 2" class="megamenu-img img-2">
+                                <img src="assets/images/accueil/materiel.jpg" alt="Peinture 3" class="megamenu-img img-3">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Menu Accessoires -->
+                <li class="nav-item has-megamenu">
+                    <a href="#" class="nav-link">Accessoires</a>
+                    
+                    <!-- Mega Menu Accessoires -->
+                    <div class="megamenu">
+                        <div class="megamenu-content">
+                            <div class="megamenu-links">
+                                <h3 class="megamenu-title">Matériel de création</h3>
+                                <ul class="megamenu-list">
+                                    <li><a href="latoilehtml2.html">Toiles</a></li>
+                                    <li><a href="pinceaux.html">Pinceaux</a></li>
+                                    <li><a href="pots-tubes.html">Pots de peinture</a></li>
+                                </ul>
+                            </div>
+                            <div class="megamenu-images">
+                                <img src="assets/images/accueil/materiel.jpg" alt="Accessoire 1" class="megamenu-img img-1">
+                                <img src="assets/images/accueil/peintures.jpg" alt="Accessoire 2" class="megamenu-img img-2">
+                                <img src="assets/images/accueil/sculptures.jpg" alt="Accessoire 3" class="megamenu-img img-3">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Menu Dessins -->
+                <li class="nav-item has-megamenu">
+                    <a href="#" class="nav-link">Dessins de beaux arts</a>
+                    
+                    <!-- Mega Menu Dessins -->
+                    <div class="megamenu">
+                        <div class="megamenu-content">
+                            <div class="megamenu-links">
+                                <h3 class="megamenu-title">Art du dessin</h3>
+                                <ul class="megamenu-list">
+                                    <li><a href="dessin_portrait.html">Dessin de portrait</a></li>
+                                    <li><a href="DessinRue.html">Dessin de rue</a></li>
+                                    <li><a href="dessins.html">Dessin à eau</a></li>
+                                </ul>
+                            </div>
+                            <div class="megamenu-images">
+                                <img src="assets/images/accueil/peintures.jpg" alt="Dessin 1" class="megamenu-img img-1">
+                                <img src="assets/images/accueil/hero.jpg" alt="Dessin 2" class="megamenu-img img-2">
+                                <img src="assets/images/accueil/product1.jpg" alt="Dessin 3" class="megamenu-img img-3">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Séparateur visuel (espace) -->
+                <li class="nav-separator"></li>
+                
+                <!-- Liens simples -->
+                <li class="nav-item"><a href="magasins.html" class="nav-link">Nos magasins</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">À propos</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Actions utilisateur (Recherche, Login, Panier) -->
+        <div class="header-actions">
+            
+            <!-- Icône de recherche (avec champ au survol) -->
+            <div class="search-wrapper">
+                <button class="search-icon" aria-label="Rechercher">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <!-- Champ de recherche qui apparaît au survol -->
+                <div class="search-dropdown">
+                    <input type="text" placeholder="Rechercher une œuvre, un artiste..." class="search-input">
+                </div>
+            </div>
+            
+            <!-- Icône Login -->
+            <a href="login.html" class="icon-btn" aria-label="Se connecter" title="Se connecter">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="6" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M3 17c0-3 2.5-5.5 7-5.5s7 2.5 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </a>
+            
+            <!-- Icône Panier -->
+            <a href="#" class="icon-btn cart-icon" aria-label="Panier">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M1 1h2l2.5 10h10l2.5-8H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="8" cy="17" r="1.2" fill="currentColor"/>
+                    <circle cx="15" cy="17" r="1.2" fill="currentColor"/>
+                </svg>
+                <span class="cart-count">0</span>
+            </a>
+            
+        </div>
+        
+    </div>
+</header>
+
+<!-- CONTENEUR PRINCIPAL -->
+<div class="main-container">
+    
+    <!-- BOUTON ENCOCHE FILTRES -->
+    <div class="filter-trigger-wrapper">
+        <button class="filter-trigger-btn" id="filterTriggerBtn">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 4h16M6 10h8M9 16h2" stroke-linecap="round"/>
+            </svg>
+            <span>Filtres</span>
+            <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- BANNIÈRE DE FILTRES (cachée par défaut) -->
+    <div class="filter-banner collapsed" id="filterBanner">
+        <div class="filter-banner-header">
+            <button class="filter-toggle-btn" id="filterToggleBtn">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 4h16M2 10h10M2 16h6" stroke-linecap="round"/>
+                </svg>
+                <span>RÉDUIRE LES FILTRES</span>
+                <span class="results-count" id="resultsCount">(19 produits)</span>
+            </button>
+            <button class="reset-filters-btn" id="resetFiltersBtn" style="display: none;">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+                    <path d="M12 4L4 12M4 4l8 8" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Réinitialiser
+            </button>
+        </div>
+        
+        <div class="filter-content" id="filterContent">
+            <div class="filter-sections">
+                
+                <!-- TAILLE -->
+                <div class="filter-group">
+                    <h3 class="filter-group-title">TAILLE</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="size" value="petit">
+                            <span>Petit (&lt; 50×70 cm)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="size" value="moyen">
+                            <span>Moyen (50×70 - 70×90 cm)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="size" value="grand">
+                            <span>Grand (&gt; 70×90 cm)</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- TECHNIQUE -->
+                <div class="filter-group">
+                    <h3 class="filter-group-title">TECHNIQUE</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="technique" value="estampe">
+                            <span>Estampe</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="technique" value="sérigraphie">
+                            <span>Sérigraphie</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="technique" value="lithographie">
+                            <span>Lithographie</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="technique" value="gravure">
+                            <span>Gravure</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- PRIX -->
+                <div class="filter-group">
+                    <h3 class="filter-group-title">PRIX</h3>
+                    <div class="price-filter-wrapper">
+                        <div class="price-inputs">
+                            <div class="price-input-group">
+                                <label>De</label>
+                                <input type="number" id="priceMin" placeholder="0" min="0" step="10000">
+                                <span>FCFA</span>
+                            </div>
+                            <div class="price-input-group">
+                                <label>À</label>
+                                <input type="number" id="priceMax" placeholder="500000" min="0" step="10000">
+                                <span>FCFA</span>
+                            </div>
+                        </div>
+                        <button class="price-apply-btn" id="priceApplyBtn">APPLIQUER</button>
+                    </div>
+                </div>
+                
+                <!-- COULEUR -->
+                <div class="filter-group">
+                    <h3 class="filter-group-title">COULEUR</h3>
+                    <div class="color-options">
+                        <label class="color-option" title="Beige">
+                            <input type="checkbox" name="color" value="beige">
+                            <span class="color-circle" style="background-color: #F5F5DC;"></span>
+                        </label>
+                        <label class="color-option" title="Bleu">
+                            <input type="checkbox" name="color" value="bleu">
+                            <span class="color-circle" style="background-color: #3498db;"></span>
+                        </label>
+                        <label class="color-option" title="Marron">
+                            <input type="checkbox" name="color" value="marron">
+                            <span class="color-circle" style="background-color: #8B4513;"></span>
+                        </label>
+                        <label class="color-option" title="Vert">
+                            <input type="checkbox" name="color" value="vert">
+                            <span class="color-circle" style="background-color: #2ecc71;"></span>
+                        </label>
+                        <label class="color-option" title="Gris">
+                            <input type="checkbox" name="color" value="gris">
+                            <span class="color-circle" style="background-color: #95a5a6;"></span>
+                        </label>
+                        <label class="color-option" title="Orange">
+                            <input type="checkbox" name="color" value="orange">
+                            <span class="color-circle" style="background-color: #e67e22;"></span>
+                        </label>
+                        <label class="color-option" title="Jaune">
+                            <input type="checkbox" name="color" value="jaune">
+                            <span class="color-circle" style="background-color: #f1c40f;"></span>
+                        </label>
+                        <label class="color-option" title="Rose">
+                            <input type="checkbox" name="color" value="rose">
+                            <span class="color-circle" style="background-color: #ff69b4;"></span>
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- GALERIE -->
+    <div class="gallery-wrapper">
+        <div class="gallery" id="gallery">
+            <!-- Les cartes seront générées par JavaScript -->
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        
+        <!-- Contenu principal du footer -->
+        <div class="footer-content">
+            
+            <!-- Colonne 1 : À propos -->
+            <div class="footer-column">
+                <h4 class="footer-title">Artika</h4>
+                <p class="footer-text">Là où l'art prend vie.</p>
+                <p class="footer-text">Votre galerie d'art en ligne pour découvrir et acquérir des œuvres uniques.</p>
+            </div>
+            
+            <!-- Colonne 2 : Navigation -->
+            <div class="footer-column">
+                <h4 class="footer-title">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Peintures</a></li>
+                    <li><a href="#">Accessoires</a></li>
+                    <li><a href="#">Dessins</a></li>
+                    <li><a href="#">Nos magasins</a></li>
+                    <li><a href="#">À propos</a></li>
+                </ul>
+            </div>
+            
+            <!-- Colonne 3 : Contact -->
+            <div class="footer-column">
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:contact@artika.com">contact@artika.com</a></li>
+                    <li><a href="tel:+237600000000">+237 6XX XX XX XX</a></li>
+                    <li>Yaoundé, Cameroun</li>
+                </ul>
+            </div>
+            
+            <!-- Colonne 4 : Réseaux sociaux -->
+            <div class="footer-column">
+                <h4 class="footer-title">Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Ligne de séparation -->
+        <div class="footer-divider"></div>
+        
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Artika. Tous droits réservés.</p>
+            <div class="footer-legal">
+                <a href="#">Mentions légales</a>
+                <span>|</span>
+                <a href="#">Politique de confidentialité</a>
+                <span>|</span>
+                <a href="#">CGV</a>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="assets/js/rue.js"></script>
+</body>
+</html>

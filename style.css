@@ -18,19 +18,46 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
    ========================================================================== */
 
 /* Import de tous les fichiers CSS */
-@import url('accueil.css');
-@import url('achat.css');
-@import url('artAbstrait.css');
-@import url('dessin_portrait.css');
-@import url('latoilecss2.css');
-@import url('login.css');
-@import url('magasins.css');
-@import url('panier.css');
-@import url('paysage.css');
-@import url('pinceaux.css');
-@import url('popArt.css');
-@import url('pots-tubes.css');
-@import url('signup.css');
-@import url('style1.css');
+/* --- CSS de Base pour Menu Déroulant --- */
+
+/* Assurez-vous que les éléments de menu sont positionnés */
+.main-nav .nav-list > .menu-item {
+    position: relative; /* Important pour le positionnement du sous-menu */
+}
+
+/* 1. Cacher le sous-menu par défaut */
+.main-nav .sub-menu {
+    display: none; /* Cache le sous-menu */
+    position: absolute; /* Le sort du flux normal de la page */
+    top: 100%; /* Le positionne juste en dessous de son parent */
+    left: 0;
+    background-color: #fff; /* Couleur de fond blanche */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Une petite ombre */
+    min-width: 200px; /* Largeur minimale */
+    z-index: 1000;
+}
+
+/* 2. Afficher le sous-menu au survol de l'élément parent */
+.main-nav .menu-item:hover > .sub-menu {
+    display: block; /* Affiche le sous-menu */
+}
+
+/* 3. Style pour les liens dans le sous-menu */
+.main-nav .sub-menu li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav .sub-menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.main-nav .sub-menu li a:hover {
+    background-color: #f4f4f4;
+}
 
 /* Note: Ce fichier importe tous les fichiers CSS du dossier pour une gestion centralisée des styles */

@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Combined CSS File - Regroupement de tous les fichiers CSS
+   ========================================================================== */
+
+/* Import de tous les fichiers CSS */
+@import url('accueil.css');
+@import url('achat.css');
+@import url('artAbstrait.css');
+@import url('dessin_portrait.css');
+@import url('latoilecss2.css');
+@import url('login.css');
+@import url('magasins.css');
+@import url('panier.css');
+@import url('paysage.css');
+@import url('pinceaux.css');
+@import url('popArt.css');
+@import url('pots-tubes.css');
+@import url('signup.css');
+@import url('style.css');
+
+/* Note: Ce fichier importe tous les fichiers CSS du dossier pour une gestion centralisée des styles */

@@ -1,192 +1,126 @@
 <?php
 /**
- * themeartika functions.php
- * Enqueue styles and provide helper to include static HTML from htm/ with corrected asset paths.
+ * functions.php du thème Artika
  */
 
-if ( ! function_exists( 'themeartika_enqueue_styles' ) ) {
-    function themeartika_enqueue_styles() {
-        // Main stylesheet
-        $style_path = get_template_directory() . '/style.css';
-        if ( file_exists( $style_path ) ) {
-            wp_enqueue_style( 'themeartika-style', get_stylesheet_uri(), array(), filemtime( $style_path ) );
-        } else {
-            wp_enqueue_style( 'themeartika-style', get_stylesheet_uri() );
-        }
+// --- 1. SUPPORT DE BASE DU THÈME ---
 
-        // Enqueue any other .css files in theme root (except style.css)
-        foreach ( glob( get_template_directory() . '/*.css' ) as $css_file ) {
-            if ( basename( $css_file ) === 'style.css' ) {
-                continue;
-            }
-            $handle = 'themeartika-' . preg_replace( '/[^a-z0-9_\-]+/i', '-', basename( $css_file, '.css' ) );
-            wp_enqueue_style( $handle, get_template_directory_uri() . '/' . basename( $css_file ), array( 'themeartika-style' ), filemtime( $css_file ) );
-        }
-    }
-    add_action( 'wp_enqueue_scripts', 'themeartika_enqueue_styles' );
+function artika_theme_setup() {
+    // A. Activer le support pour WooCommerce
+    add_theme_support( 'woocommerce' );
+    
+    // B. Activer les images mises en avant (pour les produits et articles)
+    add_theme_support( 'post-thumbnails' );
+
+    // C. Enregistrer les emplacements de menu
+    register_nav_menus( array(
+        // 'primary-menu' correspond à ce que vous avez dans header.php
+        'primary-menu' => __( 'Menu Principal (Header)', 'artika' ), 
+        // 'footer-menu' correspond à ce que vous avez dans footer.php
+        'footer-menu'  => __( 'Menu Pied de Page', 'artika' ),
+    ) );
+
+    // D. Permet à WordPress de gérer le titre <title>
+    add_theme_support( 'title-tag' );
 }
+// Exécute cette fonction après le chargement du thème
+add_action( 'after_setup_theme', 'artika_theme_setup' );
 
 
-    // --------- Product CPT & Metaboxes ----------
-    if ( ! function_exists( 'themeartika_register_product_cpt' ) ) {
-        function themeartika_register_product_cpt() {
-            $labels = array(
-                'name'               => 'Produits',
-                'singular_name'      => 'Produit',
-                'menu_name'          => 'Produits',
-                'name_admin_bar'     => 'Produit',
-                'add_new'            => 'Ajouter',
-                'add_new_item'       => 'Ajouter un produit',
-                'new_item'           => 'Nouveau produit',
-                'edit_item'          => 'Modifier le produit',
-                'view_item'          => 'Voir le produit',
-                'all_items'          => 'Tous les produits',
-                'search_items'       => 'Rechercher des produits',
-                'not_found'          => 'Aucun produit trouvé',
-            );
+// --- 2. ENREGISTREMENT DE LA ZONE DE WIDGETS (POUR LES FILTRES) ---
 
-            $args = array(
-                'labels'             => $labels,
-                'public'             => true,
-                'has_archive'        => true,
-                'rewrite'            => array( 'slug' => 'produits' ),
-                'show_in_rest'       => true,
-                'supports'           => array( 'title', 'editor', 'thumbnail' ),
-                'menu_position'      => 5,
-                'menu_icon'          => 'dashicons-products',
-            );
+/**
+ * Enregistre notre "Shop Sidebar" pour les filtres WooCommerce.
+ */
+function artika_widgets_init() {
+    register_sidebar( array(
+        'name'          => __( 'Barre Latérale Boutique (Filtres)', 'artika' ),
+        'id'            => 'shop-sidebar',
+        'description'   => __( 'Ajoutez vos widgets de filtre WooCommerce ici.', 'artika' ),
+        // Utilise vos classes CSS de 'archive-product.php' pour un style cohérent
+        'before_widget' => '<div id="%1$s" class="widget %2$s filter-group">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title filter-group-title">',
+        'after_title'   => '</h3>',
+    ) );
+}
+// Exécute cette fonction lors de l'initialisation des widgets
+add_action( 'widgets_init', 'artika_widgets_init' );
 
-            register_post_type( 'product', $args );
 
-            // taxonomy for categories
-            $tax_labels = array(
-                'name' => 'Catégories produit',
-                'singular_name' => 'Catégorie produit',
-                'search_items' => 'Rechercher des catégories',
-                'all_items' => 'Toutes les catégories',
-                'edit_item' => 'Modifier la catégorie',
-                'update_item' => 'Mettre à jour',
-                'add_new_item' => 'Ajouter une catégorie',
-                'new_item_name' => 'Nouvelle catégorie',
-                'menu_name' => 'Catégories',
-            );
+// --- 3. MISE EN FILE D'ATTENTE (ENQUEUE) DES STYLES ET SCRIPTS ---
 
-            register_taxonomy( 'product_cat', array( 'product' ), array(
-                'hierarchical' => true,
-                'labels' => $tax_labels,
-                'show_ui' => true,
-                'show_in_rest' => true,
-                'rewrite' => array( 'slug' => 'categorie-produit' ),
-            ) );
-        }
-        add_action( 'init', 'themeartika_register_product_cpt' );
+/**
+ * Charge tous les CSS et JS.
+ */
+function artika_theme_scripts() {
+    
+    // --- CHARGEMENT DU CSS ---
+    
+    // Charge le 'style.css' principal (pour les infos du thème)
+    wp_enqueue_style( 
+        'artika-style', 
+        get_stylesheet_uri(),
+        array(),
+        '1.0'
+    );
+    
+    // Charge votre 'combined.css' (meilleure pratique que les @import)
+    // Assurez-vous que ce fichier existe bien dans 'assets/css/'
+    wp_enqueue_style( 
+        'artika-main-styles',
+        get_template_directory_uri() . '/assets/css/combined.css',
+        array('artika-style'), // Dépend du style principal
+        '1.0'
+    );
+
+    // --- CHARGEMENT DU JS ---
+    // On charge le bon JS pour la bonne page, dans le footer (true)
+    
+    $js_path = get_template_directory_uri() . '/assets/js/';
+
+    // Si on est sur la page d'accueil (front-page.php)
+    if ( is_front_page() ) {
+        wp_enqueue_script( 
+            'artika-accueil', 
+            $js_path . 'accueil.js', // (Assurez-vous que ce fichier existe)
+            array(), 
+            '1.0', 
+            true // Charger dans le footer
+        );
     }
-
-    // Support miniatures
-    add_action( 'after_setup_theme', function() {
-        add_theme_support( 'post-thumbnails' );
-    } );
-
-    // Metaboxes: price, stock
-    function themeartika_add_product_metaboxes() {
-        add_meta_box( 'themeartika_product_details', 'Détails produit', 'themeartika_render_product_metabox', 'product', 'normal', 'high' );
+    
+    // Si on est sur la page "Mon Compte" (login/signup)
+    elseif ( is_account_page() ) { 
+         wp_enqueue_script( 
+            'artika-login', 
+            $js_path . 'login.js', // (gérera le login.html)
+            array(), 
+            '1.0', 
+            true 
+        );
+         wp_enqueue_script( 
+            'artika-signup', 
+            $js_path . 'signup.js', // (gérera le signup.html)
+            array(), 
+            '1.0', 
+            true 
+        );
     }
-    add_action( 'add_meta_boxes', 'themeartika_add_product_metaboxes' );
-
-    function themeartika_render_product_metabox( $post ) {
-        wp_nonce_field( 'themeartika_save_product', 'themeartika_product_nonce' );
-        $price = get_post_meta( $post->ID, '_themeartika_price', true );
-        $stock = get_post_meta( $post->ID, '_themeartika_stock', true );
-        ?>
-        <p>
-            <label for="themeartika_price">Prix (en FCFA)</label><br>
-            <input type="number" step="1" min="0" name="themeartika_price" id="themeartika_price" value="<?php echo esc_attr( $price ); ?>" style="width:200px;">
-        </p>
-        <p>
-            <label for="themeartika_stock">Stock</label><br>
-            <input type="number" step="1" min="0" name="themeartika_stock" id="themeartika_stock" value="<?php echo esc_attr( $stock ); ?>" style="width:200px;">
-        </p>
-        <p>Utilisez l'image mise en avant pour l'image du produit.</p>
-        <?php
-    }
-
-    function themeartika_save_product( $post_id ) {
-        if ( ! isset( $_POST['themeartika_product_nonce'] ) ) {
-            return;
-        }
-        if ( ! wp_verify_nonce( $_POST['themeartika_product_nonce'], 'themeartika_save_product' ) ) {
-            return;
-        }
-        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-            return;
-        }
-        if ( isset( $_POST['post_type'] ) && 'product' == $_POST['post_type'] ) {
-            if ( ! current_user_can( 'edit_post', $post_id ) ) {
-                return;
-            }
-        }
-
-        if ( isset( $_POST['themeartika_price'] ) ) {
-            $price = intval( $_POST['themeartika_price'] );
-            update_post_meta( $post_id, '_themeartika_price', $price );
-        }
-        if ( isset( $_POST['themeartika_stock'] ) ) {
-            $stock = intval( $_POST['themeartika_stock'] );
-            update_post_meta( $post_id, '_themeartika_stock', $stock );
-        }
-    }
-    add_action( 'save_post', 'themeartika_save_product' );
-
-
-if ( ! function_exists( 'themeartika_get_processed_html' ) ) {
-    /**
-     * Retourne le contenu HTML d'un fichier `htm/{slug}.html` en remplaçant
-     * les chemins relatifs d'assets (images/, css/, pots/, tubes/, etc.) par
-     * l'URL absolue du thème (get_template_directory_uri()).
-     * Remplace aussi les liens vers `*.html` par des URLs WP (home_url('/slug')).
-     *
-     * @param string $slug
-     * @return string|false Contenu traité ou false si fichier introuvable
-     */
-    /**
-     * Traite une chaîne HTML : préfixe les src/href relatifs par l'URL du thème
-     * et convertit les liens *.html en permaliens WP.
-     *
-     * @param string $content
-     * @return string
-     */
-    function themeartika_process_html_content( $content ) {
-        $base_uri = get_template_directory_uri();
-
-        // 1) Préfixer les src/href relatifs (ne commençant pas par http(s):// ou /) par get_template_directory_uri()
-        $content = preg_replace_callback('#(src|href)=([\'\"])(?!https?://|/)([^\'\"]+)\2#i', function( $m ) use ( $base_uri ) {
-            $attr = $m[1];
-            $quote = $m[2];
-            $path = $m[3];
-            // Retirer ./ ou ../ en tête
-            $path = preg_replace('#^(\./|\.\./)+#', '', $path);
-            return $attr . '=' . $quote . $base_uri . '/' . $path . $quote;
-        }, $content );
-
-        // 2) Remplacer les liens vers des fichiers .html par l'URL du slug correspondant
-        $content = preg_replace_callback('#href=([\'\"])([^\'\"]+?)\.html([\'\"])#i', function( $m ) {
-            $slug = basename( $m[2] );
-            return 'href="' . esc_url( home_url( '/' . $slug ) ) . '"';
-        }, $content );
-
-        return $content;
-    }
-
-    function themeartika_get_processed_html( $slug ) {
-        $file = get_template_directory() . '/htm/' . $slug . '.html';
-        if ( ! file_exists( $file ) ) {
-            return false;
-        }
-        $content = file_get_contents( $file );
-        if ( $content === false ) {
-            return false;
-        }
-
-        return themeartika_process_html_content( $content );
+    
+    // Si on est sur une page boutique (archive ou single)
+    elseif ( is_woocommerce() ) {
+        // (Peut-être un JS pour la galerie ou les filtres)
+        wp_enqueue_script( 
+            'artika-shop', 
+            $js_path . 'shop.js', 
+            array(), 
+            '1.0', 
+            true 
+        );
     }
 }
+// Exécute cette fonction pour charger les scripts/styles
+add_action( 'wp_enqueue_scripts', 'artika_theme_scripts' );
+
+?>
