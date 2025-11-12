@@ -9,7 +9,7 @@
         "/api/test": {
             "get": {
                 "summary": "Route de test",
-                "operationId": "dc097032a606e8d42c32d872872316c6",
+                "operationId": "45e5a4f2f4ac34750230e33d3dd16a0f",
                 "responses": {
                     "200": {
                         "description": "Test OK"
