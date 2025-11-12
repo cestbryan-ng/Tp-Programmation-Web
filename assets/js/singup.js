@@ -81,14 +81,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Fonction pour vérifier si l'email existe déjà
   function emailDejaUtilise(email) {
-    return email.toLowerCase() === compteAdmin.email.toLowerCase();
+    return email === compteAdmin.email;
   }
 
   // Fonction pour vérifier si le nom d'utilisateur existe déjà
   function nomUtilisateurDejaUtilise(nomUtilisateur) {
-    return (
-      nomUtilisateur.toLowerCase() === compteAdmin.nomUtilisateur.toLowerCase()
-    );
+    return nomUtilisateur === compteAdmin.nomUtilisateur;
   }
 
   // Fonction pour afficher un message d'erreur

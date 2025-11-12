@@ -68,12 +68,17 @@ function validerEmail(input) {
   const valeur = input.value.trim();
   const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  if (valeur === "") {
+    afficherErreur(input, "L'adresse e-mail est requise");
+    return false;
+  }
+
   if (!regexEmail.test(valeur)) {
     afficherErreur(input, "L'adresse e-mail n'est pas valide");
     return false;
   }
 
-  // Vérifier si l'email est déjà utilisé (sauf si c'est l'email actuel)
+  // Vérifier si l'email est déjà utilisé
   if (valeur === 'root@gmail.com') {
     afficherErreur(input, "Cette adresse e-mail est déjà utilisée");
     return false;
