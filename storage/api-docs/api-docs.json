@@ -9,13 +9,267 @@
         "/api/test": {
             "get": {
                 "summary": "Route de test",
-                "operationId": "dc097032a606e8d42c32d872872316c6",
+                "operationId": "45e5a4f2f4ac34750230e33d3dd16a0f",
                 "responses": {
                     "200": {
                         "description": "Test OK"
                     }
                 }
             }
+        },
+        "/api/connexion": {
+            "post": {
+                "tags": [
+                    "Utilisateur"
+                ],
+                "summary": "connexion utilisateur",
+                "operationId": "42c9cc82c0ba7e0b3f974ab34f022e3e",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "mot_de_passe"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "mot_de_passe": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "La connexion a réussie avec succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id_utilisateur": {
+                                            "type": "string"
+                                        },
+                                        "nom_utilisateur": {
+                                            "type": "string"
+                                        },
+                                        "nom": {
+                                            "type": "string"
+                                        },
+                                        "prenom": {
+                                            "type": "string"
+                                        },
+                                        "token": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "301": {
+                        "description": "Mot de passe incorrect"
+                    },
+                    "304": {
+                        "description": "Compte inexistant"
+                    }
+                }
+            }
+        },
+        "/api/deconnexion": {
+            "put": {
+                "tags": [
+                    "Utilisateur"
+                ],
+                "summary": "Déconnexion utilisateur",
+                "operationId": "ed0e62360e7ed1657eb6c77744266fa8",
+                "responses": {
+                    "200": {
+                        "description": "Déconnexion réussie"
+                    },
+                    "301": {
+                        "description": "Token invalide ou expiré"
+                    },
+                    "304": {
+                        "description": "Utilisateur introuvable"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/inscription": {
+            "post": {
+                "tags": [
+                    "Utilisateur"
+                ],
+                "summary": "inscription utilisateur",
+                "operationId": "c1c8d991dee8eec977c64b8570e20c42",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nom_utilisateur",
+                                    "email",
+                                    "mot_de_passe"
+                                ],
+                                "properties": {
+                                    "nom_utilisateur": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "mot_de_passe": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "L'inscription a réussie avec succès"
+                    },
+                    "301": {
+                        "description": "Nom d'utilisateur existant"
+                    },
+                    "304": {
+                        "description": "Email déjà utilisée"
+                    }
+                }
+            }
+        },
+        "/api/modifier_infos": {
+            "put": {
+                "tags": [
+                    "Utilisateur"
+                ],
+                "summary": "Modifier les informations de l'utilisateur",
+                "operationId": "8c084616179e3d94284c6f8403f27def",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nom",
+                                    "prenom",
+                                    "email",
+                                    "date_naissance"
+                                ],
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "prenom": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "date_naissance": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Informations de l'utilisateur modifiées avec succès"
+                    },
+                    "301": {
+                        "description": "Token invalide ou expiré"
+                    },
+                    "304": {
+                        "description": "Utilisateur introuvable"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/modifier_mdp": {
+            "put": {
+                "tags": [
+                    "Utilisateur"
+                ],
+                "summary": "Modifier le mot de passe de l'utilisateur",
+                "operationId": "6c3f0fe3c8e6553676012bade1891a59",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "mot_de_passe"
+                                ],
+                                "properties": {
+                                    "mot_de_passe": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Mot de passe de l'utilisateur modifié avec succès"
+                    },
+                    "301": {
+                        "description": "Token invalide ou expiré"
+                    },
+                    "304": {
+                        "description": "Utilisateur introuvable"
+                    },
+                    "307": {
+                        "description": "Mot de passe vide"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
         }
-    }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "Entrez votre token JWT",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Utilisateur",
+            "description": "Utilisateur"
+        }
+    ]
 }
