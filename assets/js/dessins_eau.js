@@ -18,7 +18,6 @@ const accessoires = [
     { id: 14, nom: "Fragment Historique", description: "Document ancien de la NY Public Library.", prix: 9500, image: "assets/images/the-new-york-public-library-wtx3HO4amVU-unsplash.jpg" },
     { id: 15, nom: "Gravure Bleue", description: "Illustration encre de la NY Public Library.", prix: 14500, image: "assets/images/the-new-york-public-library-zPxCdKcj-PQ-unsplash.jpg" }
 ];
-
 // ====================================
 // ÉTAT DES FILTRES
 // ====================================
