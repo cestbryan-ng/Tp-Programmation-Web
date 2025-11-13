@@ -52,9 +52,6 @@ function initializeSearch() {
     }
 }
 
-// ====================================
-// RENDU DE LA GALERIE (CORRECTION DE CHEMIN INCLUSE)
-// ====================================
 function renderGallery(items) {
     const gallery = document.getElementById('gallery');
     if (!gallery) return;
@@ -65,8 +62,13 @@ function renderGallery(items) {
         // CORRECTION: Ajout du '/' pour un chemin absolu si non présent
         const imagePath = item.image.startsWith('/') ? item.image : '/' + item.image;
 
-        const card = document.createElement('div');
+        // MODIFIÉ : 'div' est devenu 'a'
+        const card = document.createElement('a');
         card.className = 'artwork-card';
+
+        // AJOUTÉ : Le lien dynamique
+        card.href = `description.html?id=${item.id}&category=dessinsEau`;
+
         card.innerHTML = `
             <div class="artwork-image">
                 <img src="${imagePath}" alt="${item.nom}">
@@ -82,7 +84,6 @@ function renderGallery(items) {
 
     updateResultsCount(items.length);
 }
-
 // ====================================
 // APPLICATION DES FILTRES (Prix et Recherche)
 // ====================================

@@ -199,9 +199,13 @@ function renderGallery(artworks) {
     gallery.innerHTML = '';
     
     artworks.forEach(artwork => {
-        const card = document.createElement('div');
+        
+        const card = document.createElement('a');
         card.className = 'artwork-card';
-        card.onclick = () => window.location.href = artwork.detailPage;
+        
+
+        card.href = `description.html?id=${artwork.id}&category=artAbstrait`;
+
         
         card.innerHTML = `
             <div class="artwork-image-wrapper">

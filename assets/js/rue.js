@@ -195,17 +195,20 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeFilterTrigger();
 });
 
-// ====================================
-// RENDU DE LA GALERIE
-// ====================================
+
 function renderGallery(artworks) {
     const gallery = document.getElementById('gallery');
     gallery.innerHTML = '';
     
     artworks.forEach(artwork => {
-        const card = document.createElement('div');
+        // MODIFIÉ : 'div' est devenu 'a'
+        const card = document.createElement('a');
         card.className = 'artwork-card';
-        card.onclick = () => window.location.href = artwork.detailPage;
+        
+        // AJOUTÉ : Le lien dynamique
+        card.href = `description.html?id=${artwork.id}&category=dessinRue`;
+        
+        // L'ancien "onclick" a été supprimé
         
         let badgeHTML = '';
         if (artwork.bestseller) {

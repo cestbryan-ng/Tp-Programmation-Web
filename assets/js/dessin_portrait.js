@@ -280,8 +280,12 @@ function renderGallery(artworks) {
     gallery.innerHTML = '';
     
     artworks.forEach(artwork => {
-        const card = document.createElement('div');
+        // MODIFIÉ : 'div' est devenu 'a'
+        const card = document.createElement('a');
         card.className = 'artwork-card';
+
+        // AJOUTÉ : Le lien dynamique
+        card.href = `description.html?id=${artwork.id}&category=dessinPortrait`;
         
         card.innerHTML = `
             <div class="artwork-image">
@@ -299,7 +303,7 @@ function renderGallery(artworks) {
     });
     
     updateResultsCount(artworks.length);
-} 
+}
 // SYSTÈME DE FILTRES
 function initializeFilters() {
     // Filtres taille

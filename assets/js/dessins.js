@@ -370,12 +370,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const creerCarteHTML = (produit) => {
-        // ... (Logique de prix et de carte inchangée, utilise produit.image) ...
+        // ... (Logique de prix inchangée) ...
         const prixAffichage = formaterPrix(produit.prix);
         const dataPrice = produit.prix > 0 ? produit.prix : 999999999; 
 
+        // MODIFIÉ : Le 'div' externe est devenu un 'a'
+        // AJOUTÉ : Le href dynamique
         return `
-            <div class="artwork-card" data-id="${produit.id}" data-price="${dataPrice}" data-category="dessin">
+            <a class="artwork-card" href="description.html?id=${produit.id}&category=dessins" data-id="${produit.id}" data-price="${dataPrice}" data-category="dessin">
                 <div class="artwork-image">
                     <img src="${produit.image}" alt="${produit.nom}">
                 </div>
@@ -384,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="artwork-title">${produit.description}</div>
                     <div class="price">${prixAffichage}</div>
                 </div>
-            </div>
+            </a>
         `;
     };
 

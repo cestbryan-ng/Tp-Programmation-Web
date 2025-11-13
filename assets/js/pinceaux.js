@@ -58,6 +58,9 @@ function initializeSearch() {
 // ====================================
 // RENDU DE LA GALERIE
 // ====================================
+// ====================================
+// RENDU DE LA GALERIE
+// ====================================
 function renderGallery(items) {
     const gallery = document.getElementById('gallery');
     if (!gallery) return;
@@ -65,13 +68,18 @@ function renderGallery(items) {
     gallery.innerHTML = ''; 
 
     items.forEach(item => {
-        const card = document.createElement('div');
+        // MODIFIÉ : 'div' est devenu 'a'
+        const card = document.createElement('a');
         card.className = 'artwork-card';
+
+        // AJOUTÉ : Le lien dynamique
+        card.href = `description.html?id=${item.id}&category=pinceaux`;
+
         card.innerHTML = `
             <div class="artwork-image">
                 <img src="${item.image}" alt="${item.nom}">
             </div>
-            <div class="artwork-info">
+            <div class_class="artwork-info">
                 <div class="artwork-title">${item.nom}</div>
                 <div class="artwork-details">${item.description}</div>
                 <div class="price">${item.prix.toLocaleString('fr-FR')} FCFA</div>

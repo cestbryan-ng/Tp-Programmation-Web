@@ -363,18 +363,21 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeFilterTrigger();
 });
 
-// ====================================
-// RENDU DE LA GALERIE
-// ====================================
+
 function renderGallery(products) {
     const gallery = document.getElementById('gallery');
     gallery.innerHTML = '';
     
     products.forEach(product => {
-        const card = document.createElement('div');
+        // MODIFIÉ : 'div' est devenu 'a'
+        const card = document.createElement('a');
         card.className = 'artwork-card';
-        card.onclick = () => window.location.href = product.detailPage;
+
+        // AJOUTÉ : Le lien dynamique
+        card.href = `description.html?id=${product.id}&category=potsTubes`;
         
+        // L'ancien "onclick" a été supprimé
+
         const colorInfo = colorMap[product.color];
         
         card.innerHTML = `
@@ -401,7 +404,6 @@ function renderGallery(products) {
     
     updateResultsCount(products.length);
 }
-
 // ====================================
 // SYSTÈME DE FILTRES
 // ====================================

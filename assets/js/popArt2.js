@@ -184,14 +184,22 @@ document.addEventListener('DOMContentLoaded', function() {
 // ====================================
 // RENDU DE LA GALERIE
 // ====================================
+// ====================================
+// RENDU DE LA GALERIE
+// ====================================
 function renderGallery(artworks) {
     const gallery = document.getElementById('gallery');
     gallery.innerHTML = '';
     
     artworks.forEach(artwork => {
-        const card = document.createElement('div');
+        // MODIFIÉ : 'div' est devenu 'a'
+        const card = document.createElement('a');
         card.className = 'artwork-card';
-        card.onclick = () => window.location.href = artwork.detailPage;
+        
+        // AJOUTÉ : Le lien dynamique
+        card.href = `description.html?id=${artwork.id}&category=popArt`;
+
+        // L'ancien "onclick" a été supprimé
         
         card.innerHTML = `
             <div class="artwork-image-wrapper">

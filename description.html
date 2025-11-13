@@ -39,9 +39,9 @@
                                 <div class="megamenu-links">
                                     <h3 class="megamenu-title">Explorez nos peintures</h3>
                                     <ul class="megamenu-list">
-                                        <li><a href="#">Art Abstrait</a></li>
-                                        <li><a href="#">Peinture Paysage</a></li>
-                                        <li><a href="#">Peinture Pop Art</a></li>
+                                        <li><a href="artAbstrait.html">Art Abstrait</a></li>
+                                        <li><a href="peinturepaysage.html">Peinture Paysage</a></li>
+                                        <li><a href="popArt.html">Peinture Pop Art</a></li>
                                     </ul>
                                 </div>
                                 <!-- Images décoratives -->
@@ -64,9 +64,9 @@
                                 <div class="megamenu-links">
                                     <h3 class="megamenu-title">Matériel de création</h3>
                                     <ul class="megamenu-list">
-                                        <li><a href="#">Toiles</a></li>
-                                        <li><a href="#">Pinceaux</a></li>
-                                        <li><a href="#">Pots de peinture</a></li>
+                                        <li><a href="latoilehtml2.html">Toiles</a></li>
+                                        <li><a href="pinceaux.html">Pinceaux</a></li>
+                                        <li><a href="pots-tubes.html">Pots de peinture</a></li>
                                     </ul>
                                 </div>
                                 <div class="megamenu-images">
@@ -129,7 +129,7 @@
                 </div>
                 
                 <!-- Icône Login -->
-                <a href="#" class="icon-btn" aria-label="Se connecter" title="Se connecter">
+                <a href="login.html" class="icon-btn" aria-label="Se connecter" title="Se connecter">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <circle cx="10" cy="6" r="3.5" stroke="currentColor" stroke-width="1.5"/>
                         <path d="M3 17c0-3 2.5-5.5 7-5.5s7 2.5 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -137,7 +137,7 @@
                 </a>
                 
                 <!-- Icône Panier -->
-                <a href="#" class="icon-btn cart-icon" aria-label="Panier">
+                <a href="panier.html" class="icon-btn cart-icon" aria-label="Panier">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M1 1h2l2.5 10h10l2.5-8H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                         <circle cx="8" cy="17" r="1.2" fill="currentColor"/>
@@ -151,117 +151,50 @@
         </div>
     </header>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <a href="#">Accueil</a> / <a href="#">Peintures</a> / <a href="#">Abstrait</a> / Think Different Yellow
-    </div>
-
-    <!-- Product Section -->
     <div class="product-wrapper">
         <div class="product-container">
-            <!-- Gallery -->
+            
             <div class="product-gallery">
                 <div class="main-image-container">
                     <div class="main-image">
-                        <span class="image-placeholder">
-                            <img src="assets/images/11.jpg" style="width: 100%; height: 100%; border-radius: 8px;">
-                        </span>
+                        <img id="product-image" src="" alt="Chargement...">
                     </div>
                 </div>
-                <div class="thumbnail-grid">
-                    <div class="thumbnail active">
-                        <span style="font-size: 24px; color: #d0d0d0;">
-                            <img src="assets/images/11.jpg" style="width: 100%; height: 100%; border-radius: 8px;">
-                        </span>
+                <div class="thumbnail-grid" id="thumbnail-grid">
                     </div>
-                    <div class="thumbnail">
-                        <span style="font-size: 24px; color: #d0d0d0;">
-                            <img src="assets/images/12.jpg" style="width: 100%; height: 100%; border-radius: 8px;">
-                        </span>
-                    </div>
-                    <!-- <div class="thumbnail">
-                        <span style="font-size: 24px; color: #d0d0d0;">
-                            <img src="13.jpg" style="width: 100%; height: 100%; border-radius: 8px;">
-                        </span>
-                    </div> -->
-                    <!-- <div class="thumbnail">
-                        <span style="font-size: 24px; color: #d0d0d0;">
-                            <img src="14.jpg" style="width: 100%; height: 100%; border-radius: 8px;">
-                        </span>
-                    </div>
-                    <div class="thumbnail">
-                        <span style="font-size: 24px; color: #d0d0d0;">
-                            <img src="15.jpg" style="width: 100%; height: 100%; border-radius: 8px;">
-                        </span>
-                    </div> -->
-                </div>
             </div>
 
-            <!-- Product Info -->
             <div class="product-info">
-                <a href="#" class="artist-link">NZIKO FELIX</a>
-                <h1 class="product-title">Think Different Yellow</h1>
-                <p class="product-subtitle">Peinture acrylique sur toile, 2024</p>
+                <a href="#" id="product-artist" class="artist-link"></a>
+                
+                <h1 id="product-title" class="product-title"></h1>
+                
+                <p id="product-subtitle" class="product-subtitle"></p>
                 
                 <div class="product-price">
-                    185 000 FCFA
+                    <span id="product-price"></span>
                     <div class="price-info">TVA incluse • Livraison gratuite</div>
                 </div>
 
-                <!-- Specs -->
                 <div class="specs-grid">
                     <div class="spec-item">
                         <span class="spec-label">Dimensions</span>
-                        <span class="spec-value">80 × 60 cm</span>
+                        <span id="product-dimensions" class="spec-value"></span>
                     </div>
                     <div class="spec-item">
                         <span class="spec-label">Technique</span>
-                        <span class="spec-value">Acrylique sur toile</span>
+                        <span id="product-technique" class="spec-value"></span>
                     </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Support</span>
-                        <span class="spec-value">Toile tendue sur châssis</span>
                     </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Année</span>
-                        <span class="spec-value">2024</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Signature</span>
-                        <span class="spec-value">Signée à la main</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Authenticité</span>
-                        <span class="spec-value">Certificat inclus</span>
-                    </div>
-                </div>
 
-                <!-- Action Buttons -->
                 <div class="action-buttons">
                     <button class="btn-primary">Ajouter au panier</button>
                 </div>
-
-                <!-- Shipping Info -->
-                <div class="info-box">
-                    <h4>Livraison & Retour</h4>
-                    <ul>
-                        <li>Livraison gratuite en France métropolitaine</li>
-                        <li>Expédition sécurisée sous 3-5 jours ouvrés</li>
-                        <li>Retour gratuit sous 14 jours</li>
-                        <li>Emballage professionnel garanti</li>
-                    </ul>
-                </div>
-
-                <!-- Description -->
+                
                 <div class="description-section">
                     <h3>Description de l'œuvre</h3>
-                    <p>"Think Different Yellow" est une œuvre vibrante qui explore la notion de différence et d'individualité à travers une palette de jaunes éclatants. Cette peinture abstraite contemporaine invite le spectateur à réfléchir sur l'importance de la singularité dans un monde uniformisé.</p>
-                    <p>L'artiste utilise des techniques mixtes pour créer des textures riches et des superpositions de couleurs qui donnent de la profondeur à l'œuvre. Les coups de pinceau énergiques et les contrastes dynamiques créent un mouvement visuel captivant.</p>
-                    <p>Cette pièce unique est parfaite pour apporter de la lumière et de l'énergie positive à n'importe quel espace de vie ou de travail.</p>
+                    <p id="product-description"></p>
                 </div>
-
-                <!-- Artist Info -->
-               
             </div>
         </div>
     </div>
@@ -398,6 +331,1826 @@
             
         </div>
     </footer>
+    <script >
 
+        const masterDatabase = {
+
+            /**
+             * Source: popopopo.txt
+             * Page: artAbstrait.html
+             */
+            artAbstrait: [
+            {
+                id: 1,
+                title: "Rêves Abstraits",
+                artist: "Sophie Dubois",
+                price: 285000,
+                dimensions: "60 × 80 cm",
+                image: "assets/images/IMG_3433.JPG",
+                size: "grand",
+                technique: "estampe numérique",
+                colors: ["bleu"],
+                bestseller: false,
+                detailPage: "artwork-detail.html?id=1"
+            },
+            {
+                id: 2,
+                title: "Horizon Urbain",
+                artist: "Jean-Marc Laurent",
+                price: 195000,
+                dimensions: "50 × 70 cm", // [cite: 2]
+                image: "assets/images/IMG_3434.JPG",
+                size: "moyen",
+                technique: "sérigraphie",
+                colors: ["gris"],
+                bestseller: false,
+                detailPage: "artwork-detail.html?id=2"
+            },
+            {
+                id: 3,
+                title: "Océan Intérieur",
+                artist: "Amina Kamara",
+                price: 425000,
+                dimensions: "70 × 90 cm",
+                image: "assets/images/IMG_3435.JPG",
+                size: "grand",
+                technique: "lithographie",
+                colors: ["bleu"],
+                bestseller: false,
+                detailPage: "artwork-detail.html?id=3"
+            },
+            {
+                id: 4, // [cite: 3]
+                title: "Lumière du Soir",
+                artist: "Pierre Nkomo",
+                price: 155000,
+                dimensions: "40 × 60 cm",
+                image: "assets/images/IMG_3436.JPG",
+                size: "petit",
+                technique: "estampe",
+                colors: ["orange"],
+                bestseller: false,
+                detailPage: "artwork-detail.html?id=4"
+            },
+            {
+                id: 5,
+                title: "Nuit Étoilée",
+                artist: "Claire Mbarga",
+                price: 320000,
+                dimensions: "55 × 75 cm",
+                image: "assets/images/IMG_3437.JPG",
+                size: "moyen", // [cite: 4]
+                technique: "gravure",
+                colors: ["noir"],
+                bestseller: false,
+                detailPage: "artwork-detail.html?id=5"
+            },
+            {
+                id: 6,
+                title: "Douceur Matinale",
+                artist: "David Essono",
+                price: 175000,
+                dimensions: "45 × 65 cm",
+                image: "assets/images/IMG_3438.JPG",
+                size: "petit",
+                technique: "estampe numérique",
+                colors: ["rose"],
+                bestseller: false,
+                detailPage: "artwork-detail.html?id=6"
+            },
+            {
+                id: 7,
+                title: "Printemps Éternel", // [cite: 5]
+                artist: "Isabelle Fotso",
+                price: 265000,
+                dimensions: "60 × 80 cm",
+                image: "assets/images/IMG_3439.JPG",
+                size: "grand",
+                technique: "sérigraphie",
+                colors: ["vert"],
+                bestseller: false,
+                detailPage: "artwork-detail.html?id=7"
+            },
+            {
+                id: 8,
+                title: "Chaleur d'Automne",
+                artist: "Thomas Onana",
+                price: 235000,
+                dimensions: "50 × 70 cm",
+                image: "assets/images/IMG_3440.JPG",
+                size: "moyen",
+                technique: "lithographie", // [cite: 6]
+                colors: ["orange"],
+                bestseller: false,
+                detailPage: "artwork-detail.html?id=8"
+            },
+            {
+                id: 9,
+                title: "Ciel Serein",
+                artist: "Marie Ngono",
+                price: 385000,
+                dimensions: "70 × 90 cm",
+                image: "assets/images/IMG_3441.JPG",
+                size: "grand",
+                technique: "estampe",
+                colors: ["bleu"],
+                bestseller: false,
+                detailPage: "artwork-detail.html?id=9"
+            },
+            {
+                id: 10,
+                title: "Jardin Secret",
+                artist: "Léa Tchoumba", // [cite: 7]
+                price: 295000,
+                dimensions: "55 × 75 cm",
+                image: "assets/images/IMG_3442.JPG",
+                size: "moyen",
+                technique: "estampe",
+                colors: ["vert"],
+                bestseller: false,
+                detailPage: "artwork-detail.html?id=10"
+            },
+            {
+                id: 11,
+                title: "Expression Moderne",
+                artist: "Marc Atangana",
+                price: 340000,
+                dimensions: "65 × 85 cm",
+                image: "assets/images/IMG_3443.JPG",
+                size: "grand",
+                technique: "sérigraphie",
+                colors: ["magenta"],
+                bestseller: false, // [cite: 8]
+                detailPage: "artwork-detail.html?id=11"
+            },
+            {
+                id: 12,
+                title: "Fraîcheur Tropicale",
+                artist: "Nadège Manga",
+                price: 215000,
+                dimensions: "50 × 70 cm",
+                image: "assets/images/IMG_3444.JPG",
+                size: "moyen",
+                technique: "lithographie",
+                colors: ["vert"],
+                bestseller: false,
+                detailPage: "artwork-detail.html?id=12"
+            },
+            {
+                id: 13,
+                title: "Harmonie Colorée",
+                artist: "Paul Bekolo",
+                price: 275000,
+                dimensions: "60 × 80 cm", // [cite: 9]
+                image: "assets/images/IMG_3445.JPG",
+                size: "grand",
+                technique: "estampe",
+                colors: ["multicolore"],
+                bestseller: false,
+                detailPage: "artwork-detail.html?id=13"
+            }
+            ], // [cite: 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+            /**
+             * Source: popopopo.txt
+             * Page: dessin_portrait.html
+             */
+            dessinPortrait: [
+                {
+                    id: 1,
+                    title: "Portrait enfant",
+                    artist: "John Matos Crash",
+                    price: 20000,
+                    dimensions: "30 × 40 cm",
+                    image: "assets/images/dessin_portrait/enfant_01.jpeg",
+                    size: "petit",
+                    style: "couleur",
+                    colors: ["marron", "beige"], // [cite: 46]
+                    bestseller: true
+                },
+                {
+                    id: 2,
+                    title: "Enfant nature",
+                    artist: "Barbara Kroll",
+                    price: 4000,
+                    dimensions: "64 × 49 cm",
+                    image: "assets/images/dessin_portrait/femme_01.jpeg",
+                    size: "grand",
+                    style: "couleur",
+                    colors: ["marron", "beige", "vert"] // [cite: 47]
+                },
+                {
+                    id: 3,
+                    title: "Œil",
+                    artist: "Reinaldo Chavez",
+                    price: 12500,
+                    dimensions: "16 × 11 cm",
+                    image: "assets/images/dessin_portrait/femme1_oeil.jpeg",
+                    size: "petit",
+                    style: "realiste",
+                    colors: ["noir", "blanc", "gris"] // [cite: 48]
+                },
+                {
+                    id: 4,
+                    title: "Portrait femme",
+                    artist: "Kirill Postovit",
+                    price: 7000,
+                    dimensions: "50 × 71 cm",
+                    image: "assets/images/dessin_portrait/femme2.jpeg",
+                    size: "grand",
+                    style: "realiste",
+                    colors: ["noir", "blanc"]
+                }, // [cite: 49]
+                {
+                    id: 5,
+                    title: "Portrait admiratif",
+                    artist: "Frédéric Bruly Bouabré",
+                    price: 8000,
+                    dimensions: "15 × 11 cm",
+                    image: "assets/images/dessin_portrait/femme3.jpeg",
+                    size: "petit",
+                    style: "couleur",
+                    colors: ["marron", "beige", "rouge"]
+                }, // [cite: 50]
+                {
+                    id: 6,
+                    title: "Le photographe",
+                    artist: "Gabrielle Rul",
+                    price: 15000,
+                    dimensions: "21 × 29 cm",
+                    image: "assets/images/dessin_portrait/femme4.jpeg",
+                    size: "petit",
+                    style: "realiste",
+                    colors: ["noir", "blanc", "gris"]
+                },
+                { // [cite: 51]
+                    id: 7,
+                    title: "Lèvres",
+                    artist: "Marie Dubois",
+                    price: 10000,
+                    dimensions: "30 × 40 cm",
+                    image: "assets/images/dessin_portrait/femme4_levre.jpeg",
+                    size: "moyen",
+                    style: "realiste",
+                    colors: ["rose", "rouge", "blanc"]
+                },
+                {
+                    id: 8, // [cite: 52]
+                    title: "Visage abstrait",
+                    artist: "Sophie Martin",
+                    price: 12000,
+                    dimensions: "42 × 30 cm",
+                    image: "assets/images/dessin_portrait/femme5_afrique.jpeg",
+                    size: "moyen",
+                    style: "abstrait",
+                    colors: ["noir", "blanc", "marron"]
+                },
+                {
+                    id: 9, // [cite: 53]
+                    title: "Lèvre milieu",
+                    artist: "Sophie Martin",
+                    price: 10000,
+                    dimensions: "42 × 30 cm",
+                    image: "assets/images/dessin_portrait/femme5_levre.jpeg",
+                    size: "moyen",
+                    style: "realiste",
+                    colors: ["rose", "rouge", "blanc"]
+                },
+                {
+                    id: 10,
+                    title: "Visage persuasif", // [cite: 54]
+                    artist: "Sophie Martin",
+                    price: 5000,
+                    dimensions: "42 × 30 cm",
+                    image: "assets/images/dessin_portrait/femme6.jpeg",
+                    size: "moyen",
+                    style: "couleur",
+                    colors: ["bleu", "rouge", "jaune"]
+                },
+                {
+                    id: 11,
+                    title: "Femme tatouée", // [cite: 55]
+                    artist: "Sophie Martin",
+                    price: 9000,
+                    dimensions: "42 × 30 cm",
+                    image: "assets/images/dessin_portrait/femme_tatoue1.jpeg",
+                    size: "moyen",
+                    style: "couleur",
+                    colors: ["bleu", "noir", "vert"]
+                },
+                {
+                    id: 12,
+                    title: "Masque",
+                    artist: "Sophie Martin", // [cite: 56]
+                    price: 9000,
+                    dimensions: "42 × 30 cm",
+                    image: "assets/images/dessin_portrait/masque.jpeg",
+                    size: "moyen",
+                    style: "couleur",
+                    colors: ["marron", "beige", "rouge"]
+                },
+                {
+                    id: 13,
+                    title: "Portrait d'histoire",
+                    artist: "Sophie Martin", // [cite: 57]
+                    price: 9000,
+                    dimensions: "42 × 30 cm",
+                    image: "assets/images/dessin_portrait/nb_enfant1.jpeg",
+                    size: "moyen",
+                    style: "noir-blanc",
+                    colors: ["noir", "blanc", "gris"]
+                },
+                {
+                    id: 14,
+                    title: "Kids",
+                    artist: "Sophie Martin",
+                    price: 9000, // [cite: 58]
+                    dimensions: "42 × 30 cm",
+                    image: "assets/images/dessin_portrait/nb_enfant2.jpeg",
+                    size: "moyen",
+                    style: "noir-blanc",
+                    colors: ["noir", "blanc"]
+                },
+                {
+                    id: 15,
+                    title: "Femme NB",
+                    artist: "Sophie Martin",
+                    price: 9000, // [cite: 59]
+                    dimensions: "42 × 30 cm",
+                    image: "assets/images/dessin_portrait/nb_femme1.jpeg",
+                    size: "moyen",
+                    style: "noir-blanc",
+                    colors: ["noir", "blanc", "gris"]
+                },
+                {
+                    id: 16,
+                    title: "Dessin de face",
+                    artist: "Sophie Martin",
+                    price: 9000,
+                    dimensions: "42 × 30 cm", // [cite: 60]
+                    image: "assets/images/dessin_portrait/nb_femme2.jpeg",
+                    size: "moyen",
+                    style: "noir-blanc",
+                    colors: ["noir", "blanc"]
+                },
+                {
+                    id: 17,
+                    title: "Portrait homme",
+                    artist: "Sophie Martin",
+                    price: 9000,
+                    dimensions: "42 × 30 cm", // [cite: 61]
+                    image: "assets/images/dessin_portrait/nb_homme1.jpeg",
+                    size: "moyen",
+                    style: "noir-blanc",
+                    colors: ["noir", "blanc", "gris"]
+                },
+                {
+                    id: 18,
+                    title: "Homme NB",
+                    artist: "Sophie Martin",
+                    price: 9000,
+                    dimensions: "42 × 30 cm", // [cite: 62]
+                    image: "assets/images/dessin_portrait/nb_homme2.jpeg",
+                    size: "moyen",
+                    style: "noir-blanc",
+                    colors: ["noir", "blanc"]
+                },
+                {
+                    id: 19,
+                    title: "Dessin Bob Marley",
+                    artist: "Sophie Martin",
+                    price: 9000,
+                    dimensions: "42 × 30 cm",
+                    image: "assets/images/dessin_portrait/nb_homme3.jpeg", // [cite: 63]
+                    size: "moyen",
+                    style: "noir-blanc",
+                    colors: ["noir", "blanc", "gris"]
+                },
+                {
+                    id: 20,
+                    title: "Dessin abstrait",
+                    artist: "Sophie Martin",
+                    price: 9000,
+                    dimensions: "42 × 30 cm",
+                    image: "assets/images/dessin_portrait/nb_homme4.jpeg", // [cite: 64]
+                    size: "moyen",
+                    style: "abstrait",
+                    colors: ["noir", "blanc"]
+                },
+                {
+                    id: 21,
+                    title: "Figure africaine",
+                    artist: "Sophie Martin",
+                    price: 9000,
+                    dimensions: "42 × 30 cm",
+                    image: "assets/images/dessin_portrait/nb_homme5.jpeg",
+                    size: "moyen", // [cite: 65]
+                    style: "noir-blanc",
+                    colors: ["noir", "blanc", "gris"]
+                },
+                {
+                    id: 22,
+                    title: "Figure africaine",
+                    artist: "Sophie Martin",
+                    price: 9000,
+                    dimensions: "42 × 30 cm",
+                    image: "assets/images/dessin_portrait/femme_04.jpeg",
+                    size: "moyen", // [cite: 66]
+                    style: "couleur",
+                    colors: ["orange", "marron", "beige"]
+                }
+            ], // [cite: 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66]
+
+            /**
+             * Source: popopopo.txt
+             * Page: (Accessoires - Dessins Spécifiques)
+             */
+            accessoiresSpecifiques: [
+                { id: 1, nom: "Esquisse Moderne", description: "Dessin au fusain de Stanley Kustamin.", prix: 15000, image: "assets/images/stanley-kustamin-OKR8bAiU_sY-unsplash.jpg" },
+                { id: 2, nom: "Abstraction Bleue", description: "Oeuvre numérique de Susan Wilkinson.", prix: 22000, image: "assets/images/susan-wilkinson-HwRiIX60p9M-unsplash.jpg" },
+                { id: 3, nom: "Formes Géométriques", description: "Dessin abstrait de Susan Wilkinson.", prix: 18000, image: "assets/images/susan-wilkinson-OeVC4pYLWH4-unsplash.jpg" },
+                { id: 4, nom: "Composition Rose", description: "Design minimaliste par Susan Wilkinson.", prix: 19500, image: "assets/images/susan-wilkinson-pYquLiPamPc-unsplash.jpg" },
+                { id: 5, nom: "Palette Pastel", description: "Couleurs douces de Susan Wilkinson.", prix: 17000, image: "assets/images/susan-wilkinson-Sl1h2dP4cyU-unsplash.jpg" }, // [cite: 106]
+                { id: 6, nom: "Contraste Vif", description: "Illustration haute en couleur de Susan Wilkinson.", prix: 21000, image: "assets/images/susan-wilkinson-ZqDz4s56h0M-unsplash.jpg" },
+                { id: 7, nom: "Motif Répétitif", description: "Œuvre de Susan Wilkinson explorant la répétition.", prix: 16500, image: "assets/images/susan-wilkinson-zzzpgcaPMTc-unsplash.jpg" },
+                { id: 8, nom: "Vieille Carte I", description: "Collection de la New York Public Library.", prix: 11000, image: "assets/images/the-new-york-public-library-aN2vUZXy1WY-unsplash.jpg" },
+                { id: 9, nom: "Illustration Botanique", description: "Planche d'herbier de la NY Public Library.", prix: 13500, image: "assets/images/the-new-york-public-library-B6utjpRWmlw-unsplash.jpg" }, // [cite: 107]
+                { id: 10, nom: "Lavis Architectural", description: "Dessin d'architecture de la NY Public Library.", prix: 14000, image: "assets/images/the-new-york-public-library-_BFkoqX5vN4-unsplash.jpg" },
+                { id: 11, nom: "Faune Exotique", description: "Gravure d'animaux de la NY Public Library.", prix: 16000, image: "assets/images/the-new-york-public-library-PPLRYRZ8iJM-unsplash.jpg" },
+                { id: 12, nom: "Étude d'Oiseau", description: "Dessin classique de la NY Public Library.", prix: 12500, image: "assets/images/the-new-york-public-library-Qt3Pf1fNaqs-unsplash.jpg" },
+                { id: 13, nom: "Plan Urbain", description: "Ancien plan de ville de la NY Public Library.", prix: 18500, image: "assets/images/the-new-york-public-library-Sai6QVPi8Aw-unsplash.jpg" },
+                { id: 14, nom: "Fragment Historique", description: "Document ancien de la NY Public Library.", prix: 9500, image: "assets/images/the-new-york-public-library-wtx3HO4amVU-unsplash.jpg" }, // [cite: 108]
+                { id: 15, nom: "Gravure Bleue", description: "Illustration encre de la NY Public Library.", prix: 14500, image: "assets/images/the-new-york-public-library-zPxCdKcj-PQ-unsplash.jpg" }
+            ], // [cite: 105, 106, 107, 108]
+
+            /**
+             * Source: popopopo.txt
+             * Page: (Aquarelles)
+             */
+            accessoiresDessins: [
+                {
+                    id: 101,
+                    nom: "Aquarelle Matinale",
+                    description: "Une scène douce inspirée des paysages urbains au lever du soleil.",
+                    prix: 10000,
+                    image: "assets/images/the-new-york-public-library-aN2vUZXy1WY-unsplash.jpg"
+                },
+                {
+                    id: 102,
+                    nom: "Rivière Enchantée",
+                    description: "Un cours d’eau calme avec des reflets de lumière délicats.", // [cite: 132]
+                    prix: 12000,
+                    image: "assets/images/the-new-york-public-library-B6utjpRWmlw-unsplash.jpg"
+                },
+                {
+                    id: 103,
+                    nom: "Forêt Brumeuse",
+                    description: "Atmosphère mystérieuse capturée avec des nuances subtiles de bleu et vert.",
+                    prix: 11500,
+                    image: "assets/images/the-new-york-public-library-_BFkoqX5vN4-unsplash.jpg"
+                }, // [cite: 133]
+                {
+                    id: 104,
+                    nom: "Ciel Crépusculaire",
+                    description: "Nuances chaudes et froides mêlées pour un coucher de soleil apaisant.",
+                    prix: 9800,
+                    image: "assets/images/the-new-york-public-library-Iu7GUGhV7qA-unsplash.jpg"
+                },
+                {
+                    id: 105,
+                    nom: "Paysage Marin",
+                    description: "Vagues et lumière douce pour capturer la tranquillité de la mer.", // [cite: 134]
+                    prix: 13000,
+                    image: "assets/images/the-new-york-public-library-NEBCw50RarM-unsplash.jpg"
+                },
+                {
+                    id: 106,
+                    nom: "Jardin Printanier",
+                    description: "Fleurs éclatantes et feuillages frais dans une harmonie colorée.",
+                    prix: 10500,
+                    image: "assets/images/the-new-york-public-library-Oy46b6eOfys-unsplash.jpg"
+                },
+                {
+                    id: 107, // [cite: 135]
+                    nom: "Pont Ancien",
+                    description: "Un pont historique rendu avec des couleurs légères et transparentes.",
+                    prix: 11200,
+                    image: "assets/images/the-new-york-public-library-p4faImzsN2Y-unsplash.jpg"
+                },
+                {
+                    id: 108,
+                    nom: "Montagne Lointaine",
+                    description: "Perspective profonde et touches de bleu pour l’atmosphère de l’altitude.",
+                    prix: 12500, // [cite: 136]
+                    image: "assets/images/the-new-york-public-library-PPLRYRZ8iJM-unsplash.jpg"
+                },
+                {
+                    id: 109,
+                    nom: "Village Paisible",
+                    description: "Maisons et ruelles capturées avec des couleurs douces et harmonieuses.",
+                    prix: 9900,
+                    image: "assets/images/the-new-york-public-library-Qt3Pf1fNaqs-unsplash.jpg"
+                },
+                {
+                    id: 110,
+                    nom: "Cascades Calmes", // [cite: 137]
+                    description: "Chute d’eau paisible avec effets aquarelle et transparence.",
+                    prix: 13500,
+                    image: "assets/images/the-new-york-public-library-Sai6QVPi8Aw-unsplash.jpg"
+                },
+                {
+                    id: 111,
+                    nom: "Ruelle Ancienne",
+                    description: "Ambiance vintage et jeux de lumière capturés à l’aquarelle.",
+                    prix: 10800,
+                    image: "assets/images/the-new-york-public-library-wtx3HO4amVU-unsplash.jpg"
+                }, // [cite: 138]
+                {
+                    id: 113, // [cite: 139]
+                    nom: "Motif Abstrait",
+                    description: "Une œuvre dynamique de couleurs et de formes inattendues.",
+                    prix: 9500,
+                    image: "assets/images/20fc23fb6127861eb8149c77ec42ac40.jpg"
+                },
+                {
+                    id: 114,
+                    nom: "Composition Minimaliste",
+                    description: "Dessin épuré basé sur la simplicité et l'espace.",
+                    prix: 8900, // [cite: 140]
+                    image: "assets/images/alex-dukhanov-ZxZQk7777R4-unsplash.jpg"
+                },
+                {
+                    id: 115,
+                    nom: "Lumière Diffuse",
+                    description: "Capture d'une atmosphère douce et enveloppante.",
+                    prix: 10100,
+                    image: "assets/images/chaozzy-lin-Y1ge0B9_oGE-unsplash.jpg"
+                },
+                {
+                    id: 116,
+                    nom: "Architecture d'Eau", // [cite: 141]
+                    description: "Reflets et structures urbaines dans l'eau.",
+                    prix: 11800,
+                    image: "assets/images/chenghe-huang-pGoYnmFuo-o-unsplash.jpg"
+                },
+                {
+                    id: 117,
+                    nom: "Feuille de Vigne",
+                    description: "Détail de la nature avec un rendu précis et délicat.",
+                    prix: 7500,
+                    image: "assets/images/clarisse-croset-zKRtZ1o5nvk-unsplash.jpg"
+                }, // [cite: 142]
+                {
+                    id: 118,
+                    nom: "Cercles d'Énergie",
+                    description: "Motif hypnotique et répétitif de cercles concentriques.",
+                    prix: 10300,
+                    image: "assets/images/d-koi-Vvp3RZZYS-Q-unsplash.jpg"
+                },
+                {
+                    id: 119,
+                    nom: "Nature Morte Fruits",
+                    description: "Une composition classique de fruits de saison.", // [cite: 143]
+                    prix: 9000,
+                    image: "assets/images/europeana-RI3ecKsrSn4-unsplash.jpg"
+                },
+                {
+                    id: 120,
+                    nom: "Oiseau en Vol",
+                    description: "Dessin capturant la légèreté du mouvement aérien.",
+                    prix: 12200,
+                    image: "assets/images/flyd--d1T-Gpgwtc-unsplash.jpg"
+                },
+                {
+                    id: 121,
+                    nom: "Visage Coloré", // [cite: 144]
+                    description: "Portrait moderne aux couleurs éclatantes.",
+                    prix: 13900,
+                    image: "assets/images/gor-davtyan-dNgIbpz90Tg-unsplash.jpg"
+                },
+                {
+                    id: 122,
+                    nom: "Végétation Profonde",
+                    description: "Exploration des formes et ombres de la jungle.",
+                    prix: 11400,
+                    image: "assets/images/leandro-souza-gyBnDczshzk-unsplash.jpg"
+                }, // [cite: 145]
+                {
+                    id: 123,
+                    nom: "Fleurs Stylisées",
+                    description: "Motifs floraux avec une touche de fantaisie.",
+                    prix: 8800,
+                    image: "assets/images/lindy-baker-pgBLZjJmPW4-unsplash.jpg"
+                },
+                {
+                    id: 124,
+                    nom: "Composition Linéaire",
+                    description: "Jeu de lignes fines et d'aplats de couleurs.", // [cite: 146]
+                    prix: 9700,
+                    image: "assets/images/linus-belanger-nCLs6KzOFAo-unsplash(1).jpg"
+                },
+                {
+                    id: 125,
+                    nom: "Nuances de Gris",
+                    description: "Étude de l'ombre et de la lumière en monochrome.",
+                    prix: 8500,
+                    image: "assets/images/linus-belanger-nCLs6KzOFAo-unsplash.jpg"
+                }, // [cite: 147]
+                {
+                    id: 126,
+                    nom: "Explosion Pastel",
+                    description: "Éclatement de couleurs douces et vibrantes.",
+                    prix: 11900,
+                    image: "assets/images/logan-voss-S7TMlozGJSY-unsplash.jpg"
+                },
+                {
+                    id: 127,
+                    nom: "Mouvements Verticaux",
+                    description: "Lignes dynamiques créant une impression de hauteur.", // [cite: 148]
+                    prix: 10900,
+                    image: "assets/images/logan-voss-w7US2bu0QFc-unsplash.jpg"
+                },
+                {
+                    id: 128,
+                    nom: "Motif Organique",
+                    description: "Formes inspirées du vivant et de la nature.",
+                    prix: 9200,
+                    image: "assets/images/luca-fontanive-dkNuU4KRG08-unsplash.jpg"
+                },
+                {
+                    id: 129,
+                    nom: "Silhouettes Douces", // [cite: 149]
+                    description: "Rendu flou et poétique de formes humaines.",
+                    prix: 12400,
+                    image: "assets/images/mariola-grobelska-H126BdTn14Y-unsplash.jpg"
+                },
+                {
+                    id: 130,
+                    nom: "Gouttes de Pluie",
+                    description: "Effet mouillé et texture unique capturant l'eau.",
+                    prix: 13200,
+                    image: "assets/images/matheus-viana-p5YTll-28k0-unsplash.jpg" // [cite: 150]
+                },
+                {
+                    id: 131,
+                    nom: "Exploration Spatiale",
+                    description: "Représentation abstraite d'un paysage céleste.",
+                    prix: 14000,
+                    image: "assets/images/maxwell-ingham-OPTFUK_OBrE-unsplash.jpg"
+                },
+                {
+                    id: 132,
+                    nom: "Motif Géométrique Bleu",
+                    description: "Design structuré avec des tons de bleu profond.", // [cite: 151]
+                    prix: 10700,
+                    image: "assets/images/pawel-czerwinski-5EUWCwDW2aI-unsplash.jpg"
+                },
+                {
+                    id: 133,
+                    nom: "Éclaboussures Noires",
+                    description: "Contraste fort et dynamique, style action painting.",
+                    prix: 9400,
+                    image: "assets/images/pawel-czerwinski-j5I0p3R_P_c-unsplash.jpg"
+                },
+                {
+                    id: 134,
+                    nom: "Texture Rouille", // [cite: 152]
+                    description: "Rendu détaillé d'une surface altérée par le temps.",
+                    prix: 8700,
+                    image: "assets/images/pawel-czerwinski-mTgO05cbQ8Y-unsplash.jpg"
+                },
+                {
+                    id: 135,
+                    nom: "Océan Abstrait I",
+                    description: "Vagues et mouvement de l'eau, effet apaisant.",
+                    prix: 11300,
+                    image: "assets/images/pure-julia-A_Ksufxi1D4-unsplash.jpg" // [cite: 153]
+                },
+                {
+                    id: 136,
+                    nom: "Océan Abstrait II",
+                    description: "Variations de bleu et de turquoise.",
+                    prix: 11600,
+                    image: "assets/images/pure-julia-fN9df_b-mGk-unsplash.jpg"
+                },
+                {
+                    id: 137,
+                    nom: "Océan Abstrait III",
+                    description: "Profondeur et mystère des fonds marins.", // [cite: 154]
+                    prix: 12100,
+                    image: "assets/images/pure-julia-Go1WX2eyA-s-unsplash.jpg"
+                },
+                {
+                    id: 138,
+                    nom: "Motif Floral Délicat",
+                    description: "Fleurs fines aux contours légèrement estompés.",
+                    prix: 9100,
+                    image: "assets/images/pure-julia-_qQngPxOySU-unsplash.jpg"
+                },
+                {
+                    id: 139,
+                    nom: "Éclatement de Lumière", // [cite: 155]
+                    description: "Composition abstraite autour de la source lumineuse.",
+                    prix: 10600,
+                    image: "assets/images/pure-julia-SBSKTha6ltI-unsplash.jpg"
+                },
+                {
+                    id: 140,
+                    nom: "Nuages et Météo",
+                    description: "Peinture atmosphérique capturant les cieux orageux.",
+                    prix: 12700,
+                    image: "assets/images/pure-julia-VwAvq_KDOp4-unsplash.jpg" // [cite: 156]
+                },
+                {
+                    id: 141,
+                    nom: "Calligraphie Liquide",
+                    description: "Mouvements fluides comme de l'encre sur papier mouillé.",
+                    prix: 13100,
+                    image: "assets/images/qiuhao-wu-ac9r7TBNm3w-unsplash.jpg"
+                },
+                {
+                    id: 142,
+                    nom: "Terre Brûlée",
+                    description: "Tons chauds et texture rappelant un paysage aride.", // [cite: 157]
+                    prix: 9300,
+                    image: "assets/images/solen-feyissa-bg6keHKDf4A-unsplash.jpg"
+                },
+                {
+                    id: 143,
+                    nom: "Horizon Lointain",
+                    description: "Perspective ouverte et couleurs d'un ciel dégagé.",
+                    prix: 11100,
+                    image: "assets/images/solen-feyissa-vmIyW9jdD7E-unsplash.jpg"
+                },
+                {
+                    id: 144, // [cite: 158]
+                    nom: "Mur de Briques",
+                    description: "Rendu réaliste d'une texture architecturale.",
+                    prix: 8200,
+                    image: "assets/images/stanley-kustamin-OKR8bAiU_sY-unsplash.jpg"
+                },
+                {
+                    id: 145,
+                    nom: "Motif Aérodynamique",
+                    description: "Formes en mouvement et lignes de vitesse.",
+                    prix: 12600,
+                    image: "assets/images/susan-wilkinson-HwRiIX60p9M-unsplash.jpg" // [cite: 159]
+                },
+                {
+                    id: 146,
+                    nom: "Jeu de Miroirs",
+                    description: "Effets de reflet et de symétrie abstraite.",
+                    prix: 13300,
+                    image: "assets/images/susan-wilkinson-OeVC4pYLWH4-unsplash.jpg"
+                },
+                {
+                    id: 147,
+                    nom: "Spirale Hypnotique",
+                    description: "Mouvement en boucle et dégradé de couleurs.", // [cite: 160]
+                    prix: 10400,
+                    image: "assets/images/susan-wilkinson-pYquLiPamPc-unsplash.jpg"
+                },
+                {
+                    id: 148,
+                    nom: "Couches Abstraites",
+                    description: "Superposition de formes et de transparence.",
+                    prix: 11700,
+                    image: "assets/images/susan-wilkinson-Sl1h2dP4cyU-unsplash.jpg"
+                },
+                {
+                    id: 149, // [cite: 161]
+                    nom: "Fusion Éthérée",
+                    description: "Mélange de couleurs douces et fluides.",
+                    prix: 12300,
+                    image: "assets/images/susan-wilkinson-ZqDz4s56h0M-unsplash.jpg"
+                },
+                {
+                    id: 150,
+                    nom: "Ondes Sonores",
+                    description: "Représentation visuelle d'un motif auditif.",
+                    prix: 13600,
+                    image: "assets/images/susan-wilkinson-zzzpgcaPMTc-unsplash.jpg" // [cite: 162]
+                }
+            ], // [cite: 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162]
+
+            /**
+             * Source: popopopo.txt
+             * Page: peinturepaysage.html
+             */
+            paysage: [
+                {
+                    id: 1,
+                    title: "les pyramides d'Egypte",
+                    artist: "Sophie Dubois",
+                    price: 285000,
+                    dimensions: "60 × 80 cm",
+                    image: "assets/images/paysage1.jpg",
+                    size: "moyen",
+                    technique: "estampe",
+                    colors: ["beige", "orange", "bleu"], // [cite: 176]
+                    bestseller: true,
+                    detailPage: "artwork-detail.html?id=1"
+                },
+                {
+                    id: 2,
+                    title: "Horizon d'elephant",
+                    artist: "Jean-Marc Laurent",
+                    price: 195000,
+                    dimensions: "50 × 70 cm",
+                    image: "assets/images/paysage2.jpg",
+                    size: "moyen",
+                    technique: "sérigraphie", // [cite: 177]
+                    colors: ["orange", "marron", "beige"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=2"
+                },
+                {
+                    id: 3,
+                    title: "beau marche",
+                    artist: "Amina Kamara",
+                    price: 425000,
+                    dimensions: "70 × 90 cm",
+                    image: "assets/images/paysage3.jpg", // [cite: 178]
+                    size: "grand",
+                    technique: "lithographie",
+                    colors: ["vert", "marron", "beige"],
+                    bestseller: false,
+                    nouveau: true,
+                    detailPage: "artwork-detail.html?id=3"
+                },
+                {
+                    id: 4,
+                    title: "Lumière du Soir",
+                    artist: "Pierre Nkomo",
+                    price: 155000, // [cite: 179]
+                    dimensions: "40 × 60 cm",
+                    image: "assets/images/paysage4.jpg",
+                    size: "petit",
+                    technique: "estampe",
+                    colors: ["orange", "rose", "jaune"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=4"
+                },
+                {
+                    id: 5,
+                    title: "vue du quartier", // [cite: 180]
+                    artist: "Claire Mbarga",
+                    price: 320000,
+                    dimensions: "55 × 75 cm",
+                    image: "assets/images/paysage5.jpg",
+                    size: "moyen",
+                    technique: "gravure",
+                    colors: ["marron", "vert", "gris"],
+                    bestseller: true,
+                    detailPage: "artwork-detail.html?id=5"
+                },
+                {
+                    id: 6, // [cite: 181]
+                    title: "Douceur Matinale",
+                    artist: "David Essono",
+                    price: 175000,
+                    dimensions: "45 × 65 cm",
+                    image: "assets/images/paysage6.jpg",
+                    size: "petit",
+                    technique: "estampe",
+                    colors: ["bleu", "vert", "beige"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=6" // [cite: 182]
+                },
+                {
+                    id: 7,
+                    title: "Plage Éternel",
+                    artist: "Isabelle Fotso",
+                    price: 265000,
+                    dimensions: "60 × 80 cm",
+                    image: "assets/images/paysage7.jpg",
+                    size: "moyen",
+                    technique: "sérigraphie",
+                    colors: ["bleu", "beige", "jaune"], // [cite: 183]
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=7"
+                },
+                {
+                    id: 8,
+                    title: "mont Cameroun",
+                    artist: "Thomas Onana",
+                    price: 235000,
+                    dimensions: "50 × 70 cm",
+                    image: "assets/images/paysage8.jpg",
+                    size: "moyen",
+                    technique: "lithographie", // [cite: 184]
+                    colors: ["vert", "gris", "bleu"],
+                    bestseller: true,
+                    detailPage: "artwork-detail.html?id=8"
+                },
+                {
+                    id: 9,
+                    title: "Col boreal",
+                    artist: "Marie Ngono",
+                    price: 385000,
+                    dimensions: "70 × 90 cm",
+                    image: "assets/images/paysage9.jpg",
+                    size: "grand", // [cite: 185]
+                    technique: "estampe",
+                    colors: ["bleu", "gris", "beige"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=9"
+                },
+                {
+                    id: 10,
+                    title: "Jardin Secret",
+                    artist: "Léa Tchoumba",
+                    price: 295000,
+                    dimensions: "55 × 75 cm", // [cite: 186]
+                    image: "assets/images/paysage10.jpg",
+                    size: "moyen",
+                    technique: "estampe",
+                    colors: ["vert", "marron", "beige"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=10"
+                },
+                {
+                    id: 11,
+                    title: "Expression Moderne",
+                    artist: "Marc Atangana",
+                    price: 340000, // [cite: 187]
+                    dimensions: "65 × 85 cm",
+                    image: "assets/images/paysage11.jpg",
+                    size: "grand",
+                    technique: "sérigraphie",
+                    colors: ["marron", "beige", "orange"],
+                    bestseller: false,
+                    nouveau: true,
+                    detailPage: "artwork-detail.html?id=11"
+                },
+                {
+                    id: 12, // [cite: 188]
+                    title: "Fraîcheur de montagne",
+                    artist: "Nadège Manga",
+                    price: 215000,
+                    dimensions: "50 × 70 cm",
+                    image: "assets/images/paysage12.jpg",
+                    size: "moyen",
+                    technique: "lithographie",
+                    colors: ["vert", "bleu", "gris"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=12"
+                }, // [cite: 189]
+                {
+                    id: 13,
+                    title: "Fraîcheur Tropicale",
+                    artist: "Nadège Manga",
+                    price: 215000,
+                    dimensions: "50 × 70 cm",
+                    image: "assets/images/paysage13.jpg",
+                    size: "moyen",
+                    technique: "lithographie",
+                    colors: ["vert", "bleu", "beige"],
+                    bestseller: false, // [cite: 190]
+                    detailPage: "artwork-detail.html?id=13"
+                },
+                {
+                    id: 14,
+                    title: "lac Tropicale",
+                    artist: "Nadège Manga",
+                    price: 215000,
+                    dimensions: "50 × 70 cm",
+                    image: "assets/images/paysage14.jpg",
+                    size: "moyen",
+                    technique: "lithographie",
+                    colors: ["bleu", "vert", "gris"], // [cite: 191]
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=14"
+                },
+                {
+                    id: 15,
+                    title: "Fraîcheur Tropicale",
+                    artist: "Nadège Manga",
+                    price: 215000,
+                    dimensions: "50 × 70 cm",
+                    image: "assets/images/paysage15.jpg",
+                    size: "moyen", // [cite: 192]
+                    technique: "lithographie",
+                    colors: ["vert", "marron", "beige"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=15"
+                },
+                {
+                    id: 16,
+                    title: "Harmonie du desert",
+                    artist: "Paul Bekolo",
+                    price: 275000,
+                    dimensions: "60 × 80 cm",
+                    image: "assets/images/paysage16.jpg", // [cite: 193]
+                    size: "moyen",
+                    technique: "estampe",
+                    colors: ["orange", "beige", "jaune"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=16"
+                },
+                {
+                    id: 17,
+                    title: "Le nil du Soir",
+                    artist: "Pierre Nkomo",
+                    price: 155000, // [cite: 194]
+                    dimensions: "40 × 60 cm",
+                    image: "assets/images/paysage17.jpg",
+                    size: "petit",
+                    technique: "estampe",
+                    colors: ["bleu", "orange", "beige"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=17"
+                },
+                {
+                    id: 18,
+                    title: "Le pecheur du Soir", // [cite: 195]
+                    artist: "Pierre Nkomo",
+                    price: 155000,
+                    dimensions: "40 × 60 cm",
+                    image: "assets/images/paysage18.jpg",
+                    size: "petit",
+                    technique: "estampe",
+                    colors: ["orange", "rose", "bleu"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=18"
+                },
+                {
+                    id: 19, // [cite: 196]
+                    title: "Le spinx",
+                    artist: "Pierre Nkomo",
+                    price: 155000,
+                    dimensions: "40 × 60 cm",
+                    image: "assets/images/paysage0.jpg",
+                    size: "petit",
+                    technique: "estampe",
+                    colors: ["beige", "orange", "gris"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=19" // [cite: 197]
+                }
+            ], // [cite: 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197]
+
+            /**
+             * Source: popopopo.txt
+             * Page: pinceaux.html
+             */
+            pinceaux: [
+                { id: 1, nom: "Pointe Ronde N°4", description: "Fibre synthétique, idéal pour les détails fins et l'aquarelle.", prix: 2500, image: "assets/images/36000cccedf589f2791101b6b27da0f7.jpg" },
+                { id: 2, nom: "Plat Carré N°10", description: "Soies synthétiques rigides, parfait pour les aplats et l'acrylique.", prix: 3200, image: "assets/images/0917b9ffee0f07d58f2a63ee77a7b26c.jpg" },
+                { id: 3, nom: "Langue de Chat N°8", description: "Idéal pour les bords doux, les dégradés et le travail en épaisseur (huile/acrylique).", prix: 4500, image: "assets/images/1cf933e6ad16b2356851a6843e26f0a9.jpg" },
+                { id: 4, nom: "Set Calligraphie Chine (5pcs)", description: "Pinceaux en poils de chèvre/loup pour encre et Sumi-e, pointe très fine.", prix: 12000, image: "assets/images/219acf043cadd3b510ecf34982cc469d.jpg" }, // [cite: 287]
+                { id: 5, nom: "Éventail N°6", description: "Permet des effets de texture, d'herbe, ou d'adoucir des contours sur huile et acrylique.", prix: 2900, image: "assets/images/36000cccedf589f2791101b6b27da0f7.jpg" },
+                { id: 6, nom: "Spalter Synthétique (50mm)", description: "Grande brosse plate pour lavis larges, fonds et gesso sur toile.", prix: 5800, image: "assets/images/36ad309418f4dfe259fad34df15f5c97.jpg" },
+                { id: 7, nom: "Traceur/Liner N°0", description: "Poils extra longs pour des lignes très fines, fluides et de la calligraphie.", prix: 2100, image: "assets/images/380cda2546b07825eec13bc58347f3f5.jpg" },
+                { id: 8, nom: "Lavis Petit-Gris N°6", description: "Poils très absorbants, idéal pour les grands lavis et mouiller le papier aquarelle.", prix: 6500, image: "assets/images/3daa56639249c1649bc88f0b5c26a08e.jpg" }, // [cite: 288]
+                { id: 9, nom: "Biseauté N°12", description: "Permet de tracer des lignes nettes et de couvrir de petites surfaces.", prix: 3500, image: "assets/images/40b6461c0d9357316754d8778cc2e8f6.jpg" },
+                { id: 10, nom: "Biseauté Précision N°2", description: "Pointe précise pour les petits détails et les lignes dures en acrylique/huile.", prix: 2400, image: "assets/images/42e200b4d2e62f6089661a96c47f1652.jpg" },
+                { id: 11, nom: "Ronde Martre Kolinsky N°6", description: "Haut de gamme, élasticité et rétention d'eau maximales pour aquarelle et détails.", prix: 15000, image: "assets/images/4d18920f3e5c5932c641047b35d5791b.jpg" }, // [cite: 289]
+                { id: 12, nom: "Usé Bombé N°14", description: "Pour estomper les bords, fondre les couleurs et créer des effets de feuilles (huile/acrylique).", prix: 4100, image: "assets/images/73ab2677e804c696ed8b854f98edd14c.jpg" },
+                { id: 13, nom: "Ronde Aquarelle N°16", description: "Pointe fine sur brosse large, excellent pour les lavis et les détails en aquarelle.", prix: 7500, image: "assets/images/74f66bdbea5d8eb2d4aab978e3ef6d17.jpg" },
+                { id: 14, nom: "Éventail N°4", description: "Pour la création de textures légères, le lissage et les effets spéciaux.", prix: 2700, image: "assets/images/9bf2fab0bf79734b85b74541e7b4740c.jpg" },
+                { id: 15, nom: "Plat Carré N°6", description: "Pour les surfaces moyennes, les lignes épaisses et le travail à l'acrylique.", prix: 2500, image: "assets/images/9d6c285a79664b26998f795f9f58e56a.jpg" } // [cite: 290]
+            ], // [cite: 286, 287, 288, 289, 290]
+
+            /**
+             * Source: popopopo.txt
+             * Page: popArt.html
+             */
+            popArt: [
+                {
+                    id: 1,
+                    title: "Anette Tjaerby",
+                    artist: "Arthur Boyle",
+                    price: 385000,
+                    dimensions: "80 × 100 cm",
+                    image: "assets/images/Anette Tjaerby.jpeg",
+                    size: "grand",
+                    technique: "portrait",
+                    colors: ["rouge", "noir", "blanc"], // [cite: 313]
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=1"
+                },
+                {
+                    id: 2,
+                    title: "Believe your dreams",
+                    artist: "Synthia Mah",
+                    price: 95000,
+                    dimensions: "50 × 70 cm",
+                    image: "assets/images/Img2.jpeg",
+                    size: "moyen",
+                    technique: "sérigraphie", // [cite: 314]
+                    colors: ["jaune", "noir", "blanc"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=2"
+                },
+                {
+                    id: 3,
+                    title: "Multiface",
+                    artist: "Arnaud Owona",
+                    price: 125000,
+                    dimensions: "70 × 90 cm",
+                    image: "assets/images/Img3.jpeg", // [cite: 315]
+                    size: "grand",
+                    technique: "lithographie",
+                    colors: ["bleu", "rouge", "vert", "jaune"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=3"
+                },
+                {
+                    id: 4,
+                    title: "Marylin Monroe",
+                    artist: "Mdr",
+                    price: 435000,
+                    dimensions: "40 × 60 cm", // [cite: 316]
+                    image: "assets/images/Img4.jpeg",
+                    size: "petit",
+                    technique: "portrait",
+                    colors: ["rose", "noir", "blanc"],
+                    bestseller: false ,
+                    detailPage: "artwork-detail.html?id=4"
+                },
+                {
+                    id: 5,
+                    title: "Scarface",
+                    artist: "Adamou Njoya", // [cite: 317]
+                    price: 300000,
+                    dimensions: "55 × 75 cm",
+                    image: "assets/images/Img5.jpeg",
+                    size: "moyen",
+                    technique: "portrait",
+                    colors: ["rouge", "noir", "blanc"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=5"
+                },
+                {
+                    id: 6,
+                    title: "Femme noire", // [cite: 318]
+                    artist: "Cynthia Essono",
+                    price: 125000,
+                    dimensions: "45 × 65 cm",
+                    image: "assets/images/Img6.jpeg",
+                    size: "petit",
+                    technique: "portrait",
+                    colors: ["orange", "bleu", "noir"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=6"
+                },
+                { // [cite: 319]
+                    id: 7,
+                    title: "Arc-en-ciel Éternel",
+                    artist: "Anabelle Ngono",
+                    price: 305000,
+                    dimensions: "60 × 80 cm",
+                    image: "assets/images/arc-en-ciel eternel.jpeg",
+                    size: "moyen",
+                    technique: "portrait",
+                    colors: ["rouge", "bleu", "vert", "jaune", "orange"],
+                    bestseller: false, // [cite: 320]
+                    detailPage: "artwork-detail.html?id=7"
+                },
+                {
+                    id: 8,
+                    title: "The mourner",
+                    artist: "Thomas Andre",
+                    price: 135000,
+                    dimensions: "50 × 70 cm",
+                    image: "assets/images/The cry.jpeg",
+                    size: "moyen",
+                    technique: "lithographie",
+                    colors: ["bleu", "noir", "blanc"], // [cite: 321]
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=8"
+                },
+                {
+                    id: 9,
+                    title: "The romantic city",
+                    artist: "Marie curie",
+                    price: 385000,
+                    dimensions: "70 × 90 cm",
+                    image: "assets/images/Paris by Lobo.jpeg",
+                    size: "grand", // [cite: 322]
+                    technique: "estampe",
+                    colors: ["rose", "bleu", "blanc"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=9"
+                },
+                {
+                    id: 10,
+                    title: "Multiculturalisme",
+                    artist: "Léa Kenfack",
+                    price: 295000,
+                    dimensions: "55 × 75 cm",
+                    image: "assets/images/Multicuturalisme.jpeg", // [cite: 323]
+                    size: "moyen",
+                    technique: "estampe",
+                    colors: ["rouge", "vert", "jaune", "noir"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=10"
+                },
+                {
+                    id: 11,
+                    title: "Culture pop",
+                    artist: "Cynthia Etoundi",
+                    price: 225000, // [cite: 324]
+                    dimensions: "45 × 65 cm",
+                    image: "assets/images/Culture pop.jpeg",
+                    size: "petit",
+                    technique: "portrait",
+                    colors: ["rouge", "bleu", "jaune"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=11"
+                },
+                {
+                    id: 12,
+                    title: "Bizarrerie",
+                    artist: "Leon marchand", // [cite: 325]
+                    price: 305000,
+                    dimensions: "60 × 80 cm",
+                    image: "assets/images/Bizarerrie.jpeg",
+                    size: "moyen",
+                    technique: "portrait",
+                    colors: ["vert", "rose", "noir"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=12"
+                }
+            ], // [cite: 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325]
+
+            /**
+             * Source: popopopo.txt
+             * Page: pots-tubes.html
+             */
+            potsTubes: [
+                {
+                    id: 1,
+                    title: "Argent Métallisée",
+                    type: "pot",
+                    price: 12500,
+                    image: "assets/images/pots/argent.jpg",
+                    color: "argent",
+                    bestseller: true,
+                    detailPage: "product-detail.html?id=1"
+                },
+                {
+                    id: 2,
+                    title: "Beige Naturel", // [cite: 364]
+                    type: "pot",
+                    price: 8500,
+                    image: "assets/images/pots/beige.jpg",
+                    color: "beige",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=2"
+                },
+                {
+                    id: 3,
+                    title: "Blanc Pur",
+                    type: "pot",
+                    price: 7500, // [cite: 365]
+                    image: "assets/images/pots/blanc.jpg",
+                    color: "blanc",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=3"
+                },
+                {
+                    id: 4,
+                    title: "Bleu Royal",
+                    type: "pot",
+                    price: 9500,
+                    image: "assets/images/pots/bleu.jpg",
+                    color: "bleu", // [cite: 366]
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=4"
+                },
+                {
+                    id: 5,
+                    title: "Cyan Éclatant",
+                    type: "pot",
+                    price: 10500,
+                    image: "assets/images/pots/cyan.jpg",
+                    color: "cyan",
+                    bestseller: true,
+                    detailPage: "product-detail.html?id=5" // [cite: 367]
+                },
+                {
+                    id: 6,
+                    title: "Gris Moderne",
+                    type: "pot",
+                    price: 8000,
+                    image: "assets/images/pots/gris.jpg",
+                    color: "gris",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=6"
+                },
+                {
+                    id: 7, // [cite: 368]
+                    title: "Jaune Soleil",
+                    type: "pot",
+                    price: 9000,
+                    image: "assets/images/pots/jaune.jpg",
+                    color: "jaune",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=7"
+                },
+                {
+                    id: 8,
+                    title: "Magenta Vibrant",
+                    type: "pot", // [cite: 369]
+                    price: 11500,
+                    image: "assets/images/pots/magenta.jpg",
+                    color: "magenta",
+                    bestseller: true,
+                    detailPage: "product-detail.html?id=8"
+                },
+                {
+                    id: 9,
+                    title: "Marron Terre",
+                    type: "pot",
+                    price: 8500,
+                    image: "assets/images/pots/marron.jpg", // [cite: 370]
+                    color: "marron",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=9"
+                },
+                {
+                    id: 10,
+                    title: "Noir Intense",
+                    type: "pot",
+                    price: 7500,
+                    image: "assets/images/pots/noir.jpg",
+                    color: "noir",
+                    bestseller: false, // [cite: 371]
+                    detailPage: "product-detail.html?id=10"
+                },
+                {
+                    id: 11,
+                    title: "Orange Énergique",
+                    type: "pot",
+                    price: 9500,
+                    image: "assets/images/pots/orange.jpg",
+                    color: "orange",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=11"
+                },
+                {
+                    id: 12, // [cite: 372]
+                    title: "Rose Tendre",
+                    type: "pot",
+                    price: 9000,
+                    image: "assets/images/pots/rose.jpg",
+                    color: "rose",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=12"
+                },
+                {
+                    id: 13,
+                    title: "Rouge Passion",
+                    type: "pot", // [cite: 373]
+                    price: 10000,
+                    image: "assets/images/pots/rouge.jpg",
+                    color: "rouge",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=13"
+                },
+                {
+                    id: 14,
+                    title: "Turquoise Océan",
+                    type: "pot",
+                    price: 11000,
+                    image: "assets/images/pots/turquoise.jpg", // [cite: 374]
+                    color: "turquoise",
+                    bestseller: true,
+                    detailPage: "product-detail.html?id=14"
+                },
+                {
+                    id: 15,
+                    title: "Vert Nature",
+                    type: "pot",
+                    price: 9500,
+                    image: "assets/images/pots/vert.jpg",
+                    color: "vert",
+                    bestseller: false, // [cite: 375]
+                    detailPage: "product-detail.html?id=15"
+                },
+                {
+                    id: 16,
+                    title: "Violet Mystique",
+                    type: "pot",
+                    price: 10500,
+                    image: "assets/images/pots/violet.jpg",
+                    color: "violet",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=16"
+                },
+                { // [cite: 376]
+                    id: 17,
+                    title: "Argent Métallisée",
+                    type: "tube",
+                    price: 6500,
+                    image: "assets/images/tubes/argent.png",
+                    color: "argent",
+                    bestseller: true,
+                    detailPage: "product-detail.html?id=17"
+                },
+                {
+                    id: 18,
+                    title: "Beige Naturel", // [cite: 377]
+                    type: "tube",
+                    price: 4500,
+                    image: "assets/images/tubes/beige.png",
+                    color: "beige",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=18"
+                },
+                {
+                    id: 19,
+                    title: "Blanc Pur",
+                    type: "tube",
+                    price: 3500, // [cite: 378]
+                    image: "assets/images/tubes/blanc.png",
+                    color: "blanc",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=19"
+                },
+                {
+                    id: 20,
+                    title: "Bleu Royal",
+                    type: "tube",
+                    price: 5500,
+                    image: "assets/images/tubes/bleu.png",
+                    color: "bleu", // [cite: 379]
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=20"
+                },
+                {
+                    id: 21,
+                    title: "Cyan Éclatant",
+                    type: "tube",
+                    price: 6500,
+                    image: "assets/images/tubes/cyan.png",
+                    color: "cyan",
+                    bestseller: true,
+                    detailPage: "product-detail.html?id=21" // [cite: 380]
+                },
+                {
+                    id: 22,
+                    title: "Gris Moderne",
+                    type: "tube",
+                    price: 4000,
+                    image: "assets/images/tubes/gris.png",
+                    color: "gris",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=22"
+                },
+                {
+                    id: 23,
+                    title: "Jaune Soleil", // [cite: 381]
+                    type: "tube",
+                    price: 5000,
+                    image: "assets/images/tubes/jaune.png",
+                    color: "jaune",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=23"
+                },
+                {
+                    id: 24,
+                    title: "Magenta Vibrant",
+                    type: "tube",
+                    price: 7500, // [cite: 382]
+                    image: "assets/images/tubes/magenta.png",
+                    color: "magenta",
+                    bestseller: true,
+                    detailPage: "product-detail.html?id=24"
+                },
+                {
+                    id: 25,
+                    title: "Marron Terre",
+                    type: "tube",
+                    price: 4500,
+                    image: "assets/images/tubes/marron.png",
+                    color: "marron", // [cite: 383]
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=25"
+                },
+                {
+                    id: 26,
+                    title: "Noir Intense",
+                    type: "tube",
+                    price: 3500,
+                    image: "assets/images/tubes/noir.png",
+                    color: "noir",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=26" // [cite: 384]
+                },
+                {
+                    id: 27,
+                    title: "Orange Énergique",
+                    type: "tube",
+                    price: 5500,
+                    image: "assets/images/tubes/orange.png",
+                    color: "orange",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=27"
+                },
+                {
+                    id: 28, // [cite: 385]
+                    title: "Rose Tendre",
+                    type: "tube",
+                    price: 5000,
+                    image: "assets/images/tubes/rose.png",
+                    color: "rose",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=28"
+                },
+                {
+                    id: 29,
+                    title: "Rouge Passion",
+                    type: "tube", // [cite: 386]
+                    price: 6000,
+                    image: "assets/images/tubes/rouge.png",
+                    color: "rouge",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=29"
+                },
+                {
+                    id: 30,
+                    title: "Turquoise Océan",
+                    type: "tube",
+                    price: 7000,
+                    image: "assets/images/tubes/turquoise.png", // [cite: 387]
+                    color: "turquoise",
+                    bestseller: true,
+                    detailPage: "product-detail.html?id=30"
+                },
+                {
+                    id: 31,
+                    title: "Vert Nature",
+                    type: "tube",
+                    price: 5500,
+                    image: "assets/images/tubes/vert.png",
+                    color: "vert",
+                    bestseller: false, // [cite: 388]
+                    detailPage: "product-detail.html?id=31"
+                },
+                {
+                    id: 32,
+                    title: "Violet Mystique",
+                    type: "tube",
+                    price: 6500,
+                    image: "assets/images/tubes/violet.png",
+                    color: "violet",
+                    bestseller: false,
+                    detailPage: "product-detail.html?id=32"
+                }
+            ], // [cite: 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388]
+
+            /**
+             * Source: popopopo.txt
+             * Page: DessinRue.html
+             */
+            dessinRue: [
+                {
+                    id: 1,
+                    title: "Matin sur Douala",
+                    artist: "Joseph Etoundi",
+                    price: 245000,
+                    dimensions: "60 × 80 cm",
+                    image: "assets/images/rue1.png",
+                    size: "moyen",
+                    technique: "estampe",
+                    colors: ["gris", "orange", "bleu"], // [cite: 423]
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=1"
+                },
+                {
+                    id: 2,
+                    title: "Rue des Artisans",
+                    artist: "Clarisse Ndongo",
+                    price: 185000,
+                    dimensions: "50 × 70 cm",
+                    image: "assets/images/rue2.png",
+                    size: "moyen", // [cite: 424]
+                    technique: "sérigraphie",
+                    colors: ["marron", "ocre", "gris"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=2"
+                },
+                {
+                    id: 3,
+                    title: "Marché Central",
+                    artist: "Amina Kamara",
+                    price: 395000,
+                    dimensions: "70 × 90 cm",
+                    image: "assets/images/rue3.png", // [cite: 425]
+                    size: "grand",
+                    technique: "lithographie",
+                    colors: ["rouge", "jaune", "brun"],
+                    bestseller: true,
+                    nouveau: true,
+                    detailPage: "artwork-detail.html?id=3"
+                },
+                {
+                    id: 4,
+                    title: "Crépuscule Urbain",
+                    artist: "Pierre Nkomo",
+                    price: 165000, // [cite: 426]
+                    dimensions: "40 × 60 cm",
+                    image: "assets/images/rue4.png",
+                    size: "petit",
+                    technique: "estampe",
+                    colors: ["orange", "violet", "gris"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=4"
+                },
+                {
+                    id: 5,
+                    title: "Ruelle des Fleurs", // [cite: 427]
+                    artist: "Claire Mbarga",
+                    price: 310000,
+                    dimensions: "55 × 75 cm",
+                    image: "assets/images/rue5.png",
+                    size: "moyen",
+                    technique: "gravure",
+                    colors: ["rose", "vert", "gris"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=5"
+                },
+                {
+                    id: 6, // [cite: 428]
+                    title: "Vieille Rue de Yaoundé",
+                    artist: "David Essono",
+                    price: 195000,
+                    dimensions: "45 × 65 cm",
+                    image: "assets/images/rue6.png",
+                    size: "petit",
+                    technique: "estampe",
+                    colors: ["beige", "marron", "gris"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=6" // [cite: 429]
+                },
+                {
+                    id: 7,
+                    title: "Boulevard du Soleil",
+                    artist: "Isabelle Fotso",
+                    price: 275000,
+                    dimensions: "60 × 80 cm",
+                    image: "assets/images/rue7.png",
+                    size: "moyen",
+                    technique: "sérigraphie",
+                    colors: ["jaune", "orange", "bleu"], // [cite: 430]
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=7"
+                },
+                {
+                    id: 8,
+                    title: "Ronde des Moto-Taxis",
+                    artist: "Thomas Onana",
+                    price: 225000,
+                    dimensions: "50 × 70 cm",
+                    image: "assets/images/rue8.png",
+                    size: "moyen",
+                    technique: "lithographie", // [cite: 431]
+                    colors: ["vert", "jaune", "gris"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=8"
+                },
+                {
+                    id: 9,
+                    title: "Matin Pluvieux",
+                    artist: "Marie Ngono",
+                    price: 365000,
+                    dimensions: "70 × 90 cm",
+                    image: "assets/images/rue9.png", // [cite: 432]
+                    size: "grand",
+                    technique: "estampe",
+                    colors: ["bleu", "gris", "blanc"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=9"
+                },
+                {
+                    id: 10,
+                    title: "Café du Carrefour",
+                    artist: "Léa Tchoumba",
+                    price: 285000,
+                    dimensions: "55 × 75 cm", // [cite: 433]
+                    image: "assets/images/rue10.png",
+                    size: "moyen",
+                    technique: "estampe",
+                    colors: ["marron", "orange", "gris"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=10"
+                },
+                {
+                    id: 11,
+                    title: "Soirée à Bonapriso",
+                    artist: "Marc Atangana", // [cite: 434]
+                    price: 335000,
+                    dimensions: "65 × 85 cm",
+                    image: "assets/images/rue11.png",
+                    size: "grand",
+                    technique: "sérigraphie",
+                    colors: ["bleu", "jaune", "violet"],
+                    bestseller: true,
+                    nouveau: true,
+                    detailPage: "artwork-detail.html?id=11"
+                },
+                {
+                    id: 12, // [cite: 435]
+                    title: "Rue des Potiers",
+                    artist: "Nadège Manga",
+                    price: 215000,
+                    dimensions: "50 × 70 cm",
+                    image: "assets/images/rue12.png",
+                    size: "moyen",
+                    technique: "lithographie",
+                    colors: ["beige", "vert", "marron"],
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=12" // [cite: 436]
+                },
+                {
+                    id: 13,
+                    title: "Ambiance du Quartier",
+                    artist: "Paul Bekolo",
+                    price: 255000,
+                    dimensions: "50 × 70 cm",
+                    image: "assets/images/rue13.png",
+                    size: "moyen",
+                    technique: "estampe",
+                    colors: ["rouge", "gris", "beige"], // [cite: 437]
+                    bestseller: false,
+                    detailPage: "artwork-detail.html?id=13"
+                }
+            ]
+        };
+        
+    </script>   
+    <script >
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Lire les paramètres de l'URL
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get("id"); // ex: "1"
+            const category = params.get("category"); // ex: "artAbstrait"
+
+            if (!productId || !category) {
+                document.getElementById("product-title").textContent = "Produit non trouvé.";
+                console.error("ID ou catégorie manquant dans l'URL");
+                return;
+            }
+
+            // 2. Trouver la base de données correspondante
+            const categoryDatabase = masterDatabase[category];
+            if (!categoryDatabase) {
+                document.getElementById("product-title").textContent = "Catégorie non valide.";
+                console.error("Catégorie inconnue:", category);
+                return;
+            }
+
+            // 3. Trouver le produit par son ID
+            // (Note: l'ID de l'URL est un string, l'ID de la DB est un nombre, d'où le ==)
+            const product = categoryDatabase.find(item => item.id == productId);
+
+            if (!product) {
+                document.getElementById("product-title").textContent = "Produit introuvable.";
+                console.error("Produit non trouvé avec ID:", productId, "dans", category);
+                return;
+            }
+
+            // 4. Remplir la page HTML avec les données du produit
+            // (Utilise les ID que nous avons ajoutés au HTML)
+            document.title = `${product.title} - Artika`; // Met à jour l'onglet du navigateur
+            
+            document.getElementById("product-image").src = product.image;
+            document.getElementById("product-image").alt = product.title;
+            
+            document.getElementById("product-artist").textContent = product.artist;
+            document.getElementById("product-title").textContent = product.title;
+            
+            // Remplissage des champs (certains peuvent être undefined, on met "N/A")
+            document.getElementById("product-subtitle").textContent = product.technique || product.style || "Oeuvre originale";
+            document.getElementById("product-dimensions").textContent = product.dimensions || "N/A";
+            document.getElementById("product-technique").textContent = product.technique || product.style || "N/A";
+            document.getElementById("product-description").textContent = product.description || `Découvrez "${product.title}", une magnifique oeuvre de ${product.artist}.`;
+
+            // Formatez le prix
+            const formattedPrice = product.price.toLocaleString('fr-FR');
+            document.getElementById("product-price").textContent = `${formattedPrice} FCFA`;
+
+            // C'est crucial : il faut aussi remplir les éléments
+            // que votre script 'produits.js' [cite: 271-272] utilise pour l'ajout au panier.
+            // Heureusement, ce sont les mêmes que ceux que nous venons de remplir.
+            // (Juste pour être sûr, on met à jour les classes qu'il recherche)
+            document.querySelector(".product-title").textContent = product.title;
+            document.querySelector(".artist-link").textContent = product.artist;
+            // Le script [cite: 271] cherche .product-price, qui contient maintenant notre span
+            document.querySelector(".main-image img").src = product.image;
+            
+            // Bonus : Remplir la miniature
+            const thumbnailGrid = document.getElementById("thumbnail-grid");
+            thumbnailGrid.innerHTML = `
+                <div class="thumbnail active">
+                    <img src="${product.image}" alt="Miniature de ${product.title}">
+                </div>
+            `;
+            // (Vous pouvez ajouter d'autres images ici si votre BDD les contient)
+        });
+    </script>
+    <script src="assets/js/countpayer.js"></script>
 </body>
 </html>
