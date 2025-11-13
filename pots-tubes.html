@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'Art - Pots et Tubes</title>
+    <link rel="stylesheet" href="assets/css/pots-tubes.css">
+    <link rel="stylesheet" href="assets/css/accueil.css">
+</head>
+<body>
+   <!-- 
+     BANNIÈRE PROMOTIONNELLE
+     Barre fixe en haut du site
+ -->
+<div class="promo-banner">
+    <p>Livraison gratuite pour les commandes de plus de 75 000 FCFA. Retours faciles.</p>
+</div>
+
+<!-- 
+     HEADER / NAVIGATION
+     Section réutilisable pour toutes les pages
+ -->
+<header class="header">
+    <div class="container-header">
+        
+        <!-- Logo (image cliquable) -->
+        <div class="logo">
+            <a href="artika.html">
+                <img src="assets/images/ARTIKA_blk.png" alt="Artika">
+            </a>
+        </div>
+        
+        <!-- Menu de navigation avec mega menu -->
+        <nav class="main-nav">
+            <ul class="nav-list">
+                
+                <!-- Menu Peintures avec sous-catégories -->
+                <li class="nav-item has-megamenu">
+                    <a href="#" class="nav-link">Peintures</a>
+                    
+                    <!-- Mega Menu Peintures -->
+                    <div class="megamenu">
+                        <div class="megamenu-content">
+                            <div class="megamenu-links">
+                                <h3 class="megamenu-title">Explorez nos peintures</h3>
+                                <ul class="megamenu-list">
+                                    <li><a href="artAbstrait.html">Art Abstrait</a></li>
+                                    <li><a href="peinturepaysage.html">Peinture Paysage</a></li>
+                                    <li><a href="popArt.html">Peinture Pop Art</a></li>
+                                </ul>
+                            </div>
+                            <!-- Images décoratives -->
+                            <div class="megamenu-images">
+                                <img src="assets/images/accueil/materiel.jpg" alt="Peinture 1" class="megamenu-img img-1">
+                                <img src="assets/images/accueil/product1.jpg" alt="Peinture 2" class="megamenu-img img-2">
+                                <img src="assets/images/accueil/materiel.jpg" alt="Peinture 3" class="megamenu-img img-3">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Menu Accessoires -->
+                <li class="nav-item has-megamenu">
+                    <a href="#" class="nav-link nav-link-active">Accessoires</a>
+                    
+                    <!-- Mega Menu Accessoires -->
+                    <div class="megamenu">
+                        <div class="megamenu-content">
+                            <div class="megamenu-links">
+                                <h3 class="megamenu-title">Matériel de création</h3>
+                                <ul class="megamenu-list">
+                                    <li><a href="latoilehtml2.html">Toiles</a></li>
+                                    <li><a href="pinceaux.html">Pinceaux</a></li>
+                                    <li><a href="pots-tubes.html">Pots de peinture</a></li>
+                                </ul>
+                            </div>
+                            <div class="megamenu-images">
+                                <img src="assets/images/accueil/materiel.jpg" alt="Accessoire 1" class="megamenu-img img-1">
+                                <img src="assets/images/accueil/peintures.jpg" alt="Accessoire 2" class="megamenu-img img-2">
+                                <img src="assets/images/accueil/sculptures.jpg" alt="Accessoire 3" class="megamenu-img img-3">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Menu Dessins -->
+                <li class="nav-item has-megamenu">
+                    <a href="#" class="nav-link">Dessins de beaux arts</a>
+                    
+                    <!-- Mega Menu Dessins -->
+                    <div class="megamenu">
+                        <div class="megamenu-content">
+                            <div class="megamenu-links">
+                                <h3 class="megamenu-title">Art du dessin</h3>
+                                <ul class="megamenu-list">
+                                    <li><a href="dessin_portrait.html">Dessin de portrait</a></li>
+                                    <li><a href="DessinRue.html">Dessin de rue</a></li>
+                                    <li><a href="dessins.html">Dessin à eau</a></li>
+                                </ul>
+                            </div>
+                            <div class="megamenu-images">
+                                <img src="assets/images/accueil/peintures.jpg" alt="Dessin 1" class="megamenu-img img-1">
+                                <img src="assets/images/accueil/hero.jpg" alt="Dessin 2" class="megamenu-img img-2">
+                                <img src="assets/images/accueil/product1.jpg" alt="Dessin 3" class="megamenu-img img-3">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Séparateur visuel (espace) -->
+                <li class="nav-separator"></li>
+                
+                <!-- Liens simples -->
+                <li class="nav-item"><a href="magasins.html" class="nav-link">Nos magasins</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">À propos</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Actions utilisateur (Recherche, Login, Panier) -->
+        <div class="header-actions">
+            
+            <!-- Icône de recherche (avec champ au survol) -->
+            <div class="search-wrapper">
+                <button class="search-icon" aria-label="Rechercher">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <!-- Champ de recherche qui apparaît au survol -->
+                <div class="search-dropdown">
+                    <input type="text" placeholder="Rechercher une œuvre, un artiste..." class="search-input">
+                </div>
+            </div>
+            
+            <!-- Icône Login -->
+            <a href="login.html" class="icon-btn" aria-label="Se connecter" title="Se connecter">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="6" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M3 17c0-3 2.5-5.5 7-5.5s7 2.5 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </a>
+            
+            <!-- Icône Panier -->
+            <a href="panier.html" class="icon-btn cart-icon" aria-label="Panier">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M1 1h2l2.5 10h10l2.5-8H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="8" cy="17" r="1.2" fill="currentColor"/>
+                    <circle cx="15" cy="17" r="1.2" fill="currentColor"/>
+                </svg>
+                <span class="cart-count">0</span>
+            </a>
+            
+        </div>
+        
+    </div>
+</header>
+
+    <!-- Boutons de filtrage par type -->
+    <div class="type-filters">
+        <a href="#pots" class="type-btn active">Pots</a>
+        <a href="#tubes" class="type-btn">Tubes</a>
+    </div>
+
+    <div class="container">
+        <!-- Section des Pots (16 produits) -->
+        <div id="pots" class="gallery pots-container active">
+            <!-- Carte 1 - Argent -->
+            <div class="artwork-card">
+                <div class="artwork-image color-argent">
+                    <img src="assets/images/pots/argent.jpg" alt="Argent Métallisée">
+                    <span class="badge">Best-seller</span>
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Argent Métallisée</div>
+                    <div class="color-code">#C0C0C0</div>
+                    <div class="price">12.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 2 - Beige -->
+            <div class="artwork-card">
+                <div class="artwork-image color-beige">
+                    <img src="assets/images/pots/beige.jpg" alt="Beige Naturel">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Beige Naturel</div>
+                    <div class="color-code">#F5F5DC</div>
+                    <div class="price">8.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 3 - Blanc -->
+            <div class="artwork-card">
+                <div class="artwork-image color-blanc">
+                    <img src="assets/images/pots/blanc.jpg" alt="Blanc Pur">
+                    <span class="badge">Nouveau</span>
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Blanc Pur</div>
+                    <div class="color-code">#FFFFFF</div>
+                    <div class="price">7.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 4 - Bleu -->
+            <div class="artwork-card">
+                <div class="artwork-image color-bleu">
+                    <img src="assets/images/pots/bleu.jpg" alt="Bleu Royal">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Bleu Royal</div>
+                    <div class="color-code">#0000FF</div>
+                    <div class="price">9.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 5 - Cyan -->
+            <div class="artwork-card">
+                <div class="artwork-image color-cyan">
+                    <img src="assets/images/pots/cyan.jpg" alt="Cyan Éclatant">
+                    <span class="badge">Best-seller</span>
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Cyan Éclatant</div>
+                    <div class="color-code">#00FFFF</div>
+                    <div class="price">10.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 6 - Gris -->
+            <div class="artwork-card">
+                <div class="artwork-image color-gris">
+                    <img src="assets/images/pots/gris.jpg" alt="Gris Moderne">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Gris Moderne</div>
+                    <div class="color-code">#808080</div>
+                    <div class="price">8.000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 7 - Jaune -->
+            <div class="artwork-card">
+                <div class="artwork-image color-jaune">
+                    <img src="assets/images/pots/jaune.jpg" alt="Jaune Soleil">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Jaune Soleil</div>
+                    <div class="color-code">#FFFF00</div>
+                    <div class="price">9.000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 8 - Magenta -->
+            <div class="artwork-card">
+                <div class="artwork-image color-magenta">
+                    <img src="assets/images/pots/magenta.jpg" alt="Magenta Vibrant">
+                    <span class="badge">Best-seller</span>
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Magenta Vibrant</div>
+                    <div class="color-code">#FF00FF</div>
+                    <div class="price">11.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 9 - Marron -->
+            <div class="artwork-card">
+                <div class="artwork-image color-marron">
+                    <img src="assets/images/pots/marron.jpg" alt="Marron Terre">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Marron Terre</div>
+                    <div class="color-code">#8B4513</div>
+                    <div class="price">8.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 10 - Noir -->
+            <div class="artwork-card">
+                <div class="artwork-image color-noir">
+                    <img src="assets/images/pots/noir.jpg" alt="Noir Intense">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Noir Intense</div>
+                    <div class="color-code">#000000</div>
+                    <div class="price">7.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 11 - Orange -->
+            <div class="artwork-card">
+                <div class="artwork-image color-orange">
+                    <img src="assets/images/pots/orange.jpg" alt="Orange Énergique">
+                    <span class="badge">Nouveau</span>
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Orange Énergique</div>
+                    <div class="color-code">#FFA500</div>
+                    <div class="price">9.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 12 - Rose -->
+            <div class="artwork-card">
+                <div class="artwork-image color-rose">
+                    <img src="assets/images/pots/rose.jpg" alt="Rose Tendre">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Rose Tendre</div>
+                    <div class="color-code">#FFC0CB</div>
+                    <div class="price">9.000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 13 - Rouge -->
+            <div class="artwork-card">
+                <div class="artwork-image color-rouge">
+                    <img src="assets/images/pots/rouge.jpg" alt="Rouge Passion">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Rouge Passion</div>
+                    <div class="color-code">#FF0000</div>
+                    <div class="price">10.000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 14 - Turquoise -->
+            <div class="artwork-card">
+                <div class="artwork-image color-turquoise">
+                    <img src="assets/images/pots/turquoise.jpg" alt="Turquoise Océan">
+                    <span class="badge">Best-seller</span>
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Turquoise Océan</div>
+                    <div class="color-code">#40E0D0</div>
+                    <div class="price">11.000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 15 - Vert -->
+            <div class="artwork-card">
+                <div class="artwork-image color-vert">
+                    <img src="assets/images/pots/vert.jpg" alt="Vert Nature">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Vert Nature</div>
+                    <div class="color-code">#008000</div>
+                    <div class="price">9.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 16 - Violet -->
+            <div class="artwork-card">
+                <div class="artwork-image color-violet">
+                    <img src="assets/images/pots/violet.jpg" alt="Violet Mystique">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Violet Mystique</div>
+                    <div class="color-code">#800080</div>
+                    <div class="price">10.500 FCFA</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section des Tubes (16 produits) -->
+        <div id="tubes" class="gallery tubes-container">
+            <!-- Carte 1 - Argent Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-argent">
+                    <img src="assets/images/tubes/argent.png" alt="Argent Métallisée">
+                    <span class="badge">Best-seller</span>
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Argent Métallisée</div>
+                    <div class="color-code">#C0C0C0</div>
+                    <div class="price">6.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 2 - Beige Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-beige">
+                    <img src="assets/images/tubes/beige.png" alt="Beige Naturel">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Beige Naturel</div>
+                    <div class="color-code">#F5F5DC</div>
+                    <div class="price">4.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 3 - Blanc Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-blanc">
+                    <img src="assets/images/tubes/blanc.png" alt="Blanc Pur">
+                    <span class="badge">Nouveau</span>
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Blanc Pur</div>
+                    <div class="color-code">#FFFFFF</div>
+                    <div class="price">3.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 4 - Bleu Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-bleu">
+                    <img src="assets/images/tubes/bleu.png" alt="Bleu Royal">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Bleu Royal</div>
+                    <div class="color-code">#0000FF</div>
+                    <div class="price">5.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 5 - Cyan Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-cyan">
+                    <img src="assets/images/tubes/cyan.png" alt="Cyan Éclatant">
+                    <span class="badge">Best-seller</span>
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Cyan Éclatant</div>
+                    <div class="color-code">#00FFFF</div>
+                    <div class="price">6.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 6 - Gris Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-gris">
+                    <img src="assets/images/tubes/gris.png" alt="Gris Moderne">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Gris Moderne</div>
+                    <div class="color-code">#808080</div>
+                    <div class="price">4.000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 7 - Jaune Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-jaune">
+                    <img src="assets/images/tubes/jaune.png" alt="Jaune Soleil">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Jaune Soleil</div>
+                    <div class="color-code">#FFFF00</div>
+                    <div class="price">5.000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 8 - Magenta Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-magenta">
+                    <img src="assets/images/tubes/magenta.png" alt="Magenta Vibrant">
+                    <span class="badge">Best-seller</span>
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Magenta Vibrant</div>
+                    <div class="color-code">#FF00FF</div>
+                    <div class="price">7.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 9 - Marron Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-marron">
+                    <img src="assets/images/tubes/marron.png" alt="Marron Terre">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Marron Terre</div>
+                    <div class="color-code">#8B4513</div>
+                    <div class="price">4.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 10 - Noir Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-noir">
+                    <img src="assets/images/tubes/noir.png" alt="Noir Intense">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Noir Intense</div>
+                    <div class="color-code">#000000</div>
+                    <div class="price">3.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 11 - Orange Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-orange">
+                    <img src="assets/images/tubes/orange.png" alt="Orange Énergique">
+                    <span class="badge">Nouveau</span>
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Orange Énergique</div>
+                    <div class="color-code">#FFA500</div>
+                    <div class="price">5.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 12 - Rose Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-rose">
+                    <img src="assets/images/tubes/rose.png" alt="Rose Tendre">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Rose Tendre</div>
+                    <div class="color-code">#FFC0CB</div>
+                    <div class="price">5.000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 13 - Rouge Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-rouge">
+                    <img src="assets/images/tubes/rouge.png" alt="Rouge Passion">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Rouge Passion</div>
+                    <div class="color-code">#FF0000</div>
+                    <div class="price">6.000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 14 - Turquoise Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-turquoise">
+                    <img src="assets/images/tubes/turquoise.png" alt="Turquoise Océan">
+                    <span class="badge">Best-seller</span>
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Turquoise Océan</div>
+                    <div class="color-code">#40E0D0</div>
+                    <div class="price">7.000 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 15 - Vert Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-vert">
+                    <img src="assets/images/tubes/vert.png" alt="Vert Nature">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Vert Nature</div>
+                    <div class="color-code">#008000</div>
+                    <div class="price">5.500 FCFA</div>
+                </div>
+            </div>
+
+            <!-- Carte 16 - Violet Tube -->
+            <div class="artwork-card">
+                <div class="artwork-image color-violet">
+                    <img src="assets/images/tubes/violet.png" alt="Violet Mystique">
+                </div>
+                <div class="artwork-info">
+                    <div class="color-name">Violet Mystique</div>
+                    <div class="color-code">#800080</div>
+                    <div class="price">6.500 FCFA</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- 
+     FOOTER
+     Section réutilisable pour toutes les pages
+ -->
+<footer class="footer">
+    <div class="container">
+        
+        <!-- Contenu principal du footer -->
+        <div class="footer-content">
+            
+            <!-- Colonne 1 : À propos -->
+            <div class="footer-column">
+                <h4 class="footer-title">Artika</h4>
+                <p class="footer-text">Là où l'art prend vie.</p>
+                <p class="footer-text">Votre galerie d'art en ligne pour découvrir et acquérir des œuvres uniques.</p>
+            </div>
+            
+            <!-- Colonne 2 : Navigation -->
+            <div class="footer-column">
+                <h4 class="footer-title">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Peintures</a></li>
+                    <li><a href="pots-tubes.html">Pots et tubes</a></li>
+                    <li><a href="#">Dessins</a></li>
+                    <li><a href="#">Nos magasins</a></li>
+                    <li><a href="#">À propos</a></li>
+                </ul>
+            </div>
+            
+            <!-- Colonne 3 : Contact -->
+            <div class="footer-column">
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:contact@artika.com">contact@artika.com</a></li>
+                    <li><a href="tel:+237600000000">+237 6XX XX XX XX</a></li>
+                    <li>Yaoundé, Cameroun</li>
+                </ul>
+            </div>
+            
+            <!-- Colonne 4 : Réseaux sociaux -->
+            <div class="footer-column">
+                <h4 class="footer-title">Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Section de copyright -->
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2023 Artika. Tous droits réservés.</p>
+        </div>
+        
+    </div>
+</footer>
+
+</body>
+</html>
+    
