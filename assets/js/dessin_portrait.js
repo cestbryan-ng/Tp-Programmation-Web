@@ -9,7 +9,7 @@ const artworksDatabase = [
         dimensions: "30 × 40 cm",
         image: "assets/images/dessin_portrait/enfant_01.jpeg",
         size: "petit",
-        style: "couleur",
+        technique: "couleur",
         colors: ["marron", "beige"],
         bestseller: true
     },
@@ -21,7 +21,7 @@ const artworksDatabase = [
         dimensions: "64 × 49 cm",
         image: "assets/images/dessin_portrait/femme_01.jpeg",
         size: "grand",
-        style: "couleur",
+        technique: "couleur",
         colors: ["marron", "beige", "vert"]
     },
     {
@@ -32,7 +32,7 @@ const artworksDatabase = [
         dimensions: "16 × 11 cm",
         image: "assets/images/dessin_portrait/femme1_oeil.jpeg",
         size: "petit",
-        style: "realiste",
+        technique: "realiste",
         colors: ["noir", "blanc", "gris"]
     },
     {
@@ -43,7 +43,7 @@ const artworksDatabase = [
         dimensions: "50 × 71 cm",
         image: "assets/images/dessin_portrait/femme2.jpeg",
         size: "grand",
-        style: "realiste",
+        technique: "realiste",
         colors: ["noir", "blanc"]
     },
     {
@@ -54,7 +54,7 @@ const artworksDatabase = [
         dimensions: "15 × 11 cm",
         image: "assets/images/dessin_portrait/femme3.jpeg",
         size: "petit",
-        style: "couleur",
+        technique: "couleur",
         colors: ["marron", "beige", "rouge"]
     },
     {
@@ -65,7 +65,7 @@ const artworksDatabase = [
         dimensions: "21 × 29 cm",
         image: "assets/images/dessin_portrait/femme4.jpeg",
         size: "petit",
-        style: "realiste",
+       technique: "realiste",
         colors: ["noir", "blanc", "gris"]
     },
     {
@@ -76,7 +76,7 @@ const artworksDatabase = [
         dimensions: "30 × 40 cm",
         image: "assets/images/dessin_portrait/femme4_levre.jpeg",
         size: "moyen",
-        style: "realiste",
+        technique: "realiste",
         colors: ["rose", "rouge", "blanc"]
     },
     {
@@ -87,7 +87,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/femme5_afrique.jpeg",
         size: "moyen",
-        style: "abstrait",
+       technique: "abstrait",
         colors: ["noir", "blanc", "marron"]
     },
     {
@@ -98,7 +98,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/femme5_levre.jpeg",
         size: "moyen",
-        style: "realiste",
+        technique: "realiste",
         colors: ["rose", "rouge", "blanc"]
     },
     {
@@ -109,7 +109,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/femme6.jpeg",
         size: "moyen",
-        style: "couleur",
+        technique: "couleur",
         colors: ["bleu", "rouge", "jaune"]
     },
     {
@@ -120,7 +120,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/femme_tatoue1.jpeg",
         size: "moyen",
-        style: "couleur",
+        technique: "couleur",
         colors: ["bleu", "noir", "vert"]
     },
     {
@@ -131,7 +131,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/masque.jpeg",
         size: "moyen",
-        style: "couleur",
+       technique: "couleur",
         colors: ["marron", "beige", "rouge"]
     },
     {
@@ -142,7 +142,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/nb_enfant1.jpeg",
         size: "moyen",
-        style: "noir-blanc",
+        technique: "noir-blanc",
         colors: ["noir", "blanc", "gris"]
     },
     {
@@ -153,7 +153,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/nb_enfant2.jpeg",
         size: "moyen",
-        style: "noir-blanc",
+      technique: "noir-blanc",
         colors: ["noir", "blanc"]
     },
     {
@@ -164,7 +164,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/nb_femme1.jpeg",
         size: "moyen",
-        style: "noir-blanc",
+      technique: "noir-blanc",
         colors: ["noir", "blanc", "gris"]
     },
     {
@@ -175,7 +175,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/nb_femme2.jpeg",
         size: "moyen",
-        style: "noir-blanc",
+       technique: "noir-blanc",
         colors: ["noir", "blanc"]
     },
     {
@@ -186,7 +186,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/nb_homme1.jpeg",
         size: "moyen",
-        style: "noir-blanc",
+        technique: "noir-blanc",
         colors: ["noir", "blanc", "gris"]
     },
     {
@@ -197,7 +197,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/nb_homme2.jpeg",
         size: "moyen",
-        style: "noir-blanc",
+       technique: "noir-blanc",
         colors: ["noir", "blanc"]
     },
     {
@@ -208,7 +208,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/nb_homme3.jpeg",
         size: "moyen",
-        style: "noir-blanc",
+       technique: "noir-blanc",
         colors: ["noir", "blanc", "gris"]
     },
     {
@@ -219,7 +219,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/nb_homme4.jpeg",
         size: "moyen",
-        style: "abstrait",
+        technique: "abstrait",
         colors: ["noir", "blanc"]
     },
     {
@@ -230,7 +230,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/nb_homme5.jpeg",
         size: "moyen",
-        style: "noir-blanc",
+       technique: "noir-blanc",
         colors: ["noir", "blanc", "gris"]
     },
     {
@@ -241,7 +241,7 @@ const artworksDatabase = [
         dimensions: "42 × 30 cm",
         image: "assets/images/dessin_portrait/femme_04.jpeg",
         size: "moyen",
-        style: "couleur",
+        technique: "couleur",
         colors: ["orange", "marron", "beige"]
     }
 ];
@@ -249,7 +249,7 @@ const artworksDatabase = [
  
 let filters = {
     size: [],
-    style: [],
+    technique: [],
     color: [],
     priceMin: null,
     priceMax: null
@@ -280,8 +280,12 @@ function renderGallery(artworks) {
     gallery.innerHTML = '';
     
     artworks.forEach(artwork => {
-        const card = document.createElement('div');
+        // MODIFIÉ : 'div' est devenu 'a'
+        const card = document.createElement('a');
         card.className = 'artwork-card';
+
+        // AJOUTÉ : Le lien dynamique
+        card.href = `description.html?id=${artwork.id}&category=dessinPortrait`;
         
         card.innerHTML = `
             <div class="artwork-image">
@@ -299,7 +303,7 @@ function renderGallery(artworks) {
     });
     
     updateResultsCount(artworks.length);
-} 
+}
 // SYSTÈME DE FILTRES
 function initializeFilters() {
     // Filtres taille
@@ -309,10 +313,10 @@ function initializeFilters() {
         });
     });
     
-    // Filtres style
-    document.querySelectorAll('input[name="style"]').forEach(checkbox => {
+    // Filtres technique
+    document.querySelectorAll('input[name="technique"]').forEach(checkbox => {
         checkbox.addEventListener('change', function() {
-            updateFilter('style', this.value, this.checked);
+            updateFilter('technique', this.value, this.checked);
         });
     });
     
@@ -363,8 +367,8 @@ function applyFilters() {
             return false;
         }
         
-        // Filtre style
-        if (filters.style.length > 0 && !filters.style.includes(artwork.style)) {
+        // Filtre technique
+        if (filters.technique.length > 0 && !filters.technique.includes(artwork.technique)) {
             return false;
         }
         
@@ -395,7 +399,7 @@ function resetAllFilters() {
     // Réinitialiser l'état
     filters = {
         size: [],
-        style: [],
+        technique: [],
         color: [],
         priceMin: null,
         priceMax: null
@@ -420,14 +424,14 @@ function resetAllFilters() {
 function updateResetButton() {
     const hasActiveFilters = 
         filters.size.length > 0 ||
-        filters.style.length > 0 ||
+        filters.technique.length > 0 ||
         filters.color.length > 0 ||
         filters.priceMin !== null ||
         filters.priceMax !== null;
     
     const resetBtn = document.getElementById('resetFiltersBtn');
     if (resetBtn) {
-        resetBtn.style.display = hasActiveFilters ? 'flex' : 'none';
+        resetBtn.technique.display = hasActiveFilters ? 'flex' : 'none';
     }
 }
  
