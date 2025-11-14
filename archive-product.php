@@ -1,8 +1,80 @@
 <?php
 /**
  * The Template for displaying product archives
+ * 
  */
 
+/**
+ * Template pour l'archive des produits
+ */
+
+get_header('shop'); ?>
+
+<div class="container">
+    <?php 
+    // Déterminer le type de page pour les filtres appropriés
+    $page_type = 'default';
+    
+    if (is_product_category()) {
+        $current_cat = get_queried_object();
+        $cat_slug = isset($current_cat->slug) ? $current_cat->slug : '';
+        $cat_id = isset($current_cat->term_id) ? $current_cat->term_id : 0;
+        
+        // Vérifier si c'est une sous-catégorie de Dessins
+        $dessins_cat_ids = array();
+        $dessins_slugs = array('dessin-portrait', 'dessin-rue', 'dessin-eau', 'dessins');
+        
+        if (in_array($cat_slug, $dessins_slugs)) {
+            $page_type = 'dessins';
+        } elseif (in_array($cat_slug, array('pop-art', 'art-abstrait', 'paysage', 'peintures'))) {
+            $page_type = 'peintures';
+        } elseif (in_array($cat_slug, array('toiles', 'pinceaux', 'pots-peinture', 'accessoires'))) {
+            $page_type = 'accessoires';
+        }
+        
+        // Alternative : vérifier par parent category
+        if ($page_type === 'default' && $cat_id) {
+            $parent_id = wp_get_post_parent_id($cat_id);
+            $parent_cat = get_term($parent_id);
+            
+            if ($parent_cat && !is_wp_error($parent_cat)) {
+                $parent_slug = $parent_cat->slug;
+                
+                if ($parent_slug === 'dessins' || $parent_slug === 'dessin-portrait') {
+                    $page_type = 'dessins';
+                } elseif ($parent_slug === 'peintures') {
+                    $page_type = 'peintures';
+                } elseif ($parent_slug === 'accessoires') {
+                    $page_type = 'accessoires';
+                }
+            }
+        }
+    }
+    
+    // Afficher les filtres
+    artika_display_filters($page_type);
+    ?>
+    
+    <?php if (woocommerce_product_loop()) : ?>
+        
+        <?php woocommerce_product_loop_start(); ?>
+        
+        <?php while (have_posts()) : the_post(); ?>
+            <?php wc_get_template_part('content', 'product'); ?>
+        <?php endwhile; ?>
+        
+        <?php woocommerce_product_loop_end(); ?>
+        
+    <?php else : ?>
+        
+        <div class="artika-no-products">
+            <p>Aucun produit trouvé.</p>
+        </div>
+        
+    <?php endif; ?>
+</div>
+
+<?php get_footer('shop'); ?><?php
 defined('ABSPATH') || exit;
 
 // 'shop' est un bon paramètre, il permet de charger header-shop.php si vous en avez un
