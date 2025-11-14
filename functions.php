@@ -122,5 +122,7 @@ function artika_theme_scripts() {
 }
 // Exécute cette fonction pour charger les scripts/styles
 add_action( 'wp_enqueue_scripts', 'artika_theme_scripts' );
+// Inclure les fonctions de filtres Artika
+require_once get_template_directory().'/artika-filters-functions.php';
 
 ?>
