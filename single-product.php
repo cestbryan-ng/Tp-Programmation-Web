@@ -1,128 +1,167 @@
 <?php
-/* Template single product */
-get_header();
+/**
+ * The Template for displaying single products
+ */
 
-if ( have_posts() ) :
-    while ( have_posts() ) : the_post();
-        $post_id = get_the_ID();
-        $price = get_post_meta( $post_id, '_themeartika_price', true );
-        $stock = get_post_meta( $post_id, '_themeartika_stock', true );
-        $image = get_the_post_thumbnail_url( $post_id, 'large' );
-        if ( ! $image ) {
-            $image = get_template_directory_uri() . '/images/accueil/hero.jpg';
-        }
-        $content = get_the_content();
-        $artist = get_the_author();
+defined('ABSPATH') || exit;
 
-        $partial = get_template_directory() . '/htm/partials/description.html';
-        if ( file_exists( $partial ) ) {
-            $html = file_get_contents( $partial );
-            if ( $html !== false ) {
-                // Load fragment and replace nodes by class
-                libxml_use_internal_errors(true);
-                $doc = new DOMDocument();
-                // Ensure proper encoding
-                $doc->loadHTML('<?xml encoding="utf-8" ?><div id="partial-root">' . $html . '</div>');
-                $xpath = new DOMXPath( $doc );
+get_header('shop'); ?>
 
-                // product title
-                $nodes = $xpath->query("//*[contains(@class,'product-title')]");
-                foreach ( $nodes as $n ) {
-                    while ( $n->hasChildNodes() ) { $n->removeChild( $n->firstChild ); }
-                    $n->appendChild( $doc->createTextNode( get_the_title() ) );
-                }
+    <div class="promo-banner">
+        <p><?php echo get_theme_mod('promo_banner_text', 'Livraison gratuite pour les commandes de plus de 75 000 FCFA. Retours faciles.'); ?></p>
+    </div>
 
-                // artist
-                $nodes = $xpath->query("//*[contains(@class,'artist-link')]");
-                foreach ( $nodes as $n ) {
-                    while ( $n->hasChildNodes() ) { $n->removeChild( $n->firstChild ); }
-                    $n->appendChild( $doc->createTextNode( $artist ) );
-                }
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <?php woocommerce_breadcrumb(); ?>
+    </div>
 
-                // price
-                $nodes = $xpath->query("//*[contains(@class,'product-price')]");
-                foreach ( $nodes as $n ) {
-                    while ( $n->hasChildNodes() ) { $n->removeChild( $n->firstChild ); }
-                    $price_text = $price ? number_format_i18n( intval( $price ), 0 ) . ' FCFA' : 'Prix sur demande';
-                    $n->appendChild( $doc->createTextNode( $price_text ) );
-                }
+    <?php while (have_posts()) : the_post(); global $product; ?>
 
-                // main image
-                $nodes = $xpath->query("//img[contains(@src,'assets/images') or contains(@class,'main-image') or contains(@class,'image-placeholder')]");
-                if ( $nodes->length > 0 ) {
-                    // replace first encountered img src
-                    $img = $nodes->item(0);
-                    $img->setAttribute( 'src', esc_url( $image ) );
-                } else {
-                    // try more specific
-                    $nodes = $xpath->query("//*[contains(@class,'main-image')]//img");
-                    if ( $nodes->length > 0 ) {
-                        $nodes->item(0)->setAttribute( 'src', esc_url( $image ) );
-                    }
-                }
-
-                // description-section
-                $nodes = $xpath->query("//*[contains(@class,'description-section')]");
-                foreach ( $nodes as $n ) {
-                    // replace innerHTML with post content
-                    // remove children
-                    while ( $n->hasChildNodes() ) { $n->removeChild( $n->firstChild ); }
-                    // create a fragment from the content
-                    $frag = $doc->createDocumentFragment();
-                    $frag->appendXML( wp_kses_post( apply_filters( 'the_content', $content ) ) );
-                    $n->appendChild( $frag );
-                }
-
-                // Related products: we'll let the static partial remain
-
-                // Output processed fragment (inner of #partial-root)
-                $root = $doc->getElementById('partial-root');
-                $out = '';
-                if ( $root ) {
-                    foreach ( $root->childNodes as $child ) {
-                        $out .= $doc->saveHTML( $child );
-                    }
-                }
-
-                // Ensure asset paths are fixed (convert relative to theme URI)
-                if ( function_exists( 'themeartika_process_html_content' ) ) {
-                    echo themeartika_process_html_content( $out );
-                } else {
-                    echo $out;
-                }
-
-                libxml_clear_errors();
-
-            } else {
-                // fallback
-                ?>
-                <div class="container">
-                    <h1><?php the_title(); ?></h1>
-                    <img src="<?php echo esc_url( $image ); ?>" alt="<?php the_title(); ?>" style="max-width:300px;">
-                    <div class="price"><?php echo $price ? number_format_i18n( intval( $price ), 0 ) . ' FCFA' : 'Prix sur demande'; ?></div>
-                    <div class="description"><?php the_content(); ?></div>
+    <!-- Product Section -->
+    <div class="product-wrapper">
+        <div class="product-container">
+            <!-- Gallery -->
+            <div class="product-gallery">
+                <div class="main-image-container">
+                    <div class="main-image">
+                        <?php
+                        if (has_post_thumbnail()) {
+                            the_post_thumbnail('large');
+                        } else {
+                            echo '<img src="' . wc_placeholder_img_src() . '" alt="Placeholder" />';
+                        }
+                        ?>
+                    </div>
                 </div>
-                <?php
-            }
-        } else {
-            // partial not found: fallback to simple layout
-            ?>
-            <div class="container product-single">
-                <div class="product-left">
-                    <img src="<?php echo esc_url( $image ); ?>" alt="<?php the_title(); ?>" style="width:100%;max-width:600px;">
-                </div>
-                <div class="product-right">
-                    <h1><?php the_title(); ?></h1>
-                    <p class="artist"><?php echo esc_html( $artist ); ?></p>
-                    <div class="price"><?php echo $price ? number_format_i18n( intval( $price ), 0 ) . ' FCFA' : 'Prix sur demande'; ?></div>
-                    <div class="stock">Stock: <?php echo intval( $stock ); ?></div>
-                    <div class="description"><?php the_content(); ?></div>
+                <div class="thumbnail-grid">
+                    <?php
+                    $attachment_ids = $product->get_gallery_image_ids();
+                    if ($attachment_ids) {
+                        $i = 0;
+                        foreach ($attachment_ids as $attachment_id) {
+                            $active_class = ($i == 0) ? 'active' : '';
+                            echo '<div class="thumbnail ' . $active_class . '">';
+                            echo wp_get_attachment_image($attachment_id, 'thumbnail');
+                            echo '</div>';
+                            $i++;
+                        }
+                    }
+                    ?>
                 </div>
             </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <?php 
+                $artist_name = get_post_meta(get_the_ID(), '_artist_name', true);
+                if ($artist_name) :
+                ?>
+                    <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" class="artist-link">
+                        <?php echo esc_html($artist_name); ?>
+                    </a>
+                <?php endif; ?>
+
+                <h1 class="product-title"><?php the_title(); ?></h1>
+                
+                <?php 
+                $product_subtitle = get_post_meta(get_the_ID(), '_product_subtitle', true);
+                if ($product_subtitle) :
+                ?>
+                    <p class="product-subtitle"><?php echo esc_html($product_subtitle); ?></p>
+                <?php endif; ?>
+                
+                <div class="product-price">
+                    <?php echo $product->get_price_html(); ?>
+                    <div class="price-info"><?php _e('TVA incluse • Livraison gratuite', 'artika'); ?></div>
+                </div>
+
+                <!-- Specs -->
+                <div class="specs-grid">
+                    <?php
+                    $specs = array(
+                        '_dimensions' => __('Dimensions', 'artika'),
+                        '_technique' => __('Technique', 'artika'),
+                        '_support' => __('Support', 'artika'),
+                        '_year' => __('Année', 'artika'),
+                        '_signature' => __('Signature', 'artika'),
+                        '_authenticity' => __('Authenticité', 'artika')
+                    );
+
+                    foreach ($specs as $meta_key => $label) {
+                        $value = get_post_meta(get_the_ID(), $meta_key, true);
+                        if ($value) :
+                    ?>
+                        <div class="spec-item">
+                            <span class="spec-label"><?php echo esc_html($label); ?></span>
+                            <span class="spec-value"><?php echo esc_html($value); ?></span>
+                        </div>
+                    <?php 
+                        endif;
+                    }
+                    ?>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <?php woocommerce_template_single_add_to_cart(); ?>
+                </div>
+
+                <!-- Shipping Info -->
+                <div class="info-box">
+                    <h4><?php _e('Livraison & Retour', 'artika'); ?></h4>
+                    <ul>
+                        <li><?php _e('Livraison gratuite en France métropolitaine', 'artika'); ?></li>
+                        <li><?php _e('Expédition sécurisée sous 3-5 jours ouvrés', 'artika'); ?></li>
+                        <li><?php _e('Retour gratuit sous 14 jours', 'artika'); ?></li>
+                        <li><?php _e('Emballage professionnel garanti', 'artika'); ?></li>
+                    </ul>
+                </div>
+
+                <!-- Description -->
+                <div class="description-section">
+                    <h3><?php _e('Description de l\'œuvre', 'artika'); ?></h3>
+                    <?php the_content(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    <section class="related-section">
+        <h2><?php _e('œuvres similaires', 'artika'); ?></h2>
+        <div class="related-grid">
             <?php
-        }
+            $related_products = wc_get_related_products($product->get_id(), 4);
+            if ($related_products) :
+                foreach ($related_products as $related_product_id) :
+                    $related_product = wc_get_product($related_product_id);
+                    if (!$related_product) continue;
+            ?>
+            <div class="related-item">
+                <div class="related-image">
+                    <a href="<?php echo get_permalink($related_product_id); ?>">
+                        <?php echo $related_product->get_image('medium'); ?>
+                    </a>
+                </div>
+                <div class="related-info">
+                    <div class="related-artist"><?php echo get_post_meta($related_product_id, '_artist_name', true); ?></div>
+                    <div class="related-title">
+                        <a href="<?php echo get_permalink($related_product_id); ?>">
+                            <?php echo $related_product->get_name(); ?>
+                        </a>
+                    </div>
+                    <div class="related-price"><?php echo $related_product->get_price_html(); ?></div>
+                </div>
+            </div>
+            <?php 
+                endforeach;
+            endif;
+            ?>
+        </div>
+    </section>
 
-    endwhile;
-endif;
+    <?php endwhile; ?>
 
-get_footer();
+<?php
+get_footer('shop');
