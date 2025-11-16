@@ -1,0 +1,370 @@
+/*  
+   SYSTÈME DE FILTRES ARTIKA - WORDPRESS
+   */
+
+/* Wrapper du bouton déclencheur */
+.artika-filter-trigger-wrapper {
+    margin: 40px 0 20px 0;
+    position: relative;
+    z-index: 10;
+}
+
+/* Bouton encoche filtres */
+.artika-filter-trigger-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 10;
+}
+
+.artika-filter-trigger-btn:hover {
+    border-color: #111;
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.artika-filter-trigger-btn .chevron {
+    transition: transform 0.3s ease;
+}
+
+.artika-filter-trigger-btn.active .chevron {
+    transform: rotate(180deg);
+}
+
+.artika-filter-trigger-btn.active {
+    border-color: #111;
+    background: #f0f4f8;
+    color: #111;
+}
+
+/* Bannière de filtres */
+.artika-filter-banner {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    max-height: 1000px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease, max-height 0.5s ease;
+    position: relative;
+    z-index: 5;
+    visibility: visible;
+}
+
+.artika-filter-banner.collapsed {
+    opacity: 0;
+    transform: translateY(-20px);
+    max-height: 0 !important;
+    margin-bottom: 0;
+    margin-top: 0;
+    border: none;
+    padding: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+/* En-tête de la bannière */
+.artika-filter-banner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #fafafa;
+    position: relative;
+    z-index: 6;
+}
+
+.artika-filter-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.artika-filter-toggle-btn:hover {
+    color: #111;
+}
+
+.artika-filter-toggle-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.artika-filter-banner.inner-collapsed .artika-filter-toggle-btn svg:first-child {
+    transform: rotate(180deg);
+}
+
+.artika-filter-toggle-btn .results-count {
+    color: #666;
+    font-weight: 400;
+}
+
+/* Bouton réinitialiser */
+.artika-reset-filters-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.artika-reset-filters-btn:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Contenu des filtres */
+.artika-filter-content {
+    max-height: 800px;
+    overflow: visible;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+.artika-filter-banner.inner-collapsed .artika-filter-content {
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.artika-filter-sections {
+    display: flex;
+    gap: 40px;
+    padding: 30px 25px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 5;
+}
+
+.artika-filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.artika-filter-group-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 15px 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.artika-filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.artika-filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+}
+
+.artika-filter-option input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #111;
+}
+
+.artika-filter-option:hover {
+    color: #111;
+}
+
+/* Filtre de prix */
+.artika-price-filter-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.artika-price-inputs {
+    display: flex;
+    gap: 15px;
+}
+
+.artika-price-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.artika-price-input-group label {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+.artika-price-input-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.artika-price-input-group span {
+    font-size: 12px;
+    color: #999;
+    margin-top: -5px;
+}
+
+.artika-price-apply-btn {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.artika-price-apply-btn:hover {
+    background: #333;
+}
+
+/* Couleurs - Cercles cliquables */
+.artika-color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.artika-color-option {
+    cursor: pointer;
+    position: relative;
+}
+
+.artika-color-option input[type="checkbox"] {
+    display: none;
+}
+
+.artika-color-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid #e0e0e0;
+    transition: all 0.2s ease;
+}
+
+.artika-color-option:hover .artika-color-circle {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.artika-color-option input[type="checkbox"]:checked + .artika-color-circle {
+    border-color: #111;
+    border-width: 3px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Container des produits */
+.artika-products-container {
+    margin-top: 30px;
+}
+
+/* Message "Aucun produit" */
+.artika-no-products {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    font-size: 16px;
+}
+
+/* Loader */
+.artika-filter-loader {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.artika-filter-loader.active {
+    display: block;
+}
+
+/* Ajustements responsive pour les filtres */
+@media (max-width: 768px) {
+    .artika-filter-sections {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .artika-filter-group {
+        min-width: 100%;
+    }
+    
+    .artika-filter-banner-header {
+        padding: 15px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .artika-price-inputs {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .artika-color-options {
+        gap: 10px;
+    }
+    
+    .artika-color-circle {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* Animation de chargement */
+@keyframes artikaFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.woocommerce ul.products li.product {
+    animation: artikaFadeIn 0.5s ease-out;
+}
