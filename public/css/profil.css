@@ -152,6 +152,17 @@
     padding-left: 10px;
 }
 
+<<<<<<< HEAD
+=======
+.div-erreur {
+    font-size: 14px;
+    display: none; 
+    color: #dc3545;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+>>>>>>> 72ed08e4c21c072a0bcf9679406ac93f0b7f700e
 .form-group .message-erreur {
     position: absolute;
     bottom: -9px;

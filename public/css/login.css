@@ -250,6 +250,17 @@ body {
   margin-top: 5px;
 }
 
+<<<<<<< HEAD
+=======
+.div-erreur {
+  display: none;
+  text-align: center;
+  margin-bottom: 15px;
+  color: red;
+  font-size: 14px;
+}
+
+>>>>>>> 72ed08e4c21c072a0bcf9679406ac93f0b7f700e
 /* Animation d'entrée (légère translation + fade-in) */
 @keyframes fadeInUp {
   0% {
