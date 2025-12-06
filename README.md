@@ -19,7 +19,7 @@ L’organisation est faite par **branches**, afin de séparer l’espace de dév
 - **MBO'O ATENA SIDONIE ORNELLA** - [MbooAtena](https://github.com/MbooAtena)
 - **MVOGO MVOGO DAVID ROLAND** - [Mdr2027ENSPY](https://github.com/Mdr2027ENSPY)
 - **NGONGA TSAFANG Jacquy Junior** - [jacks524](https://github.com/jacks524)
-- **NGOUPEYOU Bryan Jean-Roland** - [CestBryan_ng](https://github.com/cestbryan-ng)
+- **NGOUPEYOU Bryan Jean-Roland** - [cestbryan-ng](https://github.com/cestbryan-ng)
 - **NJIKI TCHOUBIA Miguel Alan** - [miguelttech](https://github.com/miguelttech)
 - **NZIKO TALLA NZIKO Félix André** - [Felix-TANZI](https://github.com/Felix-TANZI)
 - **OYIE MVA'A Japhet** - [japh004](https://github.com/japh004)
